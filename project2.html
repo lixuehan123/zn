@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="zh-CN">
 <head>
-	<title>Thesis: Souls-like Topology | Xuehan Li</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-
-	<style>
+<title>论文：类魂关卡拓扑 | 李学汉</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
+<style>
 		/* ========================================== */
 		/* 全局与背景设定 */
 		/* ========================================== */
-		body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background-color: #f7f7f9; color: #333; }
+		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
 
 		/* ========================================== */
 		/* 导航栏 (与 index.html 完全一致) */
@@ -78,83 +76,68 @@
 		}
 	</style>
 </head>
-
 <body>
-	
-	<header class="my-clean-header">
-		<div class="my-clean-logo">
-			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
-			<span class="job-title">Level Designer</span>
-		</div>
-		<ul class="my-clean-nav">
-			<li><a href="index.html">HOME</a></li>
-			
-			<li class="dropdown">
-				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
-				<div class="dropdown-content">
-					<div class="dropdown-category-title">Personal & Thesis</div>
-					<a href="project1.html">ContainmentBreach (Starfield)</a>
-					<a href="project2.html">Thesis: Souls-like Topology</a>
-					<a href="project3.html">Invalidprescription (Starfield)</a>
-					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
-					<a href="project5.html">Coldfront (Quake 3)</a>
-					<a href="project6.html">Beast Motos (Board Game)</a>
-
-					<div class="dropdown-category-title">Team Projects</div>
-					<a href="project7.html">Petalnaut</a>
-					<a href="project8.html">HamsterBallin</a>
-					<a href="project9.html">Unannounced Project</a>
-					
-					<div class="dropdown-category-title">Game Jams</div>
-					<a href="project10.html">GGJ 2024: Make me laugh</a>
-					<a href="project11.html">LD 54: Summon</a>
-					<a href="project12.html">GMTK 2024: Build to scale</a>
-				</div>
-			</li>
-			
-			<li><a href="index.html#about">ABOUT</a></li>
-			<li><a href="index.html#contact">CONTACT</a></li>
-		</ul>
-	</header>
-
-	<div class="project-detail-container">
-		
-		<div class="project-header">
-			<h1>Thesis: Souls-like Topology</h1>
-			<p class="subtitle">Quantitative Research on Level Shortcuts & Diorama Pacing</p>
-		</div>
-
-		<div class="video-wrapper">
-			<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Thesis Video Placeholder" allowfullscreen></iframe>
-		</div>
-
-		<div class="content-section">
-			<h2>Project Introduction</h2>
-			<p>This master's thesis focuses on establishing a "Golden Benchmark" for non-linear 3D level design, heavily inspired by the intricate map structures found in Souls-like games. It aims to decode the magic behind interconnectivity, verticality, and reward-driven exploration through the lens of graph theory.</p>
-		</div>
-
-		<div class="content-section">
-			<h2>My Contributions</h2>
-			<ul class="contribution-list">
-				<li><strong>Research & Methodology:</strong> Formulated mathematical models integrating directed edges and cognitive load to quantify spatial complexity.</li>
-				<li><strong>Engine Implementation:</strong> Utilized the Dying Light Engine to build diorama test maps, validating theoretical topological structures in a playable 3D space.</li>
-				<li><strong>Architectural Integration:</strong> Applied real-world architectural principles (spatial syntax, courtyard layering, scenic borrowing) to control sightlines and navigation.</li>
-				<li><strong>Data Analysis:</strong> Documented the correlation between loop rates, shortcut unlock pacing, and player satisfaction.</li>
-			</ul>
-		</div>
-
-		<div class="content-section">
-			<h2>Design Analysis</h2>
-			<p>A key finding in this project is the "Extended Stability Factor," which addresses the limitations of 2D abstraction when designing vertically stacked 3D environments. By mapping out nodes (checkpoints) and edges (paths/shortcuts), I calculated the optimal topological depth required before a player experiences cognitive fatigue.</p>
-			<p>The practical application of this research allows for the systematic generation of levels that feel highly organic yet are meticulously structured to guide player movement and combat pacing naturally.</p>
-		</div>
-
-		<div class="back-btn-container">
-			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
-		</div>
-
-	</div>
-	
-	<script src="js/jquery-2.2.3.min.js"></script>
+<header class="my-clean-header">
+<div class="my-clean-logo">
+<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
+<span class="job-title">关卡设计师</span>
+</div>
+<ul class="my-clean-nav">
+<li><a href="index.html">首页</a></li>
+<li class="dropdown">
+<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
+<div class="dropdown-content">
+<div class="dropdown-category-title">个人项目与论文</div>
+<a href="project1.html">ContainmentBreach（星空）</a>
+<a href="project2.html">论文：类魂关卡拓扑</a>
+<a href="project3.html">Invalidprescription（星空）</a>
+<a href="project4.html">逃离发电厂（半衰期 2）</a>
+<a href="project5.html">Coldfront（雷神之锤 3）</a>
+<a href="project6.html">Beast Motos（桌游）</a>
+<div class="dropdown-category-title">团队项目</div>
+<a href="project7.html">Petalnaut</a>
+<a href="project8.html">HamsterBallin</a>
+<a href="project9.html">未公开项目</a>
+<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
+<a href="project10.html">GGJ 2024：Make Me Laugh</a>
+<a href="project11.html">LD 54：Summon</a>
+<a href="project12.html">GMTK 2024：Build to Scale</a>
+</div>
+</li>
+<li><a href="index.html#about">关于我</a></li>
+<li><a href="index.html#contact">联系方式</a></li>
+</ul>
+</header>
+<div class="project-detail-container">
+<div class="project-header">
+<h1>论文：类魂关卡拓扑</h1>
+<p class="subtitle">关卡捷径与立体模型节奏的量化研究</p>
+</div>
+<div class="video-wrapper">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="论文视频占位"></iframe>
+</div>
+<div class="content-section">
+<h2>项目简介</h2>
+<p>本硕士论文旨在为非线性 3D 关卡设计建立一套“黄金基准”，研究灵感主要来自类魂游戏中错综复杂的地图结构。研究通过图论视角，解析互联性、垂直性与奖励驱动探索背后的设计规律。</p>
+</div>
+<div class="content-section">
+<h2>我的工作</h2>
+<ul class="contribution-list">
+<li><strong>研究与方法论：</strong> 建立融合有向边与认知负荷的数学模型，用于量化空间复杂度。</li>
+<li><strong>引擎实现：</strong> 使用《消逝的光芒》引擎搭建立体模型测试地图，在可游玩的 3D 空间中验证理论拓扑结构。</li>
+<li><strong>建筑学整合：</strong> 运用真实建筑学原理，包括空间句法、院落层叠与借景，控制视线与导航。</li>
+<li><strong>数据分析：</strong> 记录回路比例、捷径解锁节奏与玩家满意度之间的相关性。</li>
+</ul>
+</div>
+<div class="content-section">
+<h2>设计分析</h2>
+<p>本研究的一项关键成果是“扩展稳定性因子”，用于解决垂直堆叠的 3D 环境在二维抽象表达中的局限。通过绘制节点（检查点）与边（路径／捷径），我计算了玩家产生认知疲劳前所适宜的拓扑深度。</p>
+<p>这项研究可用于系统化生成既显得自然有机、又经过严密组织的关卡，使玩家移动与战斗节奏得到自然引导。</p>
+</div>
+<div class="back-btn-container">
+<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
+</div>
+</div>
+<script src="js/jquery-2.2.3.min.js"></script>
 </body>
 </html>

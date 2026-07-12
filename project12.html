@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>GMTK 2024: Build to Scale | Xuehan Li</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
-	<style>
-		body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background-color: #f7f7f9; color: #333; }
+<html lang="zh-CN">
+<head>
+<title>GMTK 2024：Build to Scale | 李学汉</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
+<style>
+		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
 		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
 		.my-clean-logo { display: flex; flex-direction: column; }
 		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
@@ -57,80 +56,66 @@
 	</style>
 </head>
 <body>
-	
-	<header class="my-clean-header">
-		<div class="my-clean-logo">
-			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
-			<span class="job-title">Level Designer</span>
-		</div>
-		<ul class="my-clean-nav">
-			<li><a href="index.html">HOME</a></li>
-			
-			<li class="dropdown">
-				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
-				<div class="dropdown-content">
-					<div class="dropdown-category-title">Personal & Thesis</div>
-					<a href="project1.html">ContainmentBreach (Starfield)</a>
-					<a href="project2.html">Thesis: Souls-like Topology</a>
-					<a href="project3.html">Invalidprescription (Starfield)</a>
-					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
-					<a href="project5.html">Coldfront (Quake 3)</a>
-					<a href="project6.html">Beast Motos (Board Game)</a>
-
-					<div class="dropdown-category-title">Team Projects</div>
-					<a href="project7.html">Petalnaut</a>
-					<a href="project8.html">HamsterBallin</a>
-					<a href="project9.html">Unannounced Project</a>
-					
-					<div class="dropdown-category-title">Game Jams</div>
-					<a href="project10.html">GGJ 2024: Make me laugh</a>
-					<a href="project11.html">LD 54: Summon</a>
-					<a href="project12.html">GMTK 2024: Build to scale</a>
-				</div>
-			</li>
-			
-			<li><a href="index.html#about">ABOUT</a></li>
-			<li><a href="index.html#contact">CONTACT</a></li>
-		</ul>
-	</header>
-
-	<div class="project-detail-container">
-		
-		<div class="project-header">
-			<h1>GMTK 2024: Build to Scale</h1>
-			<p class="subtitle">Puzzle Platforming & Dynamic Environment Sizing</p>
-		</div>
-
-		<div class="video-wrapper">
-			<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Project 12 Video Placeholder" allowfullscreen></iframe>
-		</div>
-
-		<div class="content-section">
-			<h2>Project Introduction</h2>
-			<p>Participating in the highly competitive GMTK Game Jam 2024 under the theme "Built to Scale." We created a puzzle platformer where the player can dynamically alter the scale of environmental objects to create bridges, block hazards, or reach new heights. This required extreme precision in level metrics and puzzle conceptualization.</p>
-		</div>
-
-		<div class="content-section">
-			<h2>My Contributions</h2>
-			<ul class="contribution-list">
-				<li><strong>Puzzle Design:</strong> Blocked out 5 distinct puzzle rooms, each introducing a new application of the scaling mechanic (e.g., scaling a block to fit a gap vs. scaling a block to gain mass/weight).</li>
-				<li><strong>Boundary Control:</strong> Implemented strict bounding boxes to prevent players from scaling objects infinitely, which would break the physics engine and the game's progression.</li>
-				<li><strong>Visual Affordance:</strong> Collaborated with artists to ensure scalable objects were instantly recognizable against the static background elements.</li>
-			</ul>
-		</div>
-
-		<div class="content-section">
-			<h2>Design Analysis</h2>
-			<p>Designing levels where the player can change the geometry of the level is inherently risky, as it invites sequence breaking. My solution was a "Lock and Key Topology." The physical space of the room itself acts as the lock, while the scalable block is the key.</p>
-			<p>For example, a puzzle might require the player to squeeze a block through a tiny crevice (min scale), and then expand it on the other side to act as a staircase (max scale). By tightly controlling the dimensions of the crevices and the platforms, I ensured the "Eureka" moment of the puzzle was preserved despite the free-form nature of the mechanic.</p>
-		</div>
-
-		<div class="back-btn-container">
-			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
-		</div>
-
-	</div>
-	
-	<script src="js/jquery-2.2.3.min.js"></script>
+<header class="my-clean-header">
+<div class="my-clean-logo">
+<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
+<span class="job-title">关卡设计师</span>
+</div>
+<ul class="my-clean-nav">
+<li><a href="index.html">首页</a></li>
+<li class="dropdown">
+<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
+<div class="dropdown-content">
+<div class="dropdown-category-title">个人项目与论文</div>
+<a href="project1.html">ContainmentBreach（星空）</a>
+<a href="project2.html">论文：类魂关卡拓扑</a>
+<a href="project3.html">Invalidprescription（星空）</a>
+<a href="project4.html">逃离发电厂（半衰期 2）</a>
+<a href="project5.html">Coldfront（雷神之锤 3）</a>
+<a href="project6.html">Beast Motos（桌游）</a>
+<div class="dropdown-category-title">团队项目</div>
+<a href="project7.html">Petalnaut</a>
+<a href="project8.html">HamsterBallin</a>
+<a href="project9.html">未公开项目</a>
+<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
+<a href="project10.html">GGJ 2024：Make Me Laugh</a>
+<a href="project11.html">LD 54：Summon</a>
+<a href="project12.html">GMTK 2024：Build to Scale</a>
+</div>
+</li>
+<li><a href="index.html#about">关于我</a></li>
+<li><a href="index.html#contact">联系方式</a></li>
+</ul>
+</header>
+<div class="project-detail-container">
+<div class="project-header">
+<h1>GMTK 2024：Build to Scale</h1>
+<p class="subtitle">解谜平台玩法与动态环境缩放</p>
+</div>
+<div class="video-wrapper">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="GMTK 2024 视频占位"></iframe>
+</div>
+<div class="content-section">
+<h2>项目简介</h2>
+<p>本项目参加竞争激烈的 GMTK Game Jam 2024，主题为“Built to Scale”。团队制作了一款解谜平台游戏，玩家可以动态改变环境物件的尺寸，用它们搭桥、阻挡危险或抵达高处。这要求关卡尺度与谜题概念具有极高精度。</p>
+</div>
+<div class="content-section">
+<h2>我的工作</h2>
+<ul class="contribution-list">
+<li><strong>谜题设计：</strong> 搭建 5 个不同的谜题房间，每个房间引入缩放机制的一种新用途，例如缩小方块以穿过缺口，或放大方块以增加质量与重量。</li>
+<li><strong>边界控制：</strong> 实施严格的包围盒限制，防止玩家无限放大物件而破坏物理引擎和游戏流程。</li>
+<li><strong>视觉可供性：</strong> 与美术师协作，确保可缩放物件能够从静态背景元素中被玩家立即识别。</li>
+</ul>
+</div>
+<div class="content-section">
+<h2>设计分析</h2>
+<p>当玩家可以改变关卡几何形状时，设计天然存在风险，因为这会鼓励玩家跳过预定流程。我的解决方案是“锁与钥匙拓扑”：房间的物理空间本身是锁，而可缩放方块则是钥匙。</p>
+<p>例如，谜题可能要求玩家先将方块缩小，使其穿过狭窄缝隙，再在另一侧放大，把它变成楼梯。通过严格控制缝隙和平台尺寸，我在机制具有自由形式的同时，仍能保留谜题顿悟的“原来如此”时刻。</p>
+</div>
+<div class="back-btn-container">
+<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
+</div>
+</div>
+<script src="js/jquery-2.2.3.min.js"></script>
 </body>
 </html>

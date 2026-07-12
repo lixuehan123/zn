@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>LD 54: Summon | Xuehan Li</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
-	<style>
-		body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background-color: #f7f7f9; color: #333; }
+<html lang="zh-CN">
+<head>
+<title>LD 54：Summon | 李学汉</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
+<style>
+		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
 		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
 		.my-clean-logo { display: flex; flex-direction: column; }
 		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
@@ -57,80 +56,66 @@
 	</style>
 </head>
 <body>
-	
-	<header class="my-clean-header">
-		<div class="my-clean-logo">
-			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
-			<span class="job-title">Level Designer</span>
-		</div>
-		<ul class="my-clean-nav">
-			<li><a href="index.html">HOME</a></li>
-			
-			<li class="dropdown">
-				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
-				<div class="dropdown-content">
-					<div class="dropdown-category-title">Personal & Thesis</div>
-					<a href="project1.html">ContainmentBreach (Starfield)</a>
-					<a href="project2.html">Thesis: Souls-like Topology</a>
-					<a href="project3.html">Invalidprescription (Starfield)</a>
-					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
-					<a href="project5.html">Coldfront (Quake 3)</a>
-					<a href="project6.html">Beast Motos (Board Game)</a>
-
-					<div class="dropdown-category-title">Team Projects</div>
-					<a href="project7.html">Petalnaut</a>
-					<a href="project8.html">HamsterBallin</a>
-					<a href="project9.html">Unannounced Project</a>
-					
-					<div class="dropdown-category-title">Game Jams</div>
-					<a href="project10.html">GGJ 2024: Make me laugh</a>
-					<a href="project11.html">LD 54: Summon</a>
-					<a href="project12.html">GMTK 2024: Build to scale</a>
-				</div>
-			</li>
-			
-			<li><a href="index.html#about">ABOUT</a></li>
-			<li><a href="index.html#contact">CONTACT</a></li>
-		</ul>
-	</header>
-
-	<div class="project-detail-container">
-		
-		<div class="project-header">
-			<h1>LD 54: Summon</h1>
-			<p class="subtitle">Ludum Dare 54 - Arena Combat & Wave Management</p>
-		</div>
-
-		<div class="video-wrapper">
-			<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Project 11 Video Placeholder" allowfullscreen></iframe>
-		</div>
-
-		<div class="content-section">
-			<h2>Project Introduction</h2>
-			<p>Created for Ludum Dare 54 under the theme "Limited Space." In this jam, we designed an intense arena combat game where the play area dynamically shrinks, and players must carefully position themselves while "summoning" allies or spells. My focus was maximizing the utility of a highly constrained map footprint.</p>
-		</div>
-
-		<div class="content-section">
-			<h2>My Contributions</h2>
-			<ul class="contribution-list">
-				<li><strong>Arena Design:</strong> Designed a single, highly dense arena that changes its topographical threat level dynamically via moving hazards.</li>
-				<li><strong>Spawn Logic:</strong> Scripted the "Summon" spawn points to ensure enemy AI couldn't spawn directly on top of the player within the limited space.</li>
-				<li><strong>Playtesting & Tweaking:</strong> Performed extreme rapid iteration during the jam's final hours to balance player movement speed against the shrinking arena border.</li>
-			</ul>
-		</div>
-
-		<div class="content-section">
-			<h2>Design Analysis</h2>
-			<p>When space is limited, verticality and line-of-sight become the primary tools for a Level Designer. Since the horizontal bounds were constantly constricting, I added a central elevated platform that offered safety but severely restricted the player's ability to summon resources.</p>
-			<p>This created a constant push-and-pull dynamic: brave the dangerous, shrinking low-ground to gather power, or retreat to the high-ground but risk being starved of resources. This risk/reward loop made the 72-hour prototype feel highly engaging and strategic.</p>
-		</div>
-
-		<div class="back-btn-container">
-			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
-		</div>
-
-	</div>
-	
-	<script src="js/jquery-2.2.3.min.js"></script>
+<header class="my-clean-header">
+<div class="my-clean-logo">
+<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
+<span class="job-title">关卡设计师</span>
+</div>
+<ul class="my-clean-nav">
+<li><a href="index.html">首页</a></li>
+<li class="dropdown">
+<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
+<div class="dropdown-content">
+<div class="dropdown-category-title">个人项目与论文</div>
+<a href="project1.html">ContainmentBreach（星空）</a>
+<a href="project2.html">论文：类魂关卡拓扑</a>
+<a href="project3.html">Invalidprescription（星空）</a>
+<a href="project4.html">逃离发电厂（半衰期 2）</a>
+<a href="project5.html">Coldfront（雷神之锤 3）</a>
+<a href="project6.html">Beast Motos（桌游）</a>
+<div class="dropdown-category-title">团队项目</div>
+<a href="project7.html">Petalnaut</a>
+<a href="project8.html">HamsterBallin</a>
+<a href="project9.html">未公开项目</a>
+<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
+<a href="project10.html">GGJ 2024：Make Me Laugh</a>
+<a href="project11.html">LD 54：Summon</a>
+<a href="project12.html">GMTK 2024：Build to Scale</a>
+</div>
+</li>
+<li><a href="index.html#about">关于我</a></li>
+<li><a href="index.html#contact">联系方式</a></li>
+</ul>
+</header>
+<div class="project-detail-container">
+<div class="project-header">
+<h1>LD 54：Summon</h1>
+<p class="subtitle">Ludum Dare 54：竞技场战斗与波次管理</p>
+</div>
+<div class="video-wrapper">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="LD 54 视频占位"></iframe>
+</div>
+<div class="content-section">
+<h2>项目简介</h2>
+<p>本项目为 Ludum Dare 54 的“Limited Space（有限空间）”主题而制作。团队设计了一款高强度竞技场战斗游戏：游玩区域会动态缩小，玩家必须谨慎站位，同时“召唤”盟友或法术。我的重点是在高度受限的地图占地内最大化空间利用率。</p>
+</div>
+<div class="content-section">
+<h2>我的工作</h2>
+<ul class="contribution-list">
+<li><strong>竞技场设计：</strong> 设计一座高密度单体竞技场，通过移动障碍动态改变地形威胁等级。</li>
+<li><strong>生成逻辑：</strong> 编写“召唤”生成点逻辑，确保敌方 AI 不会在有限空间中直接生成到玩家身上。</li>
+<li><strong>试玩与调校：</strong> 在 Game Jam 最后数小时进行高频快速迭代，平衡玩家移动速度与不断收缩的竞技场边界。</li>
+</ul>
+</div>
+<div class="content-section">
+<h2>设计分析</h2>
+<p>当空间受限时，垂直性和视线成为关卡设计师最重要的工具。由于水平边界持续收缩，我加入一个中央高台，它能提供安全区域，却会严重限制玩家召唤资源的能力。</p>
+<p>这形成持续的推拉关系：冒险进入危险且不断收缩的低地收集力量，或退守高地但承担资源枯竭风险。这一风险／收益循环让 72 小时完成的原型依然具有较强参与感和策略性。</p>
+</div>
+<div class="back-btn-container">
+<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
+</div>
+</div>
+<script src="js/jquery-2.2.3.min.js"></script>
 </body>
 </html>

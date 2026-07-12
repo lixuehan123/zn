@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Escape from Power Plant | Xuehan Li</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
-	<style>
-		body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background-color: #f7f7f9; color: #333; }
+<html lang="zh-CN">
+<head>
+<title>逃离发电厂 | 李学汉</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
+<style>
+		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
 		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
 		.my-clean-logo { display: flex; flex-direction: column; }
 		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
@@ -57,81 +56,67 @@
 	</style>
 </head>
 <body>
-	
-	<header class="my-clean-header">
-		<div class="my-clean-logo">
-			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
-			<span class="job-title">Level Designer</span>
-		</div>
-		<ul class="my-clean-nav">
-			<li><a href="index.html">HOME</a></li>
-			
-			<li class="dropdown">
-				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
-				<div class="dropdown-content">
-					<div class="dropdown-category-title">Personal & Thesis</div>
-					<a href="project1.html">ContainmentBreach (Starfield)</a>
-					<a href="project2.html">Thesis: Souls-like Topology</a>
-					<a href="project3.html">Invalidprescription (Starfield)</a>
-					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
-					<a href="project5.html">Coldfront (Quake 3)</a>
-					<a href="project6.html">Beast Motos (Board Game)</a>
-
-					<div class="dropdown-category-title">Team Projects</div>
-					<a href="#">Petalnaut</a>
-					<a href="#">HamsterBallin</a>
-					<a href="#">Unannounced Project</a>
-					
-					<div class="dropdown-category-title">Game Jams</div>
-					<a href="#">GGJ 2024: Make me laugh</a>
-					<a href="#">LD 54: Summon</a>
-					<a href="#">GMTK 2024: Build to scale</a>
-				</div>
-			</li>
-			
-			<li><a href="index.html#about">ABOUT</a></li>
-			<li><a href="index.html#contact">CONTACT</a></li>
-		</ul>
-	</header>
-
-	<div class="project-detail-container">
-		
-		<div class="project-header">
-			<h1>Escape from Power Plant</h1>
-			<p class="subtitle">Half-Life 2 Custom Mod & Linear FPS Level Design</p>
-		</div>
-
-		<div class="video-wrapper">
-			<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Project 4 Video Placeholder" allowfullscreen></iframe>
-		</div>
-
-		<div class="content-section">
-			<h2>Project Introduction</h2>
-			<p>Escape from Power Plant is a classic, narrative-driven linear FPS level built using the Source Engine's Hammer Editor. The goal of this project was to master the fundamentals of traditional level design pacing—specifically, the ebb and flow of tension, enemy encounters, and environmental puzzle-solving inherent to the Half-Life 2 formula.</p>
-		</div>
-
-		<div class="content-section">
-			<h2>My Contributions</h2>
-			<ul class="contribution-list">
-				<li><strong>Hammer Editor Greyboxing:</strong> Blocked out the entire power plant facility, ensuring player paths were intuitive yet challenging.</li>
-				<li><strong>Visual Scripting & Triggers:</strong> Set up complex I/O entities (Input/Output) to trigger explosive barrels, collapsing structures, and synchronized enemy ambushes.</li>
-				<li><strong>Combat Encounter Pacing:</strong> Placed Combine soldiers and zombies in strategic locations to create distinct arenas with varying tactical requirements.</li>
-				<li><strong>Lighting for Guidance:</strong> Utilized the Source Engine's lighting system to subtly guide the player's eye toward critical paths and health pickups.</li>
-			</ul>
-		</div>
-
-		<div class="content-section">
-			<h2>Design Analysis</h2>
-			<p>The layout follows a strict pacing curve: Build-up, Climax, and Resolution. I focused heavily on "Sightline Control"—ensuring that the player is never overwhelmed by enemies from 360 degrees, but rather faces "funneled" challenges that require them to use cover and physics objects effectively.</p>
-			<p>A key design moment is the central generator room, which acts as a "Valve" (a point of no return). Here, the player must defend against a multi-directional siege before escaping, utilizing the spatial awareness built up during the earlier, slower-paced exploration segments.</p>
-		</div>
-
-		<div class="back-btn-container">
-			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
-		</div>
-
-	</div>
-	
-	<script src="js/jquery-2.2.3.min.js"></script>
+<header class="my-clean-header">
+<div class="my-clean-logo">
+<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
+<span class="job-title">关卡设计师</span>
+</div>
+<ul class="my-clean-nav">
+<li><a href="index.html">首页</a></li>
+<li class="dropdown">
+<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
+<div class="dropdown-content">
+<div class="dropdown-category-title">个人项目与论文</div>
+<a href="project1.html">ContainmentBreach（星空）</a>
+<a href="project2.html">论文：类魂关卡拓扑</a>
+<a href="project3.html">Invalidprescription（星空）</a>
+<a href="project4.html">逃离发电厂（半衰期 2）</a>
+<a href="project5.html">Coldfront（雷神之锤 3）</a>
+<a href="project6.html">Beast Motos（桌游）</a>
+<div class="dropdown-category-title">团队项目</div>
+<a href="project7.html">Petalnaut</a>
+<a href="project8.html">HamsterBallin</a>
+<a href="project9.html">未公开项目</a>
+<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
+<a href="project10.html">GGJ 2024：Make Me Laugh</a>
+<a href="project11.html">LD 54：Summon</a>
+<a href="project12.html">GMTK 2024：Build to Scale</a>
+</div>
+</li>
+<li><a href="index.html#about">关于我</a></li>
+<li><a href="index.html#contact">联系方式</a></li>
+</ul>
+</header>
+<div class="project-detail-container">
+<div class="project-header">
+<h1>逃离发电厂</h1>
+<p class="subtitle">《半衰期 2》自定义模组与线性 FPS 关卡设计</p>
+</div>
+<div class="video-wrapper">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="项目 4 视频占位"></iframe>
+</div>
+<div class="content-section">
+<h2>项目简介</h2>
+<p>《逃离发电厂》是一个使用 Source 引擎 Hammer 编辑器制作的经典叙事驱动型线性 FPS 关卡。项目目标是掌握传统关卡节奏的基础，尤其是《半衰期 2》式体验中紧张感、敌人遭遇与环境谜题之间的起伏变化。</p>
+</div>
+<div class="content-section">
+<h2>我的工作</h2>
+<ul class="contribution-list">
+<li><strong>Hammer 编辑器灰盒搭建：</strong> 完成整座发电厂设施的灰盒布局，使玩家路径直观但仍具挑战。</li>
+<li><strong>可视化脚本与触发器：</strong> 设置复杂的 I/O 实体（输入／输出），触发爆炸桶、结构坍塌与同步敌人伏击。</li>
+<li><strong>战斗遭遇节奏：</strong> 在策略位置布置联合军士兵与僵尸，形成具有不同战术需求的独立战斗空间。</li>
+<li><strong>灯光引导：</strong> 利用 Source 引擎灯光系统，细微地将玩家视线引向关键路径与生命补给。</li>
+</ul>
+</div>
+<div class="content-section">
+<h2>设计分析</h2>
+<p>关卡布局遵循严格的节奏曲线：铺垫、高潮与收束。我尤其重视“视线控制”，确保玩家不会同时受到 360 度敌人的压迫，而是面对经过收束的挑战，促使其有效使用掩体与物理物件。</p>
+<p>中央发电机房是关卡中的关键设计节点，它像一扇“阀门”，也是不可返回点。玩家必须在此抵御多方向围攻后逃离，并运用此前较慢探索阶段中逐步建立的空间认知。</p>
+</div>
+<div class="back-btn-container">
+<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
+</div>
+</div>
+<script src="js/jquery-2.2.3.min.js"></script>
 </body>
 </html>

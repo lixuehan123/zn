@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Beast Motos | Xuehan Li</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
-	<style>
-		body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background-color: #f7f7f9; color: #333; }
+<html lang="zh-CN">
+<head>
+<title>Beast Motos | 李学汉</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
+<style>
+		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
 		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
 		.my-clean-logo { display: flex; flex-direction: column; }
 		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
@@ -57,81 +56,67 @@
 	</style>
 </head>
 <body>
-	
-	<header class="my-clean-header">
-		<div class="my-clean-logo">
-			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
-			<span class="job-title">Level Designer</span>
-		</div>
-		<ul class="my-clean-nav">
-			<li><a href="index.html">HOME</a></li>
-			
-			<li class="dropdown">
-				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
-				<div class="dropdown-content">
-					<div class="dropdown-category-title">Personal & Thesis</div>
-					<a href="project1.html">ContainmentBreach (Starfield)</a>
-					<a href="project2.html">Thesis: Souls-like Topology</a>
-					<a href="project3.html">Invalidprescription (Starfield)</a>
-					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
-					<a href="project5.html">Coldfront (Quake 3)</a>
-					<a href="project6.html">Beast Motos (Board Game)</a>
-
-					<div class="dropdown-category-title">Team Projects</div>
-					<a href="#">Petalnaut</a>
-					<a href="#">HamsterBallin</a>
-					<a href="#">Unannounced Project</a>
-					
-					<div class="dropdown-category-title">Game Jams</div>
-					<a href="#">GGJ 2024: Make me laugh</a>
-					<a href="#">LD 54: Summon</a>
-					<a href="#">GMTK 2024: Build to scale</a>
-				</div>
-			</li>
-			
-			<li><a href="index.html#about">ABOUT</a></li>
-			<li><a href="index.html#contact">CONTACT</a></li>
-		</ul>
-	</header>
-
-	<div class="project-detail-container">
-		
-		<div class="project-header">
-			<h1>Beast Motos</h1>
-			<p class="subtitle">Tabletop Board Game & System Design</p>
-		</div>
-
-		<div class="video-wrapper">
-			<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Project 6 Video Placeholder" allowfullscreen></iframe>
-		</div>
-
-		<div class="content-section">
-			<h2>Project Introduction</h2>
-			<p>Beast Motos is an original tabletop board game that focuses on resource management, strategic positioning, and player-driven market dynamics. Creating a physical game requires a deep understanding of core systems without relying on digital processing power, making it a pure test of game logic and numerical balance.</p>
-		</div>
-
-		<div class="content-section">
-			<h2>My Contributions</h2>
-			<ul class="contribution-list">
-				<li><strong>Core Loop Design:</strong> Established the foundational gameplay loops—gathering resources, upgrading vehicles (motos), and competing for spatial dominance on the board.</li>
-				<li><strong>Paper Prototyping:</strong> Iterated through multiple physical prototypes using index cards and tokens to test the fun-factor of mechanics before finalizing rules.</li>
-				<li><strong>Rulebook Writing:</strong> Authored clear, edge-case-proof rulebooks to ensure players could onboard themselves without external guidance.</li>
-				<li><strong>Numerical Balancing:</strong> Utilized spreadsheets to calculate probability distributions for dice rolls and card draws, ensuring no dominant "meta" strategy broke the game.</li>
-			</ul>
-		</div>
-
-		<div class="content-section">
-			<h2>Design Analysis</h2>
-			<p>The biggest challenge in tabletop design is "Mental Math Reduction"—ensuring that the complex interactions between players don't result in tedious calculations. In Beast Motos, I solved this by using a physical "Market Tracker" board that visually represents supply and demand, offloading the cognitive load from the players to the game pieces.</p>
-			<p>Additionally, the game employs a "Catch-up Mechanic." Through iterative playtesting, I noticed early leaders tended to snowball. I introduced dynamic event cards that slightly penalize hoarders while rewarding aggressive risk-takers, keeping the tension high until the final round.</p>
-		</div>
-
-		<div class="back-btn-container">
-			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
-		</div>
-
-	</div>
-	
-	<script src="js/jquery-2.2.3.min.js"></script>
+<header class="my-clean-header">
+<div class="my-clean-logo">
+<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
+<span class="job-title">关卡设计师</span>
+</div>
+<ul class="my-clean-nav">
+<li><a href="index.html">首页</a></li>
+<li class="dropdown">
+<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
+<div class="dropdown-content">
+<div class="dropdown-category-title">个人项目与论文</div>
+<a href="project1.html">ContainmentBreach（星空）</a>
+<a href="project2.html">论文：类魂关卡拓扑</a>
+<a href="project3.html">Invalidprescription（星空）</a>
+<a href="project4.html">逃离发电厂（半衰期 2）</a>
+<a href="project5.html">Coldfront（雷神之锤 3）</a>
+<a href="project6.html">Beast Motos（桌游）</a>
+<div class="dropdown-category-title">团队项目</div>
+<a href="project7.html">Petalnaut</a>
+<a href="project8.html">HamsterBallin</a>
+<a href="project9.html">未公开项目</a>
+<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
+<a href="project10.html">GGJ 2024：Make Me Laugh</a>
+<a href="project11.html">LD 54：Summon</a>
+<a href="project12.html">GMTK 2024：Build to Scale</a>
+</div>
+</li>
+<li><a href="index.html#about">关于我</a></li>
+<li><a href="index.html#contact">联系方式</a></li>
+</ul>
+</header>
+<div class="project-detail-container">
+<div class="project-header">
+<h1>Beast Motos</h1>
+<p class="subtitle">桌面游戏与系统设计</p>
+</div>
+<div class="video-wrapper">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="项目 6 视频占位"></iframe>
+</div>
+<div class="content-section">
+<h2>项目简介</h2>
+<p>Beast Motos 是一款原创桌面游戏，核心围绕资源管理、策略站位与玩家驱动的市场变化。实体游戏无法依赖数字运算能力，因此要求设计者深入理解核心系统，是对游戏逻辑与数值平衡的直接检验。</p>
+</div>
+<div class="content-section">
+<h2>我的工作</h2>
+<ul class="contribution-list">
+<li><strong>核心循环设计：</strong> 建立基础玩法循环：收集资源、升级载具（motos），并争夺版图中的空间优势。</li>
+<li><strong>纸面原型：</strong> 使用索引卡与标记物迭代多个实体原型，在规则定稿前测试机制的趣味性。</li>
+<li><strong>规则书撰写：</strong> 编写清晰并覆盖边缘情况的规则书，使玩家无需外部指导即可自行上手。</li>
+<li><strong>数值平衡：</strong> 使用电子表格计算掷骰与抽牌的概率分布，避免任何单一“主流策略”破坏游戏平衡。</li>
+</ul>
+</div>
+<div class="content-section">
+<h2>设计分析</h2>
+<p>桌游设计最大的挑战之一是“减少心算”，即避免玩家之间复杂互动演变成繁琐计算。在 Beast Motos 中，我使用实体“市场追踪板”直观表现供求关系，将认知负担从玩家转移到游戏组件上。</p>
+<p>游戏同时采用“追赶机制”。反复试玩显示，早期领先者容易形成滚雪球优势，因此我加入动态事件卡，轻微限制囤积资源的玩家，同时奖励积极承担风险的玩家，使紧张感保持到最后一轮。</p>
+</div>
+<div class="back-btn-container">
+<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
+</div>
+</div>
+<script src="js/jquery-2.2.3.min.js"></script>
 </body>
 </html>

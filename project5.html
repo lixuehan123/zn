@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Coldfront | Xuehan Li</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
-	<style>
-		body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background-color: #f7f7f9; color: #333; }
+<html lang="zh-CN">
+<head>
+<title>Coldfront | 李学汉</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
+<style>
+		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
 		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
 		.my-clean-logo { display: flex; flex-direction: column; }
 		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
@@ -57,81 +56,67 @@
 	</style>
 </head>
 <body>
-	
-	<header class="my-clean-header">
-		<div class="my-clean-logo">
-			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
-			<span class="job-title">Level Designer</span>
-		</div>
-		<ul class="my-clean-nav">
-			<li><a href="index.html">HOME</a></li>
-			
-			<li class="dropdown">
-				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
-				<div class="dropdown-content">
-					<div class="dropdown-category-title">Personal & Thesis</div>
-					<a href="project1.html">ContainmentBreach (Starfield)</a>
-					<a href="project2.html">Thesis: Souls-like Topology</a>
-					<a href="project3.html">Invalidprescription (Starfield)</a>
-					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
-					<a href="project5.html">Coldfront (Quake 3)</a>
-					<a href="project6.html">Beast Motos (Board Game)</a>
-
-					<div class="dropdown-category-title">Team Projects</div>
-					<a href="#">Petalnaut</a>
-					<a href="#">HamsterBallin</a>
-					<a href="#">Unannounced Project</a>
-					
-					<div class="dropdown-category-title">Game Jams</div>
-					<a href="#">GGJ 2024: Make me laugh</a>
-					<a href="#">LD 54: Summon</a>
-					<a href="#">GMTK 2024: Build to scale</a>
-				</div>
-			</li>
-			
-			<li><a href="index.html#about">ABOUT</a></li>
-			<li><a href="index.html#contact">CONTACT</a></li>
-		</ul>
-	</header>
-
-	<div class="project-detail-container">
-		
-		<div class="project-header">
-			<h1>Coldfront</h1>
-			<p class="subtitle">Quake 3 Arena Custom Team Deathmatch Map</p>
-		</div>
-
-		<div class="video-wrapper">
-			<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Project 5 Video Placeholder" allowfullscreen></iframe>
-		</div>
-
-		<div class="content-section">
-			<h2>Project Introduction</h2>
-			<p>Coldfront is a fast-paced, multi-tiered Team Deathmatch map designed for Quake 3 Arena. The goal of this map was to study and replicate the frantic, skill-based movement and arena control mechanics that defined the boomer-shooter era, focusing heavily on verticality and risk/reward dynamics.</p>
-		</div>
-
-		<div class="content-section">
-			<h2>My Contributions</h2>
-			<ul class="contribution-list">
-				<li><strong>Arena Layout Design:</strong> Constructed a figure-eight core topology with multiple interconnected vertical floors.</li>
-				<li><strong>Mobility Mechanics:</strong> Strategically placed jump pads and teleporters to allow players to traverse from the lowest point of the map to the highest in seconds.</li>
-				<li><strong>Weapon & Armor Placement:</strong> Balanced the map by placing high-value power weapons (like the Railgun and Rocket Launcher) in highly exposed, vulnerable areas to force skirmishes.</li>
-				<li><strong>Map Flow Optimization:</strong> Conducted bot matches to analyze heatmaps, adjusting choke points to prevent spawn-trapping.</li>
-			</ul>
-		</div>
-
-		<div class="content-section">
-			<h2>Design Analysis</h2>
-			<p>The map is divided into three distinct zones: The Atrium (high conflict, open sightlines), The Maintenance Corridors (tight, shotgun-friendly corners), and The Control Tower (the high ground). The design philosophy forces players to constantly rotate through these zones rather than camping.</p>
-			<p>By placing the Mega Health in a sunken pit in the center of the Atrium, it creates a "Kill Box" scenario. Players must weigh the benefit of gaining maximum health against the high probability of being ambushed from the upper walkways, driving the core loop of competitive arena gameplay.</p>
-		</div>
-
-		<div class="back-btn-container">
-			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
-		</div>
-
-	</div>
-	
-	<script src="js/jquery-2.2.3.min.js"></script>
+<header class="my-clean-header">
+<div class="my-clean-logo">
+<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
+<span class="job-title">关卡设计师</span>
+</div>
+<ul class="my-clean-nav">
+<li><a href="index.html">首页</a></li>
+<li class="dropdown">
+<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
+<div class="dropdown-content">
+<div class="dropdown-category-title">个人项目与论文</div>
+<a href="project1.html">ContainmentBreach（星空）</a>
+<a href="project2.html">论文：类魂关卡拓扑</a>
+<a href="project3.html">Invalidprescription（星空）</a>
+<a href="project4.html">逃离发电厂（半衰期 2）</a>
+<a href="project5.html">Coldfront（雷神之锤 3）</a>
+<a href="project6.html">Beast Motos（桌游）</a>
+<div class="dropdown-category-title">团队项目</div>
+<a href="project7.html">Petalnaut</a>
+<a href="project8.html">HamsterBallin</a>
+<a href="project9.html">未公开项目</a>
+<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
+<a href="project10.html">GGJ 2024：Make Me Laugh</a>
+<a href="project11.html">LD 54：Summon</a>
+<a href="project12.html">GMTK 2024：Build to Scale</a>
+</div>
+</li>
+<li><a href="index.html#about">关于我</a></li>
+<li><a href="index.html#contact">联系方式</a></li>
+</ul>
+</header>
+<div class="project-detail-container">
+<div class="project-header">
+<h1>Coldfront</h1>
+<p class="subtitle">《雷神之锤 3：竞技场》自定义团队死亡竞赛地图</p>
+</div>
+<div class="video-wrapper">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="项目 5 视频占位"></iframe>
+</div>
+<div class="content-section">
+<h2>项目简介</h2>
+<p>Coldfront 是一张为《雷神之锤 3：竞技场》设计的快节奏、多层级团队死亡竞赛地图。项目旨在研究并复现“复古高速射击”时代高强度、重技巧的移动与竞技场控制机制，重点关注垂直性以及风险与收益之间的关系。</p>
+</div>
+<div class="content-section">
+<h2>我的工作</h2>
+<ul class="contribution-list">
+<li><strong>竞技场布局设计：</strong> 构建以“8”字形为核心的拓扑，并设置多个互联的垂直楼层。</li>
+<li><strong>移动机制：</strong> 策略性布置跳板与传送器，使玩家能在数秒内从地图最低点到达最高点。</li>
+<li><strong>武器与护甲布置：</strong> 将轨道枪、火箭发射器等高价值强力武器放在暴露且危险的位置，以迫使玩家发生交火。</li>
+<li><strong>地图流线优化：</strong> 通过机器人对局分析热力图，调整瓶颈区域以避免出生点压制。</li>
+</ul>
+</div>
+<div class="content-section">
+<h2>设计分析</h2>
+<p>地图分为三个鲜明区域：中庭（冲突频繁、视线开阔）、维护走廊（狭窄、适合霰弹枪）以及控制塔（制高点）。设计迫使玩家持续在这些区域之间轮转，而不是固守一处。</p>
+<p>超级生命被放置在中庭中央的下沉坑内，由此形成“击杀盒”情境。玩家必须权衡获得最高生命值的收益与遭到上层步道伏击的高风险，从而推动竞技场对战的核心循环。</p>
+</div>
+<div class="back-btn-container">
+<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
+</div>
+</div>
+<script src="js/jquery-2.2.3.min.js"></script>
 </body>
 </html>

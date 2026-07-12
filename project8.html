@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>HamsterBallin | Xuehan Li</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
-	<style>
-		body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background-color: #f7f7f9; color: #333; }
+<html lang="zh-CN">
+<head>
+<title>HamsterBallin | 李学汉</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
+<style>
+		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
 		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
 		.my-clean-logo { display: flex; flex-direction: column; }
 		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
@@ -57,90 +56,76 @@
 	</style>
 </head>
 <body>
-	
-	<!-- 顶部导航栏 -->
-	<header class="my-clean-header">
-		<div class="my-clean-logo">
-			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
-			<span class="job-title">Level Designer</span>
-		</div>
-		<ul class="my-clean-nav">
-			<li><a href="index.html">HOME</a></li>
-			
-			<li class="dropdown">
-				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
-				<div class="dropdown-content">
-					<!-- Personal & Thesis -->
-					<div class="dropdown-category-title">Personal & Thesis</div>
-					<a href="project1.html">ContainmentBreach (Starfield)</a>
-					<a href="project2.html">Thesis: Souls-like Topology</a>
-					<a href="project3.html">Invalidprescription (Starfield)</a>
-					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
-					<a href="project5.html">Coldfront (Quake 3)</a>
-					<a href="project6.html">Beast Motos (Board Game)</a>
-
-					<!-- Team Projects -->
-					<div class="dropdown-category-title">Team Projects</div>
-					<a href="project7.html">Petalnaut</a>
-					<a href="project8.html">HamsterBallin</a>
-					<a href="project9.html">Unannounced Project</a>
-					
-					<!-- Game Jams -->
-					<div class="dropdown-category-title">Game Jams</div>
-					<a href="#">GGJ 2024: Make me laugh</a>
-					<a href="#">LD 54: Summon</a>
-					<a href="#">GMTK 2024: Build to scale</a>
-				</div>
-			</li>
-			
-			<li><a href="index.html#about">ABOUT</a></li>
-			<li><a href="index.html#contact">CONTACT</a></li>
-		</ul>
-	</header>
-
-	<!-- 项目主容器 -->
-	<div class="project-detail-container">
-		
-		<div class="project-header">
-			<h1>HamsterBallin</h1>
-			<p class="subtitle">Multiplayer Arcade Level Flow & Physics Integration</p>
-		</div>
-
-		<!-- 1. 视频窗口 -->
-		<div class="video-wrapper">
-			<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Project 8 Video Placeholder" allowfullscreen></iframe>
-		</div>
-
-		<!-- 2. 项目简介 -->
-		<div class="content-section">
-			<h2>Project Introduction</h2>
-			<p>HamsterBallin is a chaotic, fast-paced physics arcade game created by a multidisciplinary team. Players control hamsters inside kinetic spheres, racing and battling across dynamic arenas. My responsibility was to craft arenas that embraced the unpredictable physics system while ensuring the gameplay loop remained fun and frustration-free.</p>
-		</div>
-
-		<!-- 3. 个人工作量 -->
-		<div class="content-section">
-			<h2>My Contributions</h2>
-			<ul class="contribution-list">
-				<li><strong>Arena Blockout & Iteration:</strong> Designed multiple multiplayer arena maps, focusing on continuous momentum and reducing "dead zones" where players could get stuck.</li>
-				<li><strong>Physics Tuning Feedback:</strong> Worked alongside gameplay programmers to adjust gravity volumes, friction materials, and bounce pad vectors to match the intended level flow.</li>
-				<li><strong>Dynamic Level Elements:</strong> Implemented moving platforms, rotating hazards, and interactive bumpers that reacted to the speed of the players.</li>
-				<li><strong>Playtest Moderation:</strong> Conducted routine team playtests, utilizing heatmaps and player feedback to refine choke points and spawn locations.</li>
-			</ul>
-		</div>
-
-		<!-- 4. 设计解析 -->
-		<div class="content-section">
-			<h2>Design Analysis</h2>
-			<p>The primary design challenge in a physics-heavy game like HamsterBallin is maintaining player agency. If a player loses momentum, the game stops being fun. To counter this, I adopted a "Bowl-shaped Topology." Outer boundaries were curved inward, naturally funneling off-course players back into the action rather than trapping them in corners.</p>
-			<p>Furthermore, I categorized obstacles into two types: "Momentum Killers" (which require precision to bypass) and "Momentum Boosters" (which reward risky maneuvers). By placing these in strategic succession, the level naturally dictates a rhythmic, high-adrenaline pacing.</p>
-		</div>
-
-		<div class="back-btn-container">
-			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
-		</div>
-
-	</div>
-	
-	<script src="js/jquery-2.2.3.min.js"></script>
+<!-- 顶部导航栏 -->
+<header class="my-clean-header">
+<div class="my-clean-logo">
+<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
+<span class="job-title">关卡设计师</span>
+</div>
+<ul class="my-clean-nav">
+<li><a href="index.html">首页</a></li>
+<li class="dropdown">
+<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
+<div class="dropdown-content">
+<!-- Personal & Thesis -->
+<div class="dropdown-category-title">个人项目与论文</div>
+<a href="project1.html">ContainmentBreach（星空）</a>
+<a href="project2.html">论文：类魂关卡拓扑</a>
+<a href="project3.html">Invalidprescription（星空）</a>
+<a href="project4.html">逃离发电厂（半衰期 2）</a>
+<a href="project5.html">Coldfront（雷神之锤 3）</a>
+<a href="project6.html">Beast Motos（桌游）</a>
+<!-- Team Projects -->
+<div class="dropdown-category-title">团队项目</div>
+<a href="project7.html">Petalnaut</a>
+<a href="project8.html">HamsterBallin</a>
+<a href="project9.html">未公开项目</a>
+<!-- Game Jams -->
+<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
+<a href="project10.html">GGJ 2024：Make Me Laugh</a>
+<a href="project11.html">LD 54：Summon</a>
+<a href="project12.html">GMTK 2024：Build to Scale</a>
+</div>
+</li>
+<li><a href="index.html#about">关于我</a></li>
+<li><a href="index.html#contact">联系方式</a></li>
+</ul>
+</header>
+<!-- 项目主容器 -->
+<div class="project-detail-container">
+<div class="project-header">
+<h1>HamsterBallin</h1>
+<p class="subtitle">多人街机关卡流线与物理系统整合</p>
+</div>
+<!-- 1. 视频窗口 -->
+<div class="video-wrapper">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="项目 8 视频占位"></iframe>
+</div>
+<!-- 2. 项目简介 -->
+<div class="content-section">
+<h2>项目简介</h2>
+<p>HamsterBallin 是一款由多专业团队制作的混乱、快节奏物理街机游戏。玩家操控位于动力球体中的仓鼠，在动态竞技场内竞速和战斗。我的职责是设计能够发挥不可预测物理系统特色，同时保持玩法有趣且减少挫败感的竞技场。</p>
+</div>
+<!-- 3. 个人工作量 -->
+<div class="content-section">
+<h2>我的工作</h2>
+<ul class="contribution-list">
+<li><strong>竞技场灰盒与迭代：</strong> 设计多张多人竞技场地图，强调持续动量，并减少玩家可能被卡住的“死区”。</li>
+<li><strong>物理调校反馈：</strong> 与玩法程序员协作，调整重力体积、摩擦材质与弹跳板向量，使其符合预期关卡流线。</li>
+<li><strong>动态关卡元素：</strong> 实现移动平台、旋转障碍与交互式缓冲器，使其根据玩家速度产生反馈。</li>
+<li><strong>试玩主持：</strong> 定期组织团队试玩，结合热力图与玩家反馈优化瓶颈区域和出生点。</li>
+</ul>
+</div>
+<!-- 4. 设计解析 -->
+<div class="content-section">
+<h2>设计分析</h2>
+<p>在 HamsterBallin 这类高度依赖物理的游戏中，主要设计挑战是维持玩家能动性。一旦玩家失去动量，乐趣也会随之中断。为此，我采用“碗状拓扑”，让外边界向内弯曲，自然地把偏离路线的玩家重新导回行动区域，而不是困在角落。</p>
+<p>此外，我将障碍分为两类：“动量终结者”（需要精准操作才能绕过）和“动量助推器”（奖励高风险动作）。通过策略性地连续布置两类障碍，关卡能够自然形成富有节奏的高强度体验。</p>
+</div>
+<div class="back-btn-container">
+<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
+</div>
+</div>
+<script src="js/jquery-2.2.3.min.js"></script>
 </body>
 </html>
