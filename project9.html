@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Unannounced Project | Xuehan Li</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+
+	<style>
+		body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background-color: #f7f7f9; color: #333; }
+		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
+		.my-clean-logo { display: flex; flex-direction: column; }
+		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
+		.my-clean-logo a:hover { color: #ff9800; text-decoration: none; }
+		.job-title { color: #ff9800; font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-top: 6px; text-transform: uppercase; }
+		.my-clean-nav { display: flex; list-style: none; margin: 0; padding: 0; align-items: center; flex-wrap: wrap; }
+		.my-clean-nav li { margin-left: 40px; position: relative; } 
+		.my-clean-nav a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 600; text-transform: uppercase; transition: color 0.3s ease; display: block; padding: 15px 0; }
+		.my-clean-nav a:hover { color: #ff9800; text-decoration: none; }
+		.dropdown-content { display: none; position: absolute; background-color: #1a1a24; min-width: 250px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); z-index: 1; top: 100%; left: 0; border-radius: 4px; padding: 10px 0; }
+		.dropdown:hover .dropdown-content { display: block; }
+		.dropdown-content a { color: #fff; padding: 10px 20px; text-decoration: none; display: block; font-size: 13px; text-transform: none; font-weight: 400; transition: 0.2s; border-left: 3px solid transparent; }
+		.dropdown-content a:hover { background-color: #2a2a3d; color: #ff9800; border-left: 3px solid #ff9800; }
+		.dropdown-category-title { padding: 10px 20px 5px 20px; color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; border-bottom: 1px solid #333; margin-bottom: 5px; margin-top: 5px; pointer-events: none; }
+		.project-detail-container { max-width: 900px; margin: 60px auto; padding: 60px; background: #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-radius: 12px; box-sizing: border-box; }
+		.project-header { text-align: center; margin-bottom: 40px; }
+		.project-header h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; color: #111; letter-spacing: 1px; text-transform: uppercase; }
+		.project-header p.subtitle { font-size: 18px; color: #777; margin: 0; font-weight: 500; }
+		.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; margin-bottom: 50px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+		.video-wrapper iframe, .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+		.content-section { margin-bottom: 50px; }
+		.content-section h2 { font-size: 26px; font-weight: bold; color: #111; margin-bottom: 20px; padding-left: 15px; border-left: 5px solid #ff9800; line-height: 1.2; }
+		.content-section p { font-size: 16px; line-height: 1.8; color: #444; text-align: justify; margin-bottom: 15px; }
+		.contribution-list { font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 15px; padding-left: 25px; }
+		.contribution-list li { margin-bottom: 12px; }
+		.contribution-list li strong { color: #111; font-weight: 700; }
+		.back-btn-container { text-align: center; margin-top: 60px; border-top: 1px solid #eaeaea; padding-top: 40px; }
+		.back-btn { background-color: #0f0f1b; color: #fff; padding: 14px 40px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background-color 0.3s ease, transform 0.3s ease; display: inline-block; }
+		.back-btn:hover { background-color: #ff9800; color: #fff; text-decoration: none; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255,152,0,0.3); }
+
+		@media (max-width: 1024px) { .project-detail-container { margin: 40px 20px; padding: 40px 30px; } }
+		@media (max-width: 768px) {
+			.my-clean-header { flex-direction: column; padding: 15px; }
+			.my-clean-logo { align-items: center; }
+			.my-clean-nav { margin-top: 15px; width: 100%; justify-content: center; }
+			.my-clean-nav li { margin: 5px 10px; }
+			.dropdown-content { position: static; display: none; box-shadow: none; background: #222; width: 100%; }
+			.dropdown:hover .dropdown-content { display: block; }
+			.project-detail-container { padding: 30px 20px; margin: 20px 10px; }
+			.project-header h1 { font-size: 32px; }
+		}
+	</style>
+</head>
+<body>
+	
+	<!-- 顶部导航栏 -->
+	<header class="my-clean-header">
+		<div class="my-clean-logo">
+			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
+			<span class="job-title">Level Designer</span>
+		</div>
+		<ul class="my-clean-nav">
+			<li><a href="index.html">HOME</a></li>
+			
+			<li class="dropdown">
+				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
+				<div class="dropdown-content">
+					<!-- Personal & Thesis -->
+					<div class="dropdown-category-title">Personal & Thesis</div>
+					<a href="project1.html">ContainmentBreach (Starfield)</a>
+					<a href="project2.html">Thesis: Souls-like Topology</a>
+					<a href="project3.html">Invalidprescription (Starfield)</a>
+					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
+					<a href="project5.html">Coldfront (Quake 3)</a>
+					<a href="project6.html">Beast Motos (Board Game)</a>
+
+					<!-- Team Projects -->
+					<div class="dropdown-category-title">Team Projects</div>
+					<a href="project7.html">Petalnaut</a>
+					<a href="project8.html">HamsterBallin</a>
+					<a href="project9.html">Unannounced Project</a>
+					
+					<!-- Game Jams -->
+					<div class="dropdown-category-title">Game Jams</div>
+					<a href="#">GGJ 2024: Make me laugh</a>
+					<a href="#">LD 54: Summon</a>
+					<a href="#">GMTK 2024: Build to scale</a>
+				</div>
+			</li>
+			
+			<li><a href="index.html#about">ABOUT</a></li>
+			<li><a href="index.html#contact">CONTACT</a></li>
+		</ul>
+	</header>
+
+	<!-- 项目主容器 -->
+	<div class="project-detail-container">
+		
+		<div class="project-header">
+			<h1>Unannounced Project</h1>
+			<p class="subtitle">NDA Protected Team Development & Modular Prototyping</p>
+		</div>
+
+		<!-- 1. 视频窗口 (对于保密项目可以放一段打码的灰盒，或者相关技术原型的展示) -->
+		<div class="video-wrapper">
+			<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Project 9 Video Placeholder" allowfullscreen></iframe>
+		</div>
+
+		<!-- 2. 项目简介 -->
+		<div class="content-section">
+			<h2>Project Introduction</h2>
+			<p>This is a professional/academic team project currently under a Non-Disclosure Agreement (NDA). While specific narrative details and IP elements cannot be shared, my role centered on establishing the modular level design pipeline, rapid whiteboxing, and coordinating with the engineering team to ensure our spatial designs met the strict technical constraints of the engine.</p>
+		</div>
+
+		<!-- 3. 个人工作量 -->
+		<div class="content-section">
+			<h2>My Contributions</h2>
+			<ul class="contribution-list">
+				<li><strong>Modular Blockout Toolkit:</strong> Developed a standardized grid-snapping library of whitebox assets to speed up iteration times across the entire level design team.</li>
+				<li><strong>Technical Constraints Management:</strong> Monitored draw calls and polycounts during the greybox phase, implementing occlusion culling strategies early in development.</li>
+				<li><strong>Systems Integration:</strong> Placed and tested early gameplay system hooks (e.g., enemy spawn volumes, quest triggers) before final art was locked.</li>
+				<li><strong>Documentation:</strong> Wrote comprehensive Level Design Documents (LDDs) outlining intended player flow, encounter setups, and specific asset requests for the environment art team.</li>
+			</ul>
+		</div>
+
+		<!-- 4. 设计解析 -->
+		<div class="content-section">
+			<h2>Design Analysis</h2>
+			<p>Working under strict creative and technical constraints required a highly organized approach to level structure. The core design philosophy I championed was "Form Follows Function." Before any aesthetic decisions were made, every metric—from the height of cover objects to the width of main thoroughfares—was mathematically verified to support the core combat loop.</p>
+			<p>Because the project details are confidential, I emphasize the *process*. The ability to rapidly tear down and rebuild a section of the map based on weekly milestone feedback without breaking the underlying technical logic was the key achievement in this endeavor.</p>
+		</div>
+
+		<div class="back-btn-container">
+			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+		</div>
+
+	</div>
+	
+	<script src="js/jquery-2.2.3.min.js"></script>
+</body>
+</html>
