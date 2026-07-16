@@ -1,131 +1,106 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
-<title>HamsterBallin | 李学汉</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
-<link href="css/font-awesome.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
-<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
-<style>
-		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
-		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
-		.my-clean-logo { display: flex; flex-direction: column; }
-		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
-		.my-clean-logo a:hover { color: #ff9800; text-decoration: none; }
-		.job-title { color: #ff9800; font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-top: 6px; text-transform: uppercase; }
-		.my-clean-nav { display: flex; list-style: none; margin: 0; padding: 0; align-items: center; flex-wrap: wrap; }
-		.my-clean-nav li { margin-left: 40px; position: relative; } 
-		.my-clean-nav a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 600; text-transform: uppercase; transition: color 0.3s ease; display: block; padding: 15px 0; }
-		.my-clean-nav a:hover { color: #ff9800; text-decoration: none; }
-		.dropdown-content { display: none; position: absolute; background-color: #1a1a24; min-width: 250px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); z-index: 1; top: 100%; left: 0; border-radius: 4px; padding: 10px 0; }
-		.dropdown:hover .dropdown-content { display: block; }
-		.dropdown-content a { color: #fff; padding: 10px 20px; text-decoration: none; display: block; font-size: 13px; text-transform: none; font-weight: 400; transition: 0.2s; border-left: 3px solid transparent; }
-		.dropdown-content a:hover { background-color: #2a2a3d; color: #ff9800; border-left: 3px solid #ff9800; }
-		.dropdown-category-title { padding: 10px 20px 5px 20px; color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; border-bottom: 1px solid #333; margin-bottom: 5px; margin-top: 5px; pointer-events: none; }
-		.project-detail-container { max-width: 900px; margin: 60px auto; padding: 60px; background: #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-radius: 12px; box-sizing: border-box; }
-		.project-header { text-align: center; margin-bottom: 40px; }
-		.project-header h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; color: #111; letter-spacing: 1px; text-transform: uppercase; }
-		.project-header p.subtitle { font-size: 18px; color: #777; margin: 0; font-weight: 500; }
-		.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; margin-bottom: 50px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
-		.video-wrapper iframe, .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-		.content-section { margin-bottom: 50px; }
-		.content-section h2 { font-size: 26px; font-weight: bold; color: #111; margin-bottom: 20px; padding-left: 15px; border-left: 5px solid #ff9800; line-height: 1.2; }
-		.content-section p { font-size: 16px; line-height: 1.8; color: #444; text-align: justify; margin-bottom: 15px; }
-		.contribution-list { font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 15px; padding-left: 25px; }
-		.contribution-list li { margin-bottom: 12px; }
-		.contribution-list li strong { color: #111; font-weight: 700; }
-		.back-btn-container { text-align: center; margin-top: 60px; border-top: 1px solid #eaeaea; padding-top: 40px; }
-		.back-btn { background-color: #0f0f1b; color: #fff; padding: 14px 40px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background-color 0.3s ease, transform 0.3s ease; display: inline-block; }
-		.back-btn:hover { background-color: #ff9800; color: #fff; text-decoration: none; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255,152,0,0.3); }
-
-		@media (max-width: 1024px) { .project-detail-container { margin: 40px 20px; padding: 40px 30px; } }
-		@media (max-width: 768px) {
-			.my-clean-header { flex-direction: column; padding: 15px; }
-			.my-clean-logo { align-items: center; }
-			.my-clean-nav { margin-top: 15px; width: 100%; justify-content: center; }
-			.my-clean-nav li { margin: 5px 10px; }
-			.dropdown-content { position: static; display: none; box-shadow: none; background: #222; width: 100%; }
-			.dropdown:hover .dropdown-content { display: block; }
-			.project-detail-container { padding: 30px 20px; margin: 20px 10px; }
-			.project-header h1 { font-size: 32px; }
-		}
-	</style>
+	<title>Hamsterballin' | Xuehan Li</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+	<link href="css/project-detail.css" rel="stylesheet">
 </head>
 <body>
-<!-- 顶部导航栏 -->
-<header class="my-clean-header">
-<div class="my-clean-logo">
-<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
-<span class="job-title">关卡设计师</span>
-</div>
-<ul class="my-clean-nav">
-<li><a href="index.html">首页</a></li>
-<li class="dropdown">
-<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
-<div class="dropdown-content">
-<!-- Personal & Thesis -->
-<div class="dropdown-category-title">个人项目与论文</div>
-<a href="project1.html">ContainmentBreach（星空）</a>
-<a href="project2.html">论文：类魂关卡拓扑</a>
-<a href="project3.html">Invalidprescription（星空）</a>
-<a href="project4.html">逃离发电厂（半衰期 2）</a>
-<a href="project5.html">Coldfront（雷神之锤 3）</a>
-<a href="project6.html">Beast Motos（桌游）</a>
-<!-- Team Projects -->
-<div class="dropdown-category-title">团队项目</div>
-<a href="project7.html">Petalnaut</a>
-<a href="project8.html">HamsterBallin</a>
-<a href="project9.html">未公开项目</a>
-<!-- Game Jams -->
-<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
-<a href="project10.html">GGJ 2024：Make Me Laugh</a>
-<a href="project11.html">LD 54：Summon</a>
-<a href="project12.html">GMTK 2024：Build to Scale</a>
-</div>
-</li>
-<li><a href="index.html#about">关于我</a></li>
-<li><a href="index.html#contact">联系方式</a></li>
-</ul>
-</header>
-<!-- 项目主容器 -->
-<div class="project-detail-container">
-<div class="project-header">
-<h1>HamsterBallin</h1>
-<p class="subtitle">多人街机关卡流线与物理系统整合</p>
-</div>
-<!-- 1. 视频窗口 -->
-<div class="video-wrapper">
-<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="项目 8 视频占位"></iframe>
-</div>
-<!-- 2. 项目简介 -->
-<div class="content-section">
-<h2>项目简介</h2>
-<p>HamsterBallin 是一款由多专业团队制作的混乱、快节奏物理街机游戏。玩家操控位于动力球体中的仓鼠，在动态竞技场内竞速和战斗。我的职责是设计能够发挥不可预测物理系统特色，同时保持玩法有趣且减少挫败感的竞技场。</p>
-</div>
-<!-- 3. 个人工作量 -->
-<div class="content-section">
-<h2>我的工作</h2>
-<ul class="contribution-list">
-<li><strong>竞技场灰盒与迭代：</strong> 设计多张多人竞技场地图，强调持续动量，并减少玩家可能被卡住的“死区”。</li>
-<li><strong>物理调校反馈：</strong> 与玩法程序员协作，调整重力体积、摩擦材质与弹跳板向量，使其符合预期关卡流线。</li>
-<li><strong>动态关卡元素：</strong> 实现移动平台、旋转障碍与交互式缓冲器，使其根据玩家速度产生反馈。</li>
-<li><strong>试玩主持：</strong> 定期组织团队试玩，结合热力图与玩家反馈优化瓶颈区域和出生点。</li>
-</ul>
-</div>
-<!-- 4. 设计解析 -->
-<div class="content-section">
-<h2>设计分析</h2>
-<p>在 HamsterBallin 这类高度依赖物理的游戏中，主要设计挑战是维持玩家能动性。一旦玩家失去动量，乐趣也会随之中断。为此，我采用“碗状拓扑”，让外边界向内弯曲，自然地把偏离路线的玩家重新导回行动区域，而不是困在角落。</p>
-<p>此外，我将障碍分为两类：“动量终结者”（需要精准操作才能绕过）和“动量助推器”（奖励高风险动作）。通过策略性地连续布置两类障碍，关卡能够自然形成富有节奏的高强度体验。</p>
-</div>
-<div class="back-btn-container">
-<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
-</div>
-</div>
-<script src="js/jquery-2.2.3.min.js"></script>
+	<header class="my-clean-header">
+		<div class="my-clean-logo">
+			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
+			<span class="job-title">Level Designer</span>
+		</div>
+		<ul class="my-clean-nav">
+			<li><a href="index.html">HOME</a></li>
+			<li class="dropdown">
+				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
+				<div class="dropdown-content">
+					<div class="dropdown-category-title">Personal Projects</div>
+					<a href="project1.html">ContainmentBreach (Starfield)</a>
+					<a href="project3.html">Invalidprescription (Starfield)</a>
+					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
+					<div class="dropdown-category-title">Team Projects</div>
+					<a href="project7.html">Petalnaut</a>
+					<a href="project8.html">Hamsterballin'</a>
+					<a href="project9.html">Unannounced Project</a>
+					<div class="dropdown-category-title">Game Jams</div>
+					<a href="project10.html">GGJ 2024: Make Me Laugh</a>
+					<a href="project11.html">LD 55: Summon</a>
+					<a href="project12.html">GMTK 2024: Built to Scale</a>
+				</div>
+			</li>
+			<li><a href="index.html#about">ABOUT</a></li>
+			<li><a href="index.html#contact">CONTACT</a></li>
+		</ul>
+	</header>
+
+	<main class="project-detail-container">
+		<div class="project-header">
+			<h1>Hamsterballin'</h1>
+			<p class="subtitle">Track 1 Level Design &amp; Item Blueprint Scripting</p>
+		</div>
+
+		<img class="hero-image" src="images/project8/hamsterballin-cover.jpg" alt="Hamsterballin 官方封面">
+		<div class="project-links">
+			<a class="external-btn" href="https://store.steampowered.com/app/4319370/Hamsterballin/" target="_blank" rel="noopener noreferrer"><i class="fa fa-steam"></i> 查看 Steam 页面</a>
+		</div>
+
+		<div class="fact-grid">
+			<div class="fact-card"><strong>项目类型</strong><span>SMU Guildhall 团队项目</span></div>
+			<div class="fact-card"><strong>我的职责</strong><span>Track 1 赛道设计</span></div>
+			<div class="fact-card"><strong>技术工作</strong><span>部分道具 Blueprint 编写</span></div>
+			<div class="fact-card"><strong>游戏类型</strong><span>多人竞技街机竞速</span></div>
+		</div>
+
+		<section class="content-section">
+			<h2>项目概述</h2>
+			<p><em>Hamsterballin'</em> 是一款竞技街机竞速游戏。玩家控制装在仓鼠球中的角色，在不同主题的赛道上滚动、弹跳和竞速，并利用赛道路线、捷径与道具干扰对手。与传统卡丁车不同，仓鼠球本身的物理运动是路线判断和操作节奏的重要组成部分。</p>
+		</section>
+
+		<section class="content-section">
+			<h2>我的工作</h2>
+			<ul class="contribution-list">
+				<li><strong>Track 1 赛道设计：</strong>负责 Track 1 的赛道设计，并围绕仓鼠球滚动和弹跳的移动方式组织赛道路线与竞速节奏。</li>
+				<li><strong>道具 Blueprint：</strong>负责部分道具的 Blueprint 逻辑编写。</li>
+				<li><strong>最终实装：</strong>我参与编写的部分道具进入了游戏的最终版本。</li>
+			</ul>
+			<div class="role-highlight">页面重点区分“团队最终成果”和“我的个人贡献”：公开截图用于呈现游戏整体视觉与玩法；我的明确工作范围是 Track 1 赛道设计和部分道具 Blueprint。</div>
+		</section>
+
+		<section class="content-section">
+			<h2>设计关注点</h2>
+			<div class="analysis-grid">
+				<div class="analysis-card">
+					<h3>赛道与球体物理</h3>
+					<p>仓鼠球会持续滚动并通过坡面和碰撞产生弹跳，因此赛道需要让玩家提前读取弯道、边缘、落点和速度变化，而不能只依赖传统车辆的转向经验。</p>
+				</div>
+				<div class="analysis-card">
+					<h3>多人竞速可读性</h3>
+					<p>竞速中同时存在多名玩家与道具效果。路线、障碍和捷径需要保持清晰，使玩家在高速移动和相互干扰时仍能快速判断前进方向。</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2>游戏画面</h2>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project8/hamster-01.jpg" target="_blank"><img src="images/project8/hamster-01.jpg" alt="Hamsterballin 赛道竞速画面"></a><figcaption>球体滚动、坡面和弯道共同构成高速竞速节奏。</figcaption></figure>
+				<figure class="media-card"><a href="images/project8/hamster-02.jpg" target="_blank"><img loading="lazy" src="images/project8/hamster-02.jpg" alt="Hamsterballin 多人竞速画面"></a><figcaption>多人竞速中的路线判断与对抗。</figcaption></figure>
+				<figure class="media-card"><a href="images/project8/hamster-03.jpg" target="_blank"><img loading="lazy" src="images/project8/hamster-03.jpg" alt="Hamsterballin 仓鼠角色选择"></a><figcaption>仓鼠角色与服装选择。</figcaption></figure>
+				<figure class="media-card"><a href="images/project8/hamster-04.jpg" target="_blank"><img loading="lazy" src="images/project8/hamster-04.jpg" alt="Hamsterballin 四人竞速画面"></a><figcaption>四人竞速中的赛道信息与玩家位置反馈。</figcaption></figure>
+			</div>
+			<p class="source-note">以上图片来自游戏公开 Steam 页面。后续如果补充 Track 1 平面图、迭代图或 Blueprint 截图，可以继续加入更详细的个人设计拆解。</p>
+		</section>
+
+		<div class="back-btn-container">
+			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+		</div>
+	</main>
 </body>
 </html>

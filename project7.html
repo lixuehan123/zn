@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-
-<html lang="zh-CN">
+<html lang="en">
 <head>
-<title>Petalnaut | 李学汉</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
-<link href="css/font-awesome.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
-<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
-<style>
-		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
+	<title>Petalnaut | Xuehan Li</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+
+	<style>
+		body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background-color: #f7f7f9; color: #333; }
 		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
 		.my-clean-logo { display: flex; flex-direction: column; }
 		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
@@ -56,76 +57,87 @@
 	</style>
 </head>
 <body>
-<!-- 顶部导航栏 -->
-<header class="my-clean-header">
-<div class="my-clean-logo">
-<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
-<span class="job-title">关卡设计师</span>
-</div>
-<ul class="my-clean-nav">
-<li><a href="index.html">首页</a></li>
-<li class="dropdown">
-<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
-<div class="dropdown-content">
-<!-- Personal & Thesis -->
-<div class="dropdown-category-title">个人项目与论文</div>
-<a href="project1.html">ContainmentBreach（星空）</a>
-<a href="project2.html">论文：类魂关卡拓扑</a>
-<a href="project3.html">Invalidprescription（星空）</a>
-<a href="project4.html">逃离发电厂（半衰期 2）</a>
-<a href="project5.html">Coldfront（雷神之锤 3）</a>
-<a href="project6.html">Beast Motos（桌游）</a>
-<!-- Team Projects -->
-<div class="dropdown-category-title">团队项目</div>
-<a href="project7.html">Petalnaut</a>
-<a href="project8.html">HamsterBallin</a>
-<a href="project9.html">未公开项目</a>
-<!-- Game Jams -->
-<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
-<a href="project10.html">GGJ 2024：Make Me Laugh</a>
-<a href="project11.html">LD 54：Summon</a>
-<a href="project12.html">GMTK 2024：Build to Scale</a>
-</div>
-</li>
-<li><a href="index.html#about">关于我</a></li>
-<li><a href="index.html#contact">联系方式</a></li>
-</ul>
-</header>
-<!-- 项目主容器 -->
-<div class="project-detail-container">
-<div class="project-header">
-<h1>Petalnaut</h1>
-<p class="subtitle">协作式关卡设计与环境叙事</p>
-</div>
-<!-- 1. 视频窗口 -->
-<div class="video-wrapper">
-<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="项目 7 视频占位"></iframe>
-</div>
-<!-- 2. 项目简介 -->
-<div class="content-section">
-<h2>项目简介</h2>
-<p>Petalnaut 是一个团队开发项目，我在其中担任主要关卡设计师。游戏将植物主题美术与探索机制结合，形成独特视觉风格。我的主要目标是构建能够自然传达世界背景，同时无缝支持玩家移动能力的环境。</p>
-</div>
-<!-- 3. 个人工作量 -->
-<div class="content-section">
-<h2>我的工作</h2>
-<ul class="contribution-list">
-<li><strong>跨学科协作：</strong> 与环境美术师紧密合作，将功能性白盒转化为完整且美术统一的关卡。</li>
-<li><strong>白盒与尺度标准：</strong> 建立跳跃距离、角色边界与摄像机限制等核心尺度，确保移动流畅。</li>
-<li><strong>资产实施：</strong> 管理场景装饰资产与碰撞体积的布置，在优化性能的同时防止玩家跳过流程。</li>
-<li><strong>版本控制（Perforce／Git）：</strong> 维护清晰的仓库结构，避免团队并行开发时出现地图冲突。</li>
-</ul>
-</div>
-<!-- 4. 设计解析 -->
-<div class="content-section">
-<h2>设计分析</h2>
-<p>Petalnaut 的设计理念高度依赖“地标导航”。在视觉丰富、色彩鲜艳的世界中，玩家容易产生感官过载。因此，我围绕巨大且形态鲜明的植物结构组织宏观布局，让它们成为清晰的参照点与玩家的空间指南针。</p>
-<p>迭代阶段的试玩显示，玩家经常在较密集区域迷路。为解决这一问题，我与灯光美术师合作建立“光线引导”系统，利用细微的大气光照与高饱和植物，自然地把玩家视线引向关键路径出口。</p>
-</div>
-<div class="back-btn-container">
-<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
-</div>
-</div>
-<script src="js/jquery-2.2.3.min.js"></script>
+	
+	<!-- 顶部导航栏 -->
+	<header class="my-clean-header">
+		<div class="my-clean-logo">
+			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
+			<span class="job-title">Level Designer</span>
+		</div>
+		<ul class="my-clean-nav">
+			<li><a href="index.html">HOME</a></li>
+			
+			<li class="dropdown">
+				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
+				<div class="dropdown-content">
+					<!-- Personal Projects -->
+					<div class="dropdown-category-title">Personal Projects</div>
+					<a href="project1.html">ContainmentBreach (Starfield)</a>
+					<a href="project3.html">Invalidprescription (Starfield)</a>
+					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
+
+					<!-- Team Projects -->
+					<div class="dropdown-category-title">Team Projects</div>
+					<a href="project7.html">Petalnaut</a>
+					<a href="project8.html">Hamsterballin'</a>
+					<a href="project9.html">Unannounced Project</a>
+					
+					<!-- Game Jams -->
+					<div class="dropdown-category-title">Game Jams</div>
+					<a href="project10.html">GGJ 2024: Make me laugh</a>
+					<a href="project11.html">LD 55: Summon</a>
+					<a href="project12.html">GMTK 2024: Built to Scale</a>
+				</div>
+			</li>
+			
+			<li><a href="index.html#about">ABOUT</a></li>
+			<li><a href="index.html#contact">CONTACT</a></li>
+		</ul>
+	</header>
+
+	<!-- 项目主容器 -->
+	<div class="project-detail-container">
+		
+		<div class="project-header">
+			<h1>Petalnaut</h1>
+			<p class="subtitle">Collaborative Level Design & Environmental Storytelling</p>
+		</div>
+
+		<!-- 1. 视频窗口 -->
+		<div class="video-wrapper">
+			<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Project 7 Video Placeholder" allowfullscreen></iframe>
+		</div>
+
+		<!-- 2. 项目简介 -->
+		<div class="content-section">
+			<h2>Project Introduction</h2>
+			<p>Petalnaut is a team-based development project where I served as the primary Level Designer. The game features a unique aesthetic blending botanical themes with exploration mechanics. My primary goal was to construct environments that naturally communicated the lore of the world while seamlessly accommodating the player's traversal abilities.</p>
+		</div>
+
+		<!-- 3. 个人工作量 -->
+		<div class="content-section">
+			<h2>My Contributions</h2>
+			<ul class="contribution-list">
+				<li><strong>Cross-Disciplinary Collaboration:</strong> Worked closely with Environment Artists to transition functional whiteboxes into fully realized, aesthetically cohesive levels.</li>
+				<li><strong>Whiteboxing & Metrics:</strong> Established core metrics for jump distances, character bounds, and camera constraints to ensure smooth traversal.</li>
+				<li><strong>Asset Implementation:</strong> Managed the placement of set-dressing assets and collision volumes to optimize performance and prevent sequence breaking.</li>
+				<li><strong>Version Control (Perforce/Git):</strong> Maintained a clean repository structure, avoiding map conflicts during concurrent team development.</li>
+			</ul>
+		</div>
+
+		<!-- 4. 设计解析 -->
+		<div class="content-section">
+			<h2>Design Analysis</h2>
+			<p>The design philosophy for Petalnaut relied heavily on "Landmark Navigation." In a visually rich and colorful world, it's easy for players to suffer from sensory overload. I designed the macro-layout around massive, distinct botanical structures that served as clear points of reference, acting as a compass for the player.</p>
+			<p>During the iteration phase, playtesting revealed that players often got lost in denser sections. To solve this, I collaborated with the lighting artists to implement a "light-guiding" system—using subtle atmospheric lighting and saturated flora to draw the player's eye toward critical path exits naturally.</p>
+		</div>
+
+		<div class="back-btn-container">
+			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+		</div>
+
+	</div>
+	
+	<script src="js/jquery-2.2.3.min.js"></script>
 </body>
 </html>

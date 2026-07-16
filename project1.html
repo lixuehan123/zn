@@ -1,162 +1,284 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
-<title>ContainmentBreach | 李学汉</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
-<link href="css/font-awesome.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
-<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
-<style>
-		body { 
-			margin: 0; 
-			padding: 0; 
-			font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; 
-			background-color: #f7f7f9; 
-			color: #333; 
-		}
-
-		/* 导航栏样式 */
-		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
-		.my-clean-logo { display: flex; flex-direction: column; }
-		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
-		.my-clean-logo a:hover { color: #ff9800; text-decoration: none; }
-		.job-title { color: #ff9800; font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-top: 6px; text-transform: uppercase; }
-
-		.my-clean-nav { display: flex; list-style: none; margin: 0; padding: 0; align-items: center; flex-wrap: wrap; }
-		.my-clean-nav li { margin-left: 40px; position: relative; } 
-		.my-clean-nav a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 600; text-transform: uppercase; transition: color 0.3s ease; display: block; padding: 15px 0; }
-		.my-clean-nav a:hover { color: #ff9800; text-decoration: none; }
-
-		/* 下拉菜单样式 */
-		.dropdown-content { display: none; position: absolute; background-color: #1a1a24; min-width: 280px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); z-index: 1; top: 100%; left: 0; border-radius: 4px; padding: 10px 0; }
-		.dropdown:hover .dropdown-content { display: block; }
-		.dropdown-content a { color: #fff; padding: 10px 20px; text-decoration: none; display: block; font-size: 13px; text-transform: none; font-weight: 400; transition: 0.2s; border-left: 3px solid transparent; }
-		.dropdown-content a:hover { background-color: #2a2a3d; color: #ff9800; border-left: 3px solid #ff9800; }
-		.dropdown-category-title { padding: 10px 20px 5px 20px; color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; border-bottom: 1px solid #333; margin-bottom: 5px; margin-top: 5px; pointer-events: none; }
-
-		/* 项目详情容器排版 (修复挤在左边的问题) */
-		.project-detail-container { 
-			max-width: 900px; 
-			margin: 60px auto; 
-			padding: 60px; 
-			background: #ffffff; 
-			box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
-			border-radius: 12px; 
-			box-sizing: border-box; 
-		}
-
-		.project-header { text-align: center; margin-bottom: 40px; }
-		.project-header h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; color: #111; letter-spacing: 1px; text-transform: uppercase; }
-		.project-header p.subtitle { font-size: 18px; color: #777; margin: 0; font-weight: 500; }
-
-		/* 视频自适应 (修复视频太小的问题) */
-		.video-wrapper { 
-			position: relative; 
-			padding-bottom: 56.25%; 
-			height: 0; 
-			overflow: hidden; 
-			border-radius: 8px; 
-			background: #000; 
-			margin-bottom: 50px; 
-			box-shadow: 0 8px 25px rgba(0,0,0,0.15); 
-		}
-		.video-wrapper iframe, .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-
-		/* 内容段落 */
-		.content-section { margin-bottom: 50px; }
-		.content-section h2 { font-size: 26px; font-weight: bold; color: #111; margin-bottom: 20px; padding-left: 15px; border-left: 5px solid #ff9800; line-height: 1.2; }
-		.content-section p { font-size: 16px; line-height: 1.8; color: #444; text-align: justify; margin-bottom: 15px; }
-		
-		/* 个人工作量列表样式 */
-		.contribution-list { font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 15px; padding-left: 25px; }
-		.contribution-list li { margin-bottom: 12px; }
-		.contribution-list li strong { color: #111; font-weight: 700; }
-
-		/* 底部返回按钮 */
-		.back-btn-container { text-align: center; margin-top: 60px; border-top: 1px solid #eaeaea; padding-top: 40px; }
-		.back-btn { background-color: #0f0f1b; color: #fff; padding: 14px 40px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background-color 0.3s ease, transform 0.3s ease; display: inline-block; }
-		.back-btn:hover { background-color: #ff9800; color: #fff; text-decoration: none; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255,152,0,0.3); }
-
-		/* 响应式适配 */
-		@media (max-width: 1024px) { .project-detail-container { margin: 40px 20px; padding: 40px 30px; } }
-		@media (max-width: 768px) {
-			.my-clean-header { flex-direction: column; padding: 15px; }
-			.my-clean-logo { align-items: center; }
-			.my-clean-nav { margin-top: 15px; width: 100%; justify-content: center; }
-			.my-clean-nav li { margin: 5px 10px; }
-			.dropdown-content { position: static; display: none; box-shadow: none; background: #222; width: 100%; }
-			.dropdown:hover .dropdown-content { display: block; }
-			.project-detail-container { padding: 30px 20px; margin: 20px 10px; }
-			.project-header h1 { font-size: 32px; }
+	<title>ContainmentBreach | Xuehan Li</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+	<style>
+		body { margin:0; padding:0; font-family:'Open Sans','Microsoft YaHei',sans-serif; background:#f7f7f9; color:#333; }
+		.my-clean-header { display:flex; justify-content:space-between; align-items:center; background:#0f0f1b; padding:15px 5%; position:sticky; top:0; z-index:99999; box-shadow:0 2px 10px rgba(0,0,0,.5); width:100%; box-sizing:border-box; }
+		.my-clean-logo { display:flex; flex-direction:column; }
+		.my-clean-logo a { color:#fff; text-decoration:none; font-size:32px; font-weight:bold; letter-spacing:1px; line-height:1; }
+		.my-clean-logo a:hover, .my-clean-nav a:hover { color:#ff9800; text-decoration:none; }
+		.job-title { color:#ff9800; font-size:14px; font-weight:600; letter-spacing:2px; margin-top:6px; text-transform:uppercase; }
+		.my-clean-nav { display:flex; list-style:none; margin:0; padding:0; align-items:center; flex-wrap:wrap; }
+		.my-clean-nav li { margin-left:40px; position:relative; }
+		.my-clean-nav a { color:#fff; text-decoration:none; font-size:15px; font-weight:600; text-transform:uppercase; display:block; padding:15px 0; }
+		.dropdown-content { display:none; position:absolute; background:#1a1a24; min-width:250px; box-shadow:0 8px 16px rgba(0,0,0,.5); z-index:1; top:100%; left:0; border-radius:4px; padding:10px 0; }
+		.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display:block; }
+		.dropdown-content a { color:#fff; padding:10px 20px; font-size:13px; text-transform:none; font-weight:400; border-left:3px solid transparent; }
+		.dropdown-content a:hover { background:#2a2a3d; color:#ff9800; border-left-color:#ff9800; }
+		.dropdown-category-title { padding:10px 20px 5px; color:#777; font-size:11px; text-transform:uppercase; letter-spacing:1px; font-weight:bold; border-bottom:1px solid #333; margin:5px 0; }
+		.project-detail-container { max-width:1080px; margin:60px auto; padding:60px; background:#fff; box-shadow:0 10px 40px rgba(0,0,0,.08); border-radius:12px; box-sizing:border-box; }
+		.project-header { text-align:center; margin-bottom:36px; }
+		.project-header h1 { font-family:'Jura',sans-serif; font-size:44px; font-weight:700; margin:0 0 12px; color:#111; letter-spacing:1px; text-transform:uppercase; }
+		.project-header .subtitle { font-size:18px; color:#777; margin:0; font-weight:500; }
+		.cover-image { width:100%; display:block; border-radius:8px; margin-bottom:28px; box-shadow:0 8px 25px rgba(0,0,0,.15); }
+		.video-placeholder { padding:34px; margin-bottom:50px; background:#0f0f1b; color:#fff; border-radius:8px; text-align:center; }
+		.video-placeholder strong { display:block; font-size:20px; margin-bottom:8px; color:#ff9800; }
+		.video-placeholder span { color:#c8c8ce; font-size:14px; line-height:1.7; }
+		.content-section { margin-bottom:52px; }
+		.content-section h2 { font-size:26px; font-weight:bold; color:#111; margin:0 0 20px; padding-left:15px; border-left:5px solid #ff9800; line-height:1.3; }
+		.content-section h3 { font-size:20px; font-weight:700; color:#222; margin:30px 0 12px; }
+		.content-section h4 { font-size:18px; font-weight:700; color:#d76d00; margin:28px 0 12px; }
+		.content-section p, .content-section li { font-size:16px; line-height:1.8; color:#444; }
+		.content-section p { margin:0 0 15px; text-align:justify; }
+		.logic-list { margin:0 0 20px; padding-left:22px; }
+		.logic-list li { margin-bottom:7px; }
+		.fact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; }
+		.fact { background:#fff6ea; border:1px solid #f3d2ad; border-radius:6px; padding:18px; }
+		.fact strong { display:block; color:#d76d00; font-size:20px; margin-bottom:4px; }
+		.fact span { font-size:13px; color:#6a5d50; }
+		.media-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:22px; }
+		.media-grid.three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+		.media-card { margin:20px 0 0; border:1px solid #e7e7e7; border-radius:7px; overflow:hidden; background:#fafafa; }
+		.media-grid .media-card { margin-top:0; }
+		.media-card a { display:block; background:#16161c; }
+		.media-card img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; }
+		.media-card img.contain { object-fit:contain; background:#f3f3f3; }
+		.media-card figcaption { padding:11px 13px; font-size:13px; line-height:1.55; color:#666; }
+		.portrait-feature { display:grid; grid-template-columns:minmax(420px,1.15fr) minmax(300px,.85fr); gap:28px; align-items:start; margin:26px 0; padding:20px; border:1px solid #e7e7e7; border-radius:8px; background:#fafafa; }
+		.portrait-feature.reverse .portrait-media { order:2; }
+		.portrait-media a { display:block; text-align:center; }
+		.portrait-media img { width:100%; max-height:760px; object-fit:contain; display:block; background:#fff; border-radius:6px; }
+		.portrait-copy h3 { margin-top:0; }
+		.image-caption { margin:10px 2px 0 !important; color:#777 !important; font-size:13px !important; line-height:1.55 !important; text-align:left !important; }
+		.note { padding:18px 20px; margin:20px 0; border-left:4px solid #ff9800; background:#fff6ea; color:#555; line-height:1.75; }
+		.design-block { margin-top:26px; padding-top:2px; border-top:1px solid #ededed; }
+		.gallery-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+		.gallery-grid a { display:block; overflow:hidden; border-radius:6px; background:#111; }
+		.gallery-grid img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; transition:transform .3s ease; }
+		.gallery-grid a:hover img { transform:scale(1.04); }
+		.back-btn-container { text-align:center; margin-top:60px; border-top:1px solid #eaeaea; padding-top:40px; }
+		.back-btn { background:#0f0f1b; color:#fff; padding:14px 40px; font-size:16px; font-weight:600; text-decoration:none; border-radius:6px; display:inline-block; }
+		.back-btn:hover { background:#ff9800; color:#fff; text-decoration:none; }
+		@media (max-width:1024px) { .project-detail-container { margin:40px 20px; padding:40px 30px; } .portrait-feature { grid-template-columns:minmax(360px,1.05fr) minmax(280px,.95fr); } }
+		@media (max-width:768px) {
+			.my-clean-header { flex-direction:column; padding:15px; position:relative; }
+			.my-clean-logo { align-items:center; }
+			.my-clean-nav { margin-top:15px; width:100%; justify-content:center; }
+			.my-clean-nav li { margin:5px 10px; }
+			.dropdown-content { position:absolute; left:50%; transform:translateX(-50%); }
+			.project-detail-container { padding:30px 20px; margin:20px 10px; }
+			.project-header h1 { font-size:32px; }
+			.fact-grid, .media-grid, .media-grid.three, .gallery-grid, .portrait-feature { grid-template-columns:1fr; }
+			.portrait-feature.reverse .portrait-media { order:0; }
+			.portrait-media img { max-height:none; }
 		}
 	</style>
 </head>
 <body>
-<header class="my-clean-header">
-<div class="my-clean-logo">
-<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
-<span class="job-title">关卡设计师</span>
-</div>
-<ul class="my-clean-nav">
-<li><a href="index.html">首页</a></li>
-<li class="dropdown">
-<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
-<div class="dropdown-content">
-<div class="dropdown-category-title">个人项目与论文</div>
-<a href="project1.html">ContainmentBreach（星空）</a>
-<a href="project2.html">论文：类魂关卡拓扑</a>
-<a href="project3.html">Invalidprescription（星空）</a>
-<a href="project4.html">逃离发电厂（半衰期 2）</a>
-<a href="project5.html">Coldfront（雷神之锤 3）</a>
-<a href="project6.html">Beast Motos（桌游）</a>
-<div class="dropdown-category-title">团队项目</div>
-<a href="project7.html">Petalnaut</a>
-<a href="project8.html">HamsterBallin</a>
-<a href="project9.html">未公开项目</a>
-<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
-<a href="project10.html">GGJ 2024：Make Me Laugh</a>
-<a href="project11.html">LD 54：Summon</a>
-<a href="project12.html">GMTK 2024：Build to Scale</a>
-</div>
-</li>
-<li><a href="index.html#about">关于我</a></li>
-<li><a href="index.html#contact">联系方式</a></li>
-</ul>
-</header>
-<div class="project-detail-container">
-<div class="project-header">
-<h1>ContainmentBreach</h1>
-<p class="subtitle">《星空》自定义关卡模组与生存机制</p>
-</div>
-<div class="video-wrapper">
-<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="ContainmentBreach 视频占位"></iframe>
-</div>
-<div class="content-section">
-<h2>项目简介</h2>
-<p>ContainmentBreach 是一个使用《星空》Creation Kit 开发的高强度战斗型自定义关卡。它借鉴经典波次生存模式，将玩家困在一座戒备森严的设施中；玩家必须管理资源、优化移动路线，并在不断增强的敌人波次中生存下来。</p>
-</div>
-<div class="content-section">
-<h2>我的工作</h2>
-<ul class="contribution-list">
-<li><strong>关卡布局与灰盒搭建：</strong> 设计设施的空间流线，鼓励玩家进行环形移动，并减少固守单一区域的可能。</li>
-<li><strong>Papyrus 脚本：</strong> 编写自定义 Papyrus 脚本，实现可迭代的波次控制逻辑与动态敌人生成。</li>
-<li><strong>自定义升级站：</strong> 实现可交互的武器等级升级机制，在生存循环中持续奖励玩家成长。</li>
-<li><strong>战斗平衡：</strong> 调整敌人生成频率、生命值成长和弹药分布，使战斗节奏具有挑战性且保持公平。</li>
-</ul>
-</div>
-<div class="content-section">
-<h2>设计分析</h2>
-<p>ContainmentBreach 的核心设计理念围绕“战斗循环与空间张力”展开。通过策略性布置瓶颈区域与垂直过渡空间，持续迫使玩家评估自身站位。</p>
-<p>我使用 Creation Kit 的 NavMesh 工具，确保 AI 敌人能够有效包抄玩家。波次逻辑经过多轮 Papyrus 迭代，形成明确的“休整阶段”与“混乱阶段”，即使在纯生存玩法中也能建立叙事般的节奏变化。</p>
-</div>
-<div class="back-btn-container">
-<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
-</div>
-</div>
-<script src="js/jquery-2.2.3.min.js"></script>
+	<header class="my-clean-header">
+		<div class="my-clean-logo">
+			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
+			<span class="job-title">Level Designer</span>
+		</div>
+		<ul class="my-clean-nav">
+			<li><a href="index.html">HOME</a></li>
+			<li class="dropdown">
+				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
+				<div class="dropdown-content">
+					<div class="dropdown-category-title">Personal Projects</div>
+					<a href="project1.html">ContainmentBreach (Starfield)</a>
+					<a href="project3.html">Invalidprescription (Starfield)</a>
+					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
+					<div class="dropdown-category-title">Team Projects</div>
+					<a href="project7.html">Petalnaut</a>
+					<a href="project8.html">Hamsterballin'</a>
+					<a href="project9.html">Unannounced Project</a>
+					<div class="dropdown-category-title">Game Jams</div>
+					<a href="project10.html">GGJ 2024: Make me laugh</a>
+					<a href="project11.html">LD 55: Summon</a>
+					<a href="project12.html">GMTK 2024: Built to Scale</a>
+				</div>
+			</li>
+			<li><a href="index.html#about">ABOUT</a></li>
+			<li><a href="index.html#contact">CONTACT</a></li>
+		</ul>
+	</header>
+
+	<div class="project-detail-container">
+		<div class="project-header">
+			<h1>ContainmentBreach</h1>
+			<p class="subtitle">《星空》Creation Kit 生存关卡设计</p>
+		</div>
+
+		<img class="cover-image" src="images/project1-cover.png" alt="收容失效实验设施主控室">
+		<div class="video-placeholder">
+			<strong>Gameplay Video Coming Soon</strong>
+			<span>项目 1 的视频尚在制作中，完成后可直接将视频嵌入此位置。</span>
+		</div>
+
+		<div class="content-section">
+			<h2>总结</h2>
+			<p>该关卡使用《星空》Creation Kit 搭建，参考《使命召唤》僵尸模式中探索、通电、区域解锁、武器成长与持续生存的核心循环。玩家在通电前主要面对狭窄、受限且高风险的小型环路；通电后，陷阱和更安全的循环路线被激活；开启武器升级通道后，玩家将获得更大的活动空间和更稳定的战斗条件。关卡重点研究环路变化、宽窄空间组合、空间尺度对心理压力的影响、环境视线引导、武器与资源的数值平衡，并通过脚本实现电力、陷阱、区域解锁和升级等系统。</p>
+			<div class="fact-grid">
+				<div class="fact"><strong>300 小时</strong><span>总工作时间</span></div>
+				<div class="fact"><strong>约 1 小时</strong><span>完整单局流程</span></div>
+				<div class="fact"><strong>4 个区域</strong><span>风格迥异的战斗空间</span></div>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>关卡布局</h2>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project1/image-002-fba867314ed3.jpeg" target="_blank"><img class="contain" src="images/project1/image-002-fba867314ed3.jpeg" alt="收容失效一层平面图"></a><figcaption>一层平面图</figcaption></figure>
+				<figure class="media-card"><a href="images/project1/image-003-ae509c07bbd2.jpeg" target="_blank"><img class="contain" src="images/project1/image-003-ae509c07bbd2.jpeg" alt="收容失效负一层平面图"></a><figcaption>负一层平面图</figcaption></figure>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>目标 1：如何设计一个驱动玩家探索的地图结构</h2>
+			<h3>明确僵尸模式的玩家体验与核心循环</h3>
+			<div class="note">击杀僵尸 → 获得资源 → 购买武器或开启区域 → 扩大移动范围 → 获得更强的生存能力 → 面对更高强度的波次</div>
+
+			<div class="portrait-feature">
+				<div class="portrait-media">
+					<a href="images/project1/image-004-e0061d45df4e.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-004-e0061d45df4e.jpeg" alt="阶段一立体环路分析图"></a>
+					<p class="image-caption">环路在结构上成立，但狭窄出口降低了路线容错率，玩家无法长期稳定使用。</p>
+				</div>
+				<div class="portrait-copy">
+					<h3>阶段 1：开启电闸之前</h3>
+					<p>在电闸开启前，我有意限制玩家获得稳定环路的能力。初始区域主要由小型环路、单向深入路线和高风险环路组成。部分路线虽然能够形成循环，但其中包含狭窄通道和视线受限的转角，随着敌人数量的增多玩家很容易在入口或转角处被敌人拦截。同时随着敌人的血量增加，前期区域的武器逐渐变弱，促使玩家进入新区域寻找更强的武器。这种设计防止了玩家前期稳定地重复绕圈。玩家需要通过观察敌人位置、判断撤退时间以及寻找新的区域入口维持生存，同时产生寻找电闸和扩大地图的动力。</p>
+				</div>
+			</div>
+
+			<div class="portrait-feature reverse">
+				<div class="portrait-media">
+					<a href="images/project1/image-005-8e2f8f54859b.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-005-8e2f8f54859b.jpeg" alt="阶段二立体环路分析图"></a>
+					<p class="image-caption">开启电闸后新增了一条环路，将原本两条环路串联起来。</p>
+				</div>
+				<div class="portrait-copy">
+					<h3>阶段 2：开启电闸之后</h3>
+					<p>开启电闸后，地图从以探索和求生为主的受限结构，转变为能够进行聚怪和路线管理的战斗空间。新的通道将原本分散的局部空间连接起来，形成宽窄交替的主要环路。环路中的宽阔区域为玩家提供观察、聚集敌人和调整方向的空间，狭窄区域则继续保留被拦截的风险。与此同时，陷阱系统被激活，使玩家能够主动规划敌人的移动路线，将空间循环与资源消耗、敌群管理结合起来。饮料机也在电闸开启后被激活，玩家需要去到地图各个角落使用饮料机来强化自身，以应对更高波次。</p>
+				</div>
+			</div>
+
+			<div class="portrait-feature">
+				<div class="portrait-media"><a href="images/project1/image-006-a00335a948f9.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-006-a00335a948f9.jpeg" alt="阶段三立体环路分析图"></a></div>
+				<div class="portrait-copy">
+					<h3>阶段 3：开启升级武器通道之后</h3>
+					<p>在玩家反复进入危险狭窄的负一层实验室之后，玩家使用收集到的电池开启了通往武器升级机的通道。玩家获得的不只是升级设施，还会解锁连接多个区域的大型环路。与前期局部环路相比，该环路拥有更大的容量和更多路线选择，能够容纳后期数量更高的敌群。我将武器升级与空间扩张设置在同一推进阶段，使玩家的战斗能力和移动能力同步成长。玩家获得更高伤害的同时，也获得了应对更高敌人密度所需要的空间条件，从而让地图成长和数值成长保持一致。同时，4 条环路再次彻底连通，形成一个立体的环路空间，在后续潮水般的虫群涌来之时，为玩家营造夺路而逃的惊险刺激感。</p>
+				</div>
+			</div>
+
+			<figure class="media-card"><a href="images/project1/image-007-d6c47d2f0632.png" target="_blank"><img class="contain" loading="lazy" src="images/project1/image-007-d6c47d2f0632.png" alt="三个阶段的环路变化对比"></a><figcaption>三个推进阶段的环路变化对比。</figcaption></figure>
+		</div>
+
+		<div class="content-section">
+			<h2>目标 2：如何利用空间比例来带给玩家不同的心理体验与战斗体验</h2>
+			<h3>建筑空间的尺度</h3>
+			<p>此处我引入了建筑的空间比例指标，通过控制不同空间的高度与面积比值，营造出不同类型空间的同时，给玩家带来不同心理体验。</p>
+			<figure class="media-card"><a href="images/project1/image-008-f131746f0598.png" target="_blank"><img class="contain" loading="lazy" src="images/project1/image-008-f131746f0598.png" alt="建筑空间比例分析图"></a><figcaption>建筑空间尺度与区域分布分析。</figcaption></figure>
+
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project1/image-009-d693c99d464d.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-009-d693c99d464d.jpeg" alt="一层高入口区域"></a><figcaption>一层高入口区域：较低的净高与中等平面面积形成接近人体尺度的空间，使玩家感到稳定、可控，适合作为初始教学区域。但随着虫子的涌入，原本的活动空间减少，变得更为局促压迫。</figcaption></figure>
+				<figure class="media-card"><a href="images/project1/image-010-300be9f5a85e.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-010-300be9f5a85e.jpeg" alt="二层高区域"></a><figcaption>二层高区域：提高净高和空间体量，降低顶部压迫感，使玩家获得第一次空间释放，并拥有更大的观察与移动范围。</figcaption></figure>
+				<figure class="media-card"><a href="images/project1/image-011-0a8126386cbe.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-011-0a8126386cbe.jpeg" alt="三层高区域"></a><figcaption>三层高区域：较大的高度与面积强化空间的宏大感，同时使玩家产生暴露感和自身尺度被缩小的感受，并提供足够空间引入地标、勾起玩家好奇心。</figcaption></figure>
+				<figure class="media-card"><a href="images/project1/image-012-ff11dd02391b.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-012-ff11dd02391b.jpeg" alt="负一层田字形实验室"></a><figcaption>负一层田字形实验室：通过较低净高、较小通道宽度和被墙体分割的平面，降低有效活动面积，形成压迫、拥挤和容易被怪物拦截的战斗体验。</figcaption></figure>
+			</div>
+
+			<h3>实验舱与虫洞区域</h3>
+			<p>利用高大空间与低矮空间形成尺度失常，使玩家同时感受到未知与不稳定。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project1/image-013-3ddae5bf29f5.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-013-3ddae5bf29f5.jpeg" alt="实验舱区域"></a><figcaption>实验舱区域</figcaption></figure>
+				<figure class="media-card"><a href="images/project1/image-014-08eb60fe5395.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-014-08eb60fe5395.jpeg" alt="虫洞区域"></a><figcaption>虫洞区域</figcaption></figure>
+			</div>
+
+			<h3>空间氛围营造</h3>
+			<div class="design-block">
+				<h4>布景</h4>
+				<ul class="logic-list">
+					<li>根据不同区域的功能配置设备、家具、管线与实验设施，建立清晰的空间身份。</li>
+					<li>通过布景密度控制心理压力：开阔区域减少遮挡，狭窄实验室增加设备与障碍，使空间更拥挤、更危险。</li>
+					<li>利用破损、污染和实验痕迹补充环境叙事，暗示实验设施由正常运行逐渐走向失控。</li>
+				</ul>
+				<figure class="media-card"><a href="images/project1/image-015-6f5310cc95c9.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-015-6f5310cc95c9.jpeg" alt="布景与环境叙事"></a><figcaption>通过设备密度、破损与污染痕迹建立区域身份和压力变化。</figcaption></figure>
+			</div>
+
+			<div class="design-block">
+				<h4>地标</h4>
+				<ul class="logic-list">
+					<li>在重要节点设置轮廓、尺度或颜色明显的地标，帮助玩家识别当前位置。</li>
+					<li>让地标能够从多个路径被提前看到，为探索提供方向目标。</li>
+					<li>将电闸、实验舱、武器升级区等核心功能塑造成独特地标，使功能识别与路线引导结合。</li>
+				</ul>
+				<figure class="media-card"><a href="images/project1/image-016-70b0679fc722.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-016-70b0679fc722.jpeg" alt="关卡地标设计"></a><figcaption>用独特轮廓、尺度与颜色把核心功能塑造成可重复识别的地标。</figcaption></figure>
+			</div>
+
+			<div class="design-block">
+				<h4>光影</h4>
+				<ul class="logic-list">
+					<li>通过明暗对比建立视觉层级，使重要入口、交互设备和前进方向优先被玩家注意。</li>
+					<li>使用不同光照氛围区分区域状态与危险等级。</li>
+					<li>在狭窄区域增加阴影和局部照明，制造未知感；在主要战斗区域扩大可见范围，保证敌人信息的可读性。</li>
+					<li>通过通电前后的灯光变化，为地图状态改变提供明确反馈。</li>
+				</ul>
+				<figure class="media-card"><a href="images/project1/image-017-e2da605d159a.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-017-e2da605d159a.jpeg" alt="关卡光影引导"></a><figcaption>利用明暗层级、局部照明与状态变化引导视线并区分危险等级。</figcaption></figure>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>目标 3：布置掩体与房间内路线</h2>
+			<h3>环绕空间</h3>
+			<p>将掩体作为房间中心的空间节点，使玩家能够围绕掩体移动，而不是被迫停留在单一位置。</p>
+			<p>通过掩体与墙体之间的距离控制路线宽度，形成绕行、拉扯和紧急突围的空间。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project1/image-018-3f1ef31b987b.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-018-3f1ef31b987b.jpeg" alt="围绕中心掩体的移动空间"></a><figcaption>掩体作为房间中心的空间节点。</figcaption></figure>
+				<figure class="media-card"><a href="images/project1/image-019-df6cf0db6557.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-019-df6cf0db6557.jpeg" alt="掩体与墙体之间的绕行空间"></a><figcaption>掩体与墙体之间保留绕行、拉扯和突围空间。</figcaption></figure>
+			</div>
+			<p class="note">避免掩体形成绝对安全点，使玩家只能短暂阻断视线，仍需持续移动。</p>
+
+			<h3>十字与 T 字路口</h3>
+			<p>T 字路口提供两个明确方向，适合控制玩家节奏，并通过尽端的地标、武器或设施引导路线选择。</p>
+			<p>十字路口增加观察方向与路线选择，同时提高被多方向包围的风险，形成更高的信息处理压力。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project1/image-020-dd55619e0ca5.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-020-dd55619e0ca5.jpeg" alt="T 字路口设计"></a><figcaption>T 字路口：用尽端地标、武器或设施引导路线选择。</figcaption></figure>
+				<figure class="media-card"><a href="images/project1/image-021-f09bab0994ec.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-021-f09bab0994ec.jpeg" alt="十字路口设计"></a><figcaption>十字路口：增加路线选择，同时提高多方向包围风险。</figcaption></figure>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>目标 4：如何平衡武器数值</h2>
+			<p>我使用 Excel 计算 TTK、STK、伤害与价格等一系列数值，以确保玩家在逐渐探索的过程中获得更强的武器，并与敌人逐渐增加的血量相匹配。</p>
+			<figure class="media-card"><a href="images/project1/image-022-04e95986e937.png" target="_blank"><img class="contain" loading="lazy" src="images/project1/image-022-04e95986e937.png" alt="武器数值平衡表"></a><figcaption>武器伤害、击杀效率、价格与敌人生命成长的平衡表。</figcaption></figure>
+		</div>
+
+		<div class="content-section">
+			<h2>画廊</h2>
+			<div class="gallery-grid">
+				<a href="images/project1/image-023-ac241dce76ee.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-023-ac241dce76ee.jpeg" alt="关卡截图 1"></a>
+				<a href="images/project1/image-024-6095db65fcc1.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-024-6095db65fcc1.jpeg" alt="关卡截图 2"></a>
+				<a href="images/project1/image-025-84f7ea66c303.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-025-84f7ea66c303.jpeg" alt="关卡截图 3"></a>
+				<a href="images/project1/image-026-d0264b510c85.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-026-d0264b510c85.jpeg" alt="关卡截图 4"></a>
+				<a href="images/project1/image-027-67697052d0b1.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-027-67697052d0b1.jpeg" alt="关卡截图 5"></a>
+				<a href="images/project1/image-028-14b17689397e.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-028-14b17689397e.jpeg" alt="关卡截图 6"></a>
+				<a href="images/project1/image-029-44e07c5df112.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-029-44e07c5df112.jpeg" alt="关卡截图 7"></a>
+				<a href="images/project1/image-030-844cdd6483a1.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-030-844cdd6483a1.jpeg" alt="关卡截图 8"></a>
+				<a href="images/project1/image-031-8df6f7f9b980.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-031-8df6f7f9b980.jpeg" alt="关卡截图 9"></a>
+				<a href="images/project1/image-032-4b79ca067ed1.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-032-4b79ca067ed1.jpeg" alt="关卡截图 10"></a>
+				<a href="images/project1/image-033-5a3e39350c10.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-033-5a3e39350c10.jpeg" alt="关卡截图 11"></a>
+				<a href="images/project1/image-034-d5f0803e244c.jpeg" target="_blank"><img loading="lazy" src="images/project1/image-034-d5f0803e244c.jpeg" alt="关卡截图 12"></a>
+			</div>
+		</div>
+
+		<div class="back-btn-container">
+			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+		</div>
+	</div>
 </body>
 </html>

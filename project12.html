@@ -1,121 +1,114 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
-<title>GMTK 2024：Build to Scale | 李学汉</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
-<link href="css/font-awesome.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
-<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
-<style>
-		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
-		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
-		.my-clean-logo { display: flex; flex-direction: column; }
-		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
-		.my-clean-logo a:hover { color: #ff9800; text-decoration: none; }
-		.job-title { color: #ff9800; font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-top: 6px; text-transform: uppercase; }
-		.my-clean-nav { display: flex; list-style: none; margin: 0; padding: 0; align-items: center; flex-wrap: wrap; }
-		.my-clean-nav li { margin-left: 40px; position: relative; } 
-		.my-clean-nav a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 600; text-transform: uppercase; transition: color 0.3s ease; display: block; padding: 15px 0; }
-		.my-clean-nav a:hover { color: #ff9800; text-decoration: none; }
-		.dropdown-content { display: none; position: absolute; background-color: #1a1a24; min-width: 250px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); z-index: 1; top: 100%; left: 0; border-radius: 4px; padding: 10px 0; }
-		.dropdown:hover .dropdown-content { display: block; }
-		.dropdown-content a { color: #fff; padding: 10px 20px; text-decoration: none; display: block; font-size: 13px; text-transform: none; font-weight: 400; transition: 0.2s; border-left: 3px solid transparent; }
-		.dropdown-content a:hover { background-color: #2a2a3d; color: #ff9800; border-left: 3px solid #ff9800; }
-		.dropdown-category-title { padding: 10px 20px 5px 20px; color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; border-bottom: 1px solid #333; margin-bottom: 5px; margin-top: 5px; pointer-events: none; }
-		.project-detail-container { max-width: 900px; margin: 60px auto; padding: 60px; background: #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-radius: 12px; box-sizing: border-box; }
-		.project-header { text-align: center; margin-bottom: 40px; }
-		.project-header h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; color: #111; letter-spacing: 1px; text-transform: uppercase; }
-		.project-header p.subtitle { font-size: 18px; color: #777; margin: 0; font-weight: 500; }
-		.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; margin-bottom: 50px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
-		.video-wrapper iframe, .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-		.content-section { margin-bottom: 50px; }
-		.content-section h2 { font-size: 26px; font-weight: bold; color: #111; margin-bottom: 20px; padding-left: 15px; border-left: 5px solid #ff9800; line-height: 1.2; }
-		.content-section p { font-size: 16px; line-height: 1.8; color: #444; text-align: justify; margin-bottom: 15px; }
-		.contribution-list { font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 15px; padding-left: 25px; }
-		.contribution-list li { margin-bottom: 12px; }
-		.contribution-list li strong { color: #111; font-weight: 700; }
-		.back-btn-container { text-align: center; margin-top: 60px; border-top: 1px solid #eaeaea; padding-top: 40px; }
-		.back-btn { background-color: #0f0f1b; color: #fff; padding: 14px 40px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background-color 0.3s ease, transform 0.3s ease; display: inline-block; }
-		.back-btn:hover { background-color: #ff9800; color: #fff; text-decoration: none; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255,152,0,0.3); }
-
-		@media (max-width: 1024px) { .project-detail-container { margin: 40px 20px; padding: 40px 30px; } }
-		@media (max-width: 768px) {
-			.my-clean-header { flex-direction: column; padding: 15px; }
-			.my-clean-logo { align-items: center; }
-			.my-clean-nav { margin-top: 15px; width: 100%; justify-content: center; }
-			.my-clean-nav li { margin: 5px 10px; }
-			.dropdown-content { position: static; display: none; box-shadow: none; background: #222; width: 100%; }
-			.dropdown:hover .dropdown-content { display: block; }
-			.project-detail-container { padding: 30px 20px; margin: 20px 10px; }
-			.project-header h1 { font-size: 32px; }
-		}
-	</style>
+	<title>Terrarium | Xuehan Li</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+	<link href="css/project-detail.css" rel="stylesheet">
 </head>
 <body>
-<header class="my-clean-header">
-<div class="my-clean-logo">
-<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
-<span class="job-title">关卡设计师</span>
-</div>
-<ul class="my-clean-nav">
-<li><a href="index.html">首页</a></li>
-<li class="dropdown">
-<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
-<div class="dropdown-content">
-<div class="dropdown-category-title">个人项目与论文</div>
-<a href="project1.html">ContainmentBreach（星空）</a>
-<a href="project2.html">论文：类魂关卡拓扑</a>
-<a href="project3.html">Invalidprescription（星空）</a>
-<a href="project4.html">逃离发电厂（半衰期 2）</a>
-<a href="project5.html">Coldfront（雷神之锤 3）</a>
-<a href="project6.html">Beast Motos（桌游）</a>
-<div class="dropdown-category-title">团队项目</div>
-<a href="project7.html">Petalnaut</a>
-<a href="project8.html">HamsterBallin</a>
-<a href="project9.html">未公开项目</a>
-<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
-<a href="project10.html">GGJ 2024：Make Me Laugh</a>
-<a href="project11.html">LD 54：Summon</a>
-<a href="project12.html">GMTK 2024：Build to Scale</a>
-</div>
-</li>
-<li><a href="index.html#about">关于我</a></li>
-<li><a href="index.html#contact">联系方式</a></li>
-</ul>
-</header>
-<div class="project-detail-container">
-<div class="project-header">
-<h1>GMTK 2024：Build to Scale</h1>
-<p class="subtitle">解谜平台玩法与动态环境缩放</p>
-</div>
-<div class="video-wrapper">
-<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="GMTK 2024 视频占位"></iframe>
-</div>
-<div class="content-section">
-<h2>项目简介</h2>
-<p>本项目参加竞争激烈的 GMTK Game Jam 2024，主题为“Built to Scale”。团队制作了一款解谜平台游戏，玩家可以动态改变环境物件的尺寸，用它们搭桥、阻挡危险或抵达高处。这要求关卡尺度与谜题概念具有极高精度。</p>
-</div>
-<div class="content-section">
-<h2>我的工作</h2>
-<ul class="contribution-list">
-<li><strong>谜题设计：</strong> 搭建 5 个不同的谜题房间，每个房间引入缩放机制的一种新用途，例如缩小方块以穿过缺口，或放大方块以增加质量与重量。</li>
-<li><strong>边界控制：</strong> 实施严格的包围盒限制，防止玩家无限放大物件而破坏物理引擎和游戏流程。</li>
-<li><strong>视觉可供性：</strong> 与美术师协作，确保可缩放物件能够从静态背景元素中被玩家立即识别。</li>
-</ul>
-</div>
-<div class="content-section">
-<h2>设计分析</h2>
-<p>当玩家可以改变关卡几何形状时，设计天然存在风险，因为这会鼓励玩家跳过预定流程。我的解决方案是“锁与钥匙拓扑”：房间的物理空间本身是锁，而可缩放方块则是钥匙。</p>
-<p>例如，谜题可能要求玩家先将方块缩小，使其穿过狭窄缝隙，再在另一侧放大，把它变成楼梯。通过严格控制缝隙和平台尺寸，我在机制具有自由形式的同时，仍能保留谜题顿悟的“原来如此”时刻。</p>
-</div>
-<div class="back-btn-container">
-<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
-</div>
-</div>
-<script src="js/jquery-2.2.3.min.js"></script>
+	<header class="my-clean-header">
+		<div class="my-clean-logo">
+			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
+			<span class="job-title">Level Designer</span>
+		</div>
+		<ul class="my-clean-nav">
+			<li><a href="index.html">HOME</a></li>
+			<li class="dropdown">
+				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
+				<div class="dropdown-content">
+					<div class="dropdown-category-title">Personal Projects</div>
+					<a href="project1.html">ContainmentBreach (Starfield)</a>
+					<a href="project3.html">Invalidprescription (Starfield)</a>
+					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
+					<div class="dropdown-category-title">Team Projects</div>
+					<a href="project7.html">Petalnaut</a>
+					<a href="project8.html">Hamsterballin'</a>
+					<a href="project9.html">Unannounced Project</a>
+					<div class="dropdown-category-title">Game Jams</div>
+					<a href="project10.html">GGJ 2024: Make Me Laugh</a>
+					<a href="project11.html">LD 55: Summon</a>
+					<a href="project12.html">GMTK 2024: Built to Scale</a>
+				</div>
+			</li>
+			<li><a href="index.html#about">ABOUT</a></li>
+			<li><a href="index.html#contact">CONTACT</a></li>
+		</ul>
+	</header>
+
+	<main class="project-detail-container">
+		<div class="project-header">
+			<h1>Terrarium</h1>
+			<p class="subtitle">GMTK Game Jam 2024 · Built to Scale</p>
+		</div>
+
+		<img class="hero-image" src="images/project12/terrarium-01.png" alt="Terrarium 蚂蚁与蚁后游戏画面">
+		<div class="project-links">
+			<a class="external-btn" href="https://how-low-hello.itch.io/terrarium" target="_blank" rel="noopener noreferrer"><i class="fa fa-gamepad"></i> 在 itch.io 在线游玩</a>
+		</div>
+
+		<div class="fact-grid">
+			<div class="fact-card"><strong>时间</strong><span>2024.08</span></div>
+			<div class="fact-card"><strong>项目形式</strong><span>GMTK Game Jam 团队项目</span></div>
+			<div class="fact-card"><strong>我的职责</strong><span>Tilemap / 场景绘制 / 动画</span></div>
+			<div class="fact-card"><strong>开发工具</strong><span>Unity · 2D 平台跳跃</span></div>
+		</div>
+
+		<section class="content-section">
+			<h2>项目概述</h2>
+			<p><em>Terrarium</em> 是一款 2D 平台跳跃游戏。玩家扮演工蚁，在生态箱中寻找蚁后需要的食物，跨越障碍并把食物安全送回蚁后身边。关卡以平台移动、路线判断和环境障碍构成主要挑战。</p>
+		</section>
+
+		<section class="content-section">
+			<h2>我的工作</h2>
+			<ul class="contribution-list">
+				<li><strong>地图 Tilemap：</strong>负责地图 Tilemap 的绘制与关卡画面搭建。</li>
+				<li><strong>近、中、远景：</strong>负责近景、中景和远景的绘制，建立关卡的空间层次。</li>
+				<li><strong>动画制作：</strong>制作部分敌人动画与手部动画。</li>
+			</ul>
+		</section>
+
+		<section class="content-section">
+			<h2>画面与关卡表达</h2>
+			<div class="analysis-grid">
+				<div class="analysis-card">
+					<h3>Tilemap 与平台路线</h3>
+					<p>Tilemap 同时承担平台碰撞与画面构成。平台边缘、落点和障碍轮廓需要清楚，使玩家在移动和跳跃中能够快速读取路线。</p>
+				</div>
+				<div class="analysis-card">
+					<h3>近中远景分层</h3>
+					<p>近景、中景和远景共同建立生态箱的纵深，同时通过明度与细节差异避免背景干扰可操作平台和敌人的识别。</p>
+				</div>
+				<div class="analysis-card">
+					<h3>角色与敌人动画</h3>
+					<p>敌人与手部动画用于强化动作反馈，让玩家更容易理解攻击、受击以及场景中的动态事件。</p>
+				</div>
+				<div class="analysis-card">
+					<h3>风格一致性</h3>
+					<p>平台、背景层和动画需要共享统一的像素密度、轮廓语言与色彩关系，使不同成员制作的内容能够形成完整场景。</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2>游戏画面</h2>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project12/terrarium-01.png" target="_blank"><img src="images/project12/terrarium-01.png" alt="工蚁与蚁后"></a><figcaption>蚁后提出食物需求，建立玩家的关卡目标。</figcaption></figure>
+				<figure class="media-card"><a href="images/project12/terrarium-02.png" target="_blank"><img loading="lazy" src="images/project12/terrarium-02.png" alt="Terrarium 平台路线"></a><figcaption>Tilemap 平台与路线组织。</figcaption></figure>
+				<figure class="media-card"><a href="images/project12/terrarium-03.png" target="_blank"><img loading="lazy" src="images/project12/terrarium-03.png" alt="Terrarium 跳跃画面"></a><figcaption>平台高度与边缘信息支持跳跃判断。</figcaption></figure>
+				<figure class="media-card"><a href="images/project12/terrarium-04.png" target="_blank"><img loading="lazy" src="images/project12/terrarium-04.png" alt="Terrarium 环境障碍"></a><figcaption>环境障碍与可操作空间的视觉区分。</figcaption></figure>
+				<figure class="media-card"><a href="images/project12/terrarium-05.png" target="_blank"><img loading="lazy" src="images/project12/terrarium-05.png" alt="Terrarium 多层平台"></a><figcaption>近、中、远景为平台关卡建立纵深。</figcaption></figure>
+			</div>
+			<p class="source-note">以上图片来自项目公开 itch.io 页面。</p>
+		</section>
+
+		<div class="back-btn-container">
+			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+		</div>
+	</main>
 </body>
 </html>

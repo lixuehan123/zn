@@ -1,122 +1,235 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
-<title>逃离发电厂 | 李学汉</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
-<link href="css/font-awesome.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
-<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
-<style>
-		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
-		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
-		.my-clean-logo { display: flex; flex-direction: column; }
-		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
-		.my-clean-logo a:hover { color: #ff9800; text-decoration: none; }
-		.job-title { color: #ff9800; font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-top: 6px; text-transform: uppercase; }
-		.my-clean-nav { display: flex; list-style: none; margin: 0; padding: 0; align-items: center; flex-wrap: wrap; }
-		.my-clean-nav li { margin-left: 40px; position: relative; } 
-		.my-clean-nav a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 600; text-transform: uppercase; transition: color 0.3s ease; display: block; padding: 15px 0; }
-		.my-clean-nav a:hover { color: #ff9800; text-decoration: none; }
-		.dropdown-content { display: none; position: absolute; background-color: #1a1a24; min-width: 250px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); z-index: 1; top: 100%; left: 0; border-radius: 4px; padding: 10px 0; }
-		.dropdown:hover .dropdown-content { display: block; }
-		.dropdown-content a { color: #fff; padding: 10px 20px; text-decoration: none; display: block; font-size: 13px; text-transform: none; font-weight: 400; transition: 0.2s; border-left: 3px solid transparent; }
-		.dropdown-content a:hover { background-color: #2a2a3d; color: #ff9800; border-left: 3px solid #ff9800; }
-		.dropdown-category-title { padding: 10px 20px 5px 20px; color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; border-bottom: 1px solid #333; margin-bottom: 5px; margin-top: 5px; pointer-events: none; }
-		.project-detail-container { max-width: 900px; margin: 60px auto; padding: 60px; background: #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-radius: 12px; box-sizing: border-box; }
-		.project-header { text-align: center; margin-bottom: 40px; }
-		.project-header h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; color: #111; letter-spacing: 1px; text-transform: uppercase; }
-		.project-header p.subtitle { font-size: 18px; color: #777; margin: 0; font-weight: 500; }
-		.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; margin-bottom: 50px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
-		.video-wrapper iframe, .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-		.content-section { margin-bottom: 50px; }
-		.content-section h2 { font-size: 26px; font-weight: bold; color: #111; margin-bottom: 20px; padding-left: 15px; border-left: 5px solid #ff9800; line-height: 1.2; }
-		.content-section p { font-size: 16px; line-height: 1.8; color: #444; text-align: justify; margin-bottom: 15px; }
-		.contribution-list { font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 15px; padding-left: 25px; }
-		.contribution-list li { margin-bottom: 12px; }
-		.contribution-list li strong { color: #111; font-weight: 700; }
-		.back-btn-container { text-align: center; margin-top: 60px; border-top: 1px solid #eaeaea; padding-top: 40px; }
-		.back-btn { background-color: #0f0f1b; color: #fff; padding: 14px 40px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background-color 0.3s ease, transform 0.3s ease; display: inline-block; }
-		.back-btn:hover { background-color: #ff9800; color: #fff; text-decoration: none; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255,152,0,0.3); }
-
-		@media (max-width: 1024px) { .project-detail-container { margin: 40px 20px; padding: 40px 30px; } }
-		@media (max-width: 768px) {
-			.my-clean-header { flex-direction: column; padding: 15px; }
-			.my-clean-logo { align-items: center; }
-			.my-clean-nav { margin-top: 15px; width: 100%; justify-content: center; }
-			.my-clean-nav li { margin: 5px 10px; }
-			.dropdown-content { position: static; display: none; box-shadow: none; background: #222; width: 100%; }
-			.dropdown:hover .dropdown-content { display: block; }
-			.project-detail-container { padding: 30px 20px; margin: 20px 10px; }
-			.project-header h1 { font-size: 32px; }
+	<title>Escape from Power Plant | Xuehan Li</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+	<style>
+		body { margin:0; padding:0; font-family:'Open Sans','Microsoft YaHei',sans-serif; background:#f7f7f9; color:#333; }
+		.my-clean-header { display:flex; justify-content:space-between; align-items:center; background:#0f0f1b; padding:15px 5%; position:sticky; top:0; z-index:99999; box-shadow:0 2px 10px rgba(0,0,0,.5); width:100%; box-sizing:border-box; }
+		.my-clean-logo { display:flex; flex-direction:column; }
+		.my-clean-logo a { color:#fff; text-decoration:none; font-size:32px; font-weight:bold; letter-spacing:1px; line-height:1; }
+		.my-clean-logo a:hover, .my-clean-nav a:hover { color:#ff9800; text-decoration:none; }
+		.job-title { color:#ff9800; font-size:14px; font-weight:600; letter-spacing:2px; margin-top:6px; text-transform:uppercase; }
+		.my-clean-nav { display:flex; list-style:none; margin:0; padding:0; align-items:center; flex-wrap:wrap; }
+		.my-clean-nav li { margin-left:40px; position:relative; }
+		.my-clean-nav a { color:#fff; text-decoration:none; font-size:15px; font-weight:600; text-transform:uppercase; display:block; padding:15px 0; }
+		.dropdown-content { display:none; position:absolute; background:#1a1a24; min-width:250px; box-shadow:0 8px 16px rgba(0,0,0,.5); z-index:1; top:100%; left:0; border-radius:4px; padding:10px 0; }
+		.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display:block; }
+		.dropdown-content a { color:#fff; padding:10px 20px; font-size:13px; text-transform:none; font-weight:400; border-left:3px solid transparent; }
+		.dropdown-content a:hover { background:#2a2a3d; color:#ff9800; border-left-color:#ff9800; }
+		.dropdown-category-title { padding:10px 20px 5px; color:#777; font-size:11px; text-transform:uppercase; letter-spacing:1px; font-weight:bold; border-bottom:1px solid #333; margin:5px 0; }
+		.project-detail-container { max-width:1000px; margin:60px auto; padding:60px; background:#fff; box-shadow:0 10px 40px rgba(0,0,0,.08); border-radius:12px; box-sizing:border-box; }
+		.project-header { text-align:center; margin-bottom:40px; }
+		.project-header h1 { font-family:'Jura',sans-serif; font-size:44px; font-weight:700; margin:0 0 12px; color:#111; letter-spacing:1px; text-transform:uppercase; }
+		.project-header .subtitle { font-size:18px; color:#777; margin:0; font-weight:500; }
+		.video-wrapper { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px; background:#000; margin-bottom:50px; box-shadow:0 8px 25px rgba(0,0,0,.15); }
+		.video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+		.content-section { margin-bottom:52px; }
+		.content-section h2 { font-size:26px; font-weight:bold; color:#111; margin:0 0 20px; padding-left:15px; border-left:5px solid #ff9800; line-height:1.2; }
+		.content-section h3 { font-size:20px; font-weight:700; color:#222; margin:30px 0 12px; }
+		.content-section p, .content-section li { font-size:16px; line-height:1.8; color:#444; }
+		.content-section p { margin:0 0 15px; text-align:justify; }
+		.fact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; }
+		.fact { background:#fff6ea; border:1px solid #f3d2ad; border-radius:6px; padding:18px; }
+		.fact strong { display:block; color:#d76d00; font-size:20px; margin-bottom:4px; }
+		.fact span { font-size:13px; color:#6a5d50; }
+		.media-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:22px; }
+		.media-grid.three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+		.media-card { margin:0; border:1px solid #e7e7e7; border-radius:7px; overflow:hidden; background:#fafafa; }
+		.media-card a { display:block; background:#16161c; }
+		.media-card img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; }
+		.media-card img.contain { object-fit:contain; background:#f3f3f3; }
+		.media-card figcaption { padding:11px 13px; font-size:13px; line-height:1.55; color:#666; }
+		.note { padding:18px 20px; margin:20px 0; border-left:4px solid #ff9800; background:#fff6ea; color:#555; line-height:1.75; }
+		.gallery-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+		.gallery-grid a { display:block; overflow:hidden; border-radius:6px; background:#111; }
+		.gallery-grid img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; transition:transform .3s ease; }
+		.gallery-grid a:hover img { transform:scale(1.04); }
+		.back-btn-container { text-align:center; margin-top:60px; border-top:1px solid #eaeaea; padding-top:40px; }
+		.back-btn { background:#0f0f1b; color:#fff; padding:14px 40px; font-size:16px; font-weight:600; text-decoration:none; border-radius:6px; display:inline-block; }
+		.back-btn:hover { background:#ff9800; color:#fff; text-decoration:none; }
+		@media (max-width:1024px) { .project-detail-container { margin:40px 20px; padding:40px 30px; } }
+		@media (max-width:768px) {
+			.my-clean-header { flex-direction:column; padding:15px; position:relative; }
+			.my-clean-logo { align-items:center; }
+			.my-clean-nav { margin-top:15px; width:100%; justify-content:center; }
+			.my-clean-nav li { margin:5px 10px; }
+			.dropdown-content { position:absolute; left:50%; transform:translateX(-50%); }
+			.project-detail-container { padding:30px 20px; margin:20px 10px; }
+			.project-header h1 { font-size:32px; }
+			.fact-grid, .media-grid, .media-grid.three, .gallery-grid { grid-template-columns:1fr; }
 		}
 	</style>
 </head>
 <body>
-<header class="my-clean-header">
-<div class="my-clean-logo">
-<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
-<span class="job-title">关卡设计师</span>
-</div>
-<ul class="my-clean-nav">
-<li><a href="index.html">首页</a></li>
-<li class="dropdown">
-<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
-<div class="dropdown-content">
-<div class="dropdown-category-title">个人项目与论文</div>
-<a href="project1.html">ContainmentBreach（星空）</a>
-<a href="project2.html">论文：类魂关卡拓扑</a>
-<a href="project3.html">Invalidprescription（星空）</a>
-<a href="project4.html">逃离发电厂（半衰期 2）</a>
-<a href="project5.html">Coldfront（雷神之锤 3）</a>
-<a href="project6.html">Beast Motos（桌游）</a>
-<div class="dropdown-category-title">团队项目</div>
-<a href="project7.html">Petalnaut</a>
-<a href="project8.html">HamsterBallin</a>
-<a href="project9.html">未公开项目</a>
-<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
-<a href="project10.html">GGJ 2024：Make Me Laugh</a>
-<a href="project11.html">LD 54：Summon</a>
-<a href="project12.html">GMTK 2024：Build to Scale</a>
-</div>
-</li>
-<li><a href="index.html#about">关于我</a></li>
-<li><a href="index.html#contact">联系方式</a></li>
-</ul>
-</header>
-<div class="project-detail-container">
-<div class="project-header">
-<h1>逃离发电厂</h1>
-<p class="subtitle">《半衰期 2》自定义模组与线性 FPS 关卡设计</p>
-</div>
-<div class="video-wrapper">
-<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="项目 4 视频占位"></iframe>
-</div>
-<div class="content-section">
-<h2>项目简介</h2>
-<p>《逃离发电厂》是一个使用 Source 引擎 Hammer 编辑器制作的经典叙事驱动型线性 FPS 关卡。项目目标是掌握传统关卡节奏的基础，尤其是《半衰期 2》式体验中紧张感、敌人遭遇与环境谜题之间的起伏变化。</p>
-</div>
-<div class="content-section">
-<h2>我的工作</h2>
-<ul class="contribution-list">
-<li><strong>Hammer 编辑器灰盒搭建：</strong> 完成整座发电厂设施的灰盒布局，使玩家路径直观但仍具挑战。</li>
-<li><strong>可视化脚本与触发器：</strong> 设置复杂的 I/O 实体（输入／输出），触发爆炸桶、结构坍塌与同步敌人伏击。</li>
-<li><strong>战斗遭遇节奏：</strong> 在策略位置布置联合军士兵与僵尸，形成具有不同战术需求的独立战斗空间。</li>
-<li><strong>灯光引导：</strong> 利用 Source 引擎灯光系统，细微地将玩家视线引向关键路径与生命补给。</li>
-</ul>
-</div>
-<div class="content-section">
-<h2>设计分析</h2>
-<p>关卡布局遵循严格的节奏曲线：铺垫、高潮与收束。我尤其重视“视线控制”，确保玩家不会同时受到 360 度敌人的压迫，而是面对经过收束的挑战，促使其有效使用掩体与物理物件。</p>
-<p>中央发电机房是关卡中的关键设计节点，它像一扇“阀门”，也是不可返回点。玩家必须在此抵御多方向围攻后逃离，并运用此前较慢探索阶段中逐步建立的空间认知。</p>
-</div>
-<div class="back-btn-container">
-<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
-</div>
-</div>
-<script src="js/jquery-2.2.3.min.js"></script>
+	<header class="my-clean-header">
+		<div class="my-clean-logo">
+			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
+			<span class="job-title">Level Designer</span>
+		</div>
+		<ul class="my-clean-nav">
+			<li><a href="index.html">HOME</a></li>
+			<li class="dropdown">
+				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
+				<div class="dropdown-content">
+					<div class="dropdown-category-title">Personal Projects</div>
+					<a href="project1.html">ContainmentBreach (Starfield)</a>
+					<a href="project3.html">Invalidprescription (Starfield)</a>
+					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
+					<div class="dropdown-category-title">Team Projects</div>
+					<a href="project7.html">Petalnaut</a>
+					<a href="project8.html">Hamsterballin'</a>
+					<a href="project9.html">Unannounced Project</a>
+					<div class="dropdown-category-title">Game Jams</div>
+					<a href="project10.html">GGJ 2024: Make me laugh</a>
+					<a href="project11.html">LD 55: Summon</a>
+					<a href="project12.html">GMTK 2024: Built to Scale</a>
+				</div>
+			</li>
+			<li><a href="index.html#about">ABOUT</a></li>
+			<li><a href="index.html#contact">CONTACT</a></li>
+		</ul>
+	</header>
+
+	<div class="project-detail-container">
+		<div class="project-header">
+			<h1>Escape from Power Plant</h1>
+			<p class="subtitle">《半衰期 2》支线任务与电路谜题设计</p>
+		</div>
+
+		<div class="video-wrapper">
+			<iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=116911761266152&amp;bvid=BV1HXNy6VE2R&amp;cid=39908215364&amp;p=1" scrolling="no" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Escape from Power Plant 项目演示"></iframe>
+		</div>
+
+		<div class="content-section">
+			<h2>项目概览</h2>
+			<p>该关卡是一个《半衰期 2》支线任务，主要用于训练谜题设计：如何使用场景演出来暗示玩家，如何设置 conveyance 来引导玩家，如何通过关卡初始布局向玩家传递信息，以及如何重复利用有限资源完成解谜。核心机制类似《塞尔达传说》中的电之神庙：玩家需要使用导电金属块连接电路，最终逃出工厂。</p>
+			<div class="fact-grid">
+				<div class="fact"><strong>50 小时</strong><span>设计、搭建与迭代</span></div>
+				<div class="fact"><strong>约 15 分钟</strong><span>完整关卡流程</span></div>
+				<div class="fact"><strong>2 + 5</strong><span>2 个大型战斗区域、5 个核心解谜环节</span></div>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>关卡布局</h2>
+			<p>关卡布局围绕电路机制的学习顺序展开。战斗区域、谜题房间、上下层空间与可回收资源被安排在同一条连续流程中，让玩家能够先观察目标，再学习规则，最后把前面使用过的资源带入后续谜题。</p>
+			<div class="media-grid three">
+				<figure class="media-card"><a href="images/project4/image-002-fd08a50d45d6.png" target="_blank"><img class="contain" src="images/project4/image-002-fd08a50d45d6.png" alt="逃出电厂关卡总览"></a><figcaption>关卡总览：战斗区、谜题区与主要流程。</figcaption></figure>
+				<figure class="media-card"><a href="images/project4/image-003-35e50e1008bc.png" target="_blank"><img class="contain" src="images/project4/image-003-35e50e1008bc.png" alt="逃出电厂立体布局"></a><figcaption>立体布局与上下层关系。</figcaption></figure>
+				<figure class="media-card"><a href="images/project4/image-004-b8eee871277d.png" target="_blank"><img class="contain" src="images/project4/image-004-b8eee871277d.png" alt="逃出电厂局部布局"></a><figcaption>局部布局与路线连接。</figcaption></figure>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>目标 1：机制设计</h2>
+			<h3>如何筛选出好的机制</h3>
+			<p><strong>传达性：</strong>作为《半衰期 2》的衍生关卡，机制需要符合当前世界观。《半衰期 2》包含大量物理模拟，因此机制最好与现实世界的物理现象结合，尽可能符合玩家直觉。在我的几个备选方案中，电路谜题虽然没有在原版中出现过，却最符合这个世界观的设定。</p>
+			<p><strong>优雅度：</strong>电路谜题的基础操作只是把两个冒着电火花的电路连接起来。这个动作足够简单，适合在教学初期快速建立规则。</p>
+			<p><strong>涌现性：</strong>机制还需要有足够潜力衍生出更多玩法。把两个物体连接起来，可以进一步发展为距离谜题、介质传递谜题、对应关系谜题、顺序谜题和时间谜题。</p>
+
+			<h3>如何挖掘机制的潜力</h3>
+			<p><strong>逻辑门：</strong>如果谜题目前使用的是 AND 关系，就继续思考 OR 或 NOT 是否也能成为玩法的一部分。</p>
+			<p><strong>时间与空间维度：</strong>从距离或时间维度限制玩家可使用的资源，使同一套连接规则产生新的解法。</p>
+			<p><strong>顺序与数量：</strong>继续推演多个电路同时出现时会形成怎样的谜题，以及连接数量和连接顺序如何改变结果。</p>
+
+			<h3>如何围绕机制设计关卡背景</h3>
+			<p><strong>叙事：</strong>玩家为什么会在这个地方使用这套机制，并完成这件事？</p>
+			<p><strong>玩家直觉：</strong>场景必须清楚区分哪些物体可以利用，哪些物体只是环境的一部分。</p>
+			<p><strong>氛围：</strong>机制带给玩家的心理体验是紧张还是休闲，也会影响空间和节奏的安排。</p>
+			<p><strong>地编：</strong>环境美术需要补充机制与叙事，但最重要的是不能干扰谜题，也不能放置看起来可以互动、实际上却无法互动的物体。</p>
+		</div>
+
+		<div class="content-section">
+			<h2>目标 2：谜题设计</h2>
+			<h3>谜题教学顺序与关卡规划</h3>
+			<p>我将谜题的学习顺序分为四步：A. 玩家直接使用电线导电；B. 玩家使用水导电；C. 玩家使用水让不同的电线相互连通，并掌握电线的颜色对应关系；D. 玩家按照正确的连接顺序通关。通过“学习、巩固、突破、结合”四个步骤，谜题难度层层递进，而不是突然把多个规则同时交给玩家。</p>
+			<figure class="media-card"><a href="images/project4/image-005-4c2bf3e151fe.png" target="_blank"><img class="contain" loading="lazy" src="images/project4/image-005-4c2bf3e151fe.png" alt="电路谜题学习顺序与关卡规划"></a><figcaption>电路谜题的学习顺序与关卡规划。</figcaption></figure>
+
+			<h3>预见性的目标与场景信息传达</h3>
+			<p>关卡开始时，我通过过场动画向玩家展示最终目标：两个冒着电火花的方块相互连接，绿色灯光表示电路已经连通，工厂大门保持开启，同时敌人在下方巡逻。玩家在真正开始操作前，就已经看到机制、反馈、目标与危险之间的关系。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project4/image-006-54b13a2eb962.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-006-54b13a2eb962.jpeg" alt="开场演出展示最终目标"></a><figcaption>开场演出展示最终目标和电路连接状态。</figcaption></figure>
+				<figure class="media-card"><a href="images/project4/image-007-ac2c061150da.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-007-ac2c061150da.jpeg" alt="开场演出展示工厂大门和敌人"></a><figcaption>大门保持开启，敌人在下方巡逻。</figcaption></figure>
+			</div>
+			<p>为了告知玩家水可以导电，我把教学嵌入场景演出：玩家想拿到第一关的电线，就一定会看到一个僵尸冲向玩家，并被冒着电火花的水面电死。规则通过事件直接展示，而不是依靠文字说明。</p>
+			<figure class="media-card"><a href="images/project4/image-008-e6b7df021e0c.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-008-e6b7df021e0c.jpeg" alt="僵尸被通电水面击杀的教学演出"></a><figcaption>僵尸被通电水面击杀，向玩家传达“水可以导电并造成伤害”。</figcaption></figure>
+			<p>红色灯光与紧闭的大门用来标记当前谜题的目标。后续关卡始终保持这一视觉语言的一致性：只要玩家看到红灯，就知道这里需要供电。</p>
+			<figure class="media-card"><a href="images/project4/image-009-9b535621687c.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-009-9b535621687c.jpeg" alt="红灯与紧闭大门标记谜题目标"></a><figcaption>红灯与紧闭的大门共同标记当前目标。</figcaption></figure>
+
+			<h3>强制性教学</h3>
+			<p>如果希望玩家真正掌握一种基础交互，就必须让它成为继续前进的必要条件。我想让玩家知道木箱可以搬动，就用木箱堵住路线；玩家必须搬开木箱才能继续。类似地，玩家必须破坏木板才能前进，从而自然学会“木板可以被破坏”。</p>
+			<div class="media-grid three">
+				<figure class="media-card"><a href="images/project4/image-010-df4bb1d2750c.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-010-df4bb1d2750c.jpeg" alt="木箱堵路的强制教学"></a><figcaption>木箱堵住路线，玩家必须搬动它。</figcaption></figure>
+				<figure class="media-card"><a href="images/project4/image-011-199d307b2d29.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-011-199d307b2d29.jpeg" alt="可破坏木板教学一"></a><figcaption>木板阻挡前路，建立可破坏物规则。</figcaption></figure>
+				<figure class="media-card"><a href="images/project4/image-012-38d7dcd9f9cb.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-012-38d7dcd9f9cb.jpeg" alt="可破坏木板教学二"></a><figcaption>玩家必须破坏木板才能继续。</figcaption></figure>
+			</div>
+
+			<h3>一致性的 Conveyance</h3>
+			<p>我在整个关卡中保持 conveyance 的一致性：绿色灯光表示电线已经通电，红色灯光表示该位置仍然需要供电；电火花则始终意味着危险和伤害。这样，玩家在后续遇到更复杂的谜题时，不需要重新猜测基础视觉语言。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project4/image-013-6932dc15e4f0.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-013-6932dc15e4f0.jpeg" alt="绿色灯光表示已经通电"></a><figcaption>绿色灯光：电线已经通电。</figcaption></figure>
+				<figure class="media-card"><a href="images/project4/image-014-dc259d58b9cc.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-014-dc259d58b9cc.jpeg" alt="红色灯光表示需要供电"></a><figcaption>红色灯光：该位置仍然需要供电。</figcaption></figure>
+				<figure class="media-card"><a href="images/project4/image-015-e8d695836c55.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-015-e8d695836c55.jpeg" alt="电火花表示伤害一"></a><figcaption>电火花始终表示危险和伤害。</figcaption></figure>
+				<figure class="media-card"><a href="images/project4/image-016-237e69a3d545.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-016-237e69a3d545.jpeg" alt="电火花表示伤害二"></a><figcaption>相同反馈在不同谜题中保持一致。</figcaption></figure>
+			</div>
+
+			<h3>迷惑点设计</h3>
+			<p>迷惑点的作用不是随意增加难度，而是引发逻辑思考，并借机传达更深层的机制信息。我希望玩家理解“蓝色电线必须与蓝色电线相连，红色电线必须与红色电线相连，电流才能通过”，因此设置了红线与蓝线已经连接、灯光却没有变绿的状态。玩家看到基础操作已经完成但反馈没有出现，就会开始思考颜色对应关系。</p>
+			<figure class="media-card"><a href="images/project4/image-017-ee69b73275cc.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-017-ee69b73275cc.jpeg" alt="红蓝电线错误连接的迷惑点"></a><figcaption>红线与蓝线虽然相连，但灯光没有变绿，促使玩家理解颜色对应规则。</figcaption></figure>
+			<p>玩家已经学会通电的水会造成伤害，但关卡又要求玩家必须穿过这片水。此时玩家需要回忆之前学过的知识：木箱可以搬动，因此可以用木箱垫脚，避开水面的伤害。新的谜题不是引入无关机制，而是组合已经完成教学的规则。</p>
+			<figure class="media-card"><a href="images/project4/image-018-5e04ccad8139.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-018-5e04ccad8139.jpeg" alt="使用木箱通过通电水域"></a><figcaption>组合“通电水会伤害玩家”和“木箱可以搬动”两条已学规则。</figcaption></figure>
+
+			<h3>锁钥嵌套结构与资源重复利用</h3>
+			<p>锁钥嵌套在解谜关卡中非常常见。简单来说，玩家无法直接解开最终谜题：玩家拥有一把 A 钥匙和两把 A 锁，需要先用 A 钥匙获得 B 钥匙，再用 B 钥匙打开 B 锁，同时释放 A 钥匙去打开另一把 A 锁。它的核心是逐步解除资源限制。</p>
+			<p>在我的关卡中，玩家若想通过前面出现的通电水域，就必须搬运箱子；但为了开门，玩家已经让原本安全的水域通电。因此玩家需要先断电让门关闭，把箱子取出来，再重新通电开门。这样，原本分开的两个谜题通过同一组资源合并成一个完整关卡。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project4/image-019-d0d2a4ede12d.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-019-d0d2a4ede12d.jpeg" alt="锁钥嵌套结构第一步"></a><figcaption>先断电并关闭门，释放被占用的箱子。</figcaption></figure>
+				<figure class="media-card"><a href="images/project4/image-020-8319a61e5d4a.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-020-8319a61e5d4a.jpeg" alt="锁钥嵌套结构第二步"></a><figcaption>取出箱子后重新通电开门，再利用箱子通过水域。</figcaption></figure>
+			</div>
+			<p>在最后一个谜题中，玩家会发现红色电线始终不够长。我利用空间的垂直关系，以及第一关破损的水管和楼下漏水的天花板，告诉玩家：第一关通向第二关的电源现在已经不再需要，可以回收并用于第四关。至此，各个谜题不再是孤立房间，而是通过资源回收完全关联起来。玩家不断利用已有资源解决不同谜题，才能最大程度挖掘机制的潜力。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project4/image-021-5a024a5d5f1a.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-021-5a024a5d5f1a.jpeg" alt="上下层空间提示资源可回收"></a><figcaption>破损水管与楼下漏水天花板建立上下层空间联系。</figcaption></figure>
+				<figure class="media-card"><a href="images/project4/image-022-31d7a61b066b.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-022-31d7a61b066b.jpeg" alt="回收前一关电源解决最终谜题"></a><figcaption>回收前一关不再需要的电源，用于解决后续谜题。</figcaption></figure>
+			</div>
+
+			<h3>错误假设</h3>
+			<p>错误假设可以打破玩家的固有思维，并趁机引入更深层的机制。第一关刚刚教学玩家“使用方块相连就能通电”；第二关却提供了有限的电线长度，玩家无论如何尝试都无法直接连接两个方块。房间中央同时出现了一片水，这会促使玩家重新检查已经学到的信息，并意识到：只要把两个方块都放入水中，就可以利用水作为导电介质延长连接距离。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project4/image-023-b40405b19ad0.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-023-b40405b19ad0.jpeg" alt="有限电线长度制造错误假设"></a><figcaption>电线长度不足，直接连接方案必然失败。</figcaption></figure>
+				<figure class="media-card"><a href="images/project4/image-024-5e6fdefa1fce.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-024-5e6fdefa1fce.jpeg" alt="利用水延长导电距离"></a><figcaption>把两个方块放入水中，利用水延长导电距离。</figcaption></figure>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>关卡画廊</h2>
+			<p>以下为最终游戏画面。点击图片可查看原图。</p>
+			<div class="gallery-grid">
+				<a href="images/project4/image-025-29afcfaa5401.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-025-29afcfaa5401.jpeg" alt="逃出电厂游戏截图 1"></a>
+				<a href="images/project4/image-026-baeea2443899.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-026-baeea2443899.jpeg" alt="逃出电厂游戏截图 2"></a>
+				<a href="images/project4/image-027-0f82becc9209.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-027-0f82becc9209.jpeg" alt="逃出电厂游戏截图 3"></a>
+				<a href="images/project4/image-028-e43ec35466e2.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-028-e43ec35466e2.jpeg" alt="逃出电厂游戏截图 4"></a>
+				<a href="images/project4/image-029-5db4d7a9a8a5.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-029-5db4d7a9a8a5.jpeg" alt="逃出电厂游戏截图 5"></a>
+				<a href="images/project4/image-030-626d908bf096.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-030-626d908bf096.jpeg" alt="逃出电厂游戏截图 6"></a>
+				<a href="images/project4/image-031-546b72f4ed37.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-031-546b72f4ed37.jpeg" alt="逃出电厂游戏截图 7"></a>
+				<a href="images/project4/image-032-d57e9bb364c5.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-032-d57e9bb364c5.jpeg" alt="逃出电厂游戏截图 8"></a>
+				<a href="images/project4/image-033-3e91e83fd8ff.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-033-3e91e83fd8ff.jpeg" alt="逃出电厂游戏截图 9"></a>
+				<a href="images/project4/image-034-458a7d39fe97.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-034-458a7d39fe97.jpeg" alt="逃出电厂游戏截图 10"></a>
+				<a href="images/project4/image-035-a096dd24c641.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-035-a096dd24c641.jpeg" alt="逃出电厂游戏截图 11"></a>
+				<a href="images/project4/image-036-84b8d2c2c8d4.jpeg" target="_blank"><img loading="lazy" src="images/project4/image-036-84b8d2c2c8d4.jpeg" alt="逃出电厂游戏截图 12"></a>
+			</div>
+		</div>
+
+		<div class="back-btn-container">
+			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+		</div>
+	</div>
+
+	<script src="js/jquery-2.2.3.min.js"></script>
 </body>
 </html>

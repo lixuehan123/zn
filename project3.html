@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
+
 <head>
-<title>Invalidprescription | 李学汉</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
-<link href="css/font-awesome.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
-<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
-<style>
+	<title>Invalidprescription | Xuehan Li</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+
+	<style>
 		/* ========================================== */
 		/* 全局与背景设定 */
 		/* ========================================== */
-		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
+		body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background-color: #f7f7f9; color: #333; }
 
 		/* ========================================== */
 		/* 导航栏 (与 index.html 完全一致) */
@@ -40,7 +42,7 @@
 		/* ========================================== */
 		/* 项目详情页专属卡片排版 */
 		/* ========================================== */
-		.project-detail-container { max-width: 900px; margin: 60px auto; padding: 60px; background: #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-radius: 12px; box-sizing: border-box; }
+		.project-detail-container { max-width: 1000px; margin: 60px auto; padding: 60px; background: #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-radius: 12px; box-sizing: border-box; }
 
 		.project-header { text-align: center; margin-bottom: 40px; }
 		.project-header h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; color: #111; letter-spacing: 1px; text-transform: uppercase; }
@@ -58,6 +60,23 @@
 		.contribution-list { font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 15px; padding-left: 25px; }
 		.contribution-list li { margin-bottom: 12px; }
 		.contribution-list li strong { color: #111; font-weight: 700; }
+		.content-section h3 { font-size: 20px; font-weight: 700; color: #222; margin: 30px 0 12px; }
+		.fact-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 24px; }
+		.fact { background:#fff6ea; border:1px solid #f3d2ad; border-radius:6px; padding:18px; }
+		.fact strong { display:block; color:#d76d00; font-size:20px; margin-bottom:4px; }
+		.fact span { font-size:13px; color:#6a5d50; }
+		.media-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:22px; }
+		.media-grid.three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+		.media-card { margin:0; border:1px solid #e7e7e7; border-radius:7px; overflow:hidden; background:#fafafa; }
+		.media-card a { display:block; background:#16161c; }
+		.media-card img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; }
+		.media-card img.contain { object-fit:contain; background:#f3f3f3; }
+		.media-card figcaption { padding:11px 13px; font-size:13px; line-height:1.55; color:#666; }
+		.note { padding:18px 20px; margin:20px 0; border-left:4px solid #ff9800; background:#fff6ea; color:#555; line-height:1.75; }
+		.gallery-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+		.gallery-grid a { display:block; overflow:hidden; border-radius:6px; background:#111; }
+		.gallery-grid img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; transition:transform .3s ease; }
+		.gallery-grid a:hover img { transform:scale(1.04); }
 
 		.back-btn-container { text-align: center; margin-top: 60px; border-top: 1px solid #eaeaea; padding-top: 40px; }
 		.back-btn { background-color: #0f0f1b; color: #fff; padding: 14px 40px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background-color 0.3s ease, transform 0.3s ease; display: inline-block; }
@@ -73,71 +92,247 @@
 			.dropdown:hover .dropdown-content { display: block; }
 			.project-detail-container { padding: 30px 20px; margin: 20px 10px; }
 			.project-header h1 { font-size: 32px; }
+			.fact-grid, .media-grid, .media-grid.three, .gallery-grid { grid-template-columns: 1fr; }
 		}
 	</style>
 </head>
+
 <body>
-<header class="my-clean-header">
-<div class="my-clean-logo">
-<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
-<span class="job-title">关卡设计师</span>
-</div>
-<ul class="my-clean-nav">
-<li><a href="index.html">首页</a></li>
-<li class="dropdown">
-<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
-<div class="dropdown-content">
-<div class="dropdown-category-title">个人项目与论文</div>
-<a href="project1.html">ContainmentBreach（星空）</a>
-<a href="project2.html">论文：类魂关卡拓扑</a>
-<a href="project3.html">Invalidprescription（星空）</a>
-<a href="project4.html">逃离发电厂（半衰期 2）</a>
-<a href="project5.html">Coldfront（雷神之锤 3）</a>
-<a href="project6.html">Beast Motos（桌游）</a>
-<div class="dropdown-category-title">团队项目</div>
-<a href="project7.html">Petalnaut</a>
-<a href="project8.html">HamsterBallin</a>
-<a href="project9.html">未公开项目</a>
-<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
-<a href="project10.html">GGJ 2024：Make Me Laugh</a>
-<a href="project11.html">LD 54：Summon</a>
-<a href="project12.html">GMTK 2024：Build to Scale</a>
-</div>
-</li>
-<li><a href="index.html#about">关于我</a></li>
-<li><a href="index.html#contact">联系方式</a></li>
-</ul>
-</header>
-<div class="project-detail-container">
-<div class="project-header">
-<h1>Invalidprescription</h1>
-<p class="subtitle">《星空》自定义任务与叙事环境</p>
-</div>
-<div class="video-wrapper">
-<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="项目 3 视频占位"></iframe>
-</div>
-<div class="content-section">
-<h2>项目简介</h2>
-<p>Invalidprescription 是一个使用《星空》Creation Kit 制作的叙事驱动型自定义关卡。不同于纯战斗竞技场，本项目重点关注环境叙事、节奏控制，以及引导玩家在废弃医疗设施中经历一系列神秘事件。</p>
-</div>
-<div class="content-section">
-<h2>我的工作</h2>
-<ul class="contribution-list">
-<li><strong>环境叙事：</strong> 策略性布置道具、灯光与贴花，无需大量文字说明即可传达设施的历史。</li>
-<li><strong>任务逻辑实现：</strong> 编写多阶段自定义任务目标系统，使目标能够根据玩家探索进度动态更新。</li>
-<li><strong>节奏控制：</strong> 在诡异的安静时刻与突发遭遇之间取得平衡，以操控玩家紧张感。</li>
-<li><strong>资产运用：</strong> 重新组合《星空》原版资产，创造符合叙事氛围且不易被识别的独特子区域。</li>
-</ul>
-</div>
-<div class="content-section">
-<h2>设计分析</h2>
-<p>Invalidprescription 的设计采用“面包屑线索”方法。通过对比鲜明的光源与细微的环境线索，例如血迹或翻倒的设备，自然地将玩家引向关键目标，同时避免让引导显得强制。</p>
-<p>我还加入了终端破解与寻找钥匙卡等轻量谜题，打破单一探索循环，使玩家持续从空间中读取并思考信息。</p>
-</div>
-<div class="back-btn-container">
-<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
-</div>
-</div>
-<script src="js/jquery-2.2.3.min.js"></script>
+	
+	<header class="my-clean-header">
+		<div class="my-clean-logo">
+			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
+			<span class="job-title">Level Designer</span>
+		</div>
+		<ul class="my-clean-nav">
+			<li><a href="index.html">HOME</a></li>
+			
+			<li class="dropdown">
+				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
+				<div class="dropdown-content">
+					<div class="dropdown-category-title">Personal Projects</div>
+					<a href="project1.html">ContainmentBreach (Starfield)</a>
+					<a href="project3.html">Invalidprescription (Starfield)</a>
+					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
+
+					<div class="dropdown-category-title">Team Projects</div>
+					<a href="project7.html">Petalnaut</a>
+					<a href="project8.html">Hamsterballin'</a>
+					<a href="project9.html">Unannounced Project</a>
+					
+					<div class="dropdown-category-title">Game Jams</div>
+					<a href="project10.html">GGJ 2024: Make me laugh</a>
+					<a href="project11.html">LD 55: Summon</a>
+					<a href="project12.html">GMTK 2024: Built to Scale</a>
+				</div>
+			</li>
+			
+			<li><a href="index.html#about">ABOUT</a></li>
+			<li><a href="index.html#contact">CONTACT</a></li>
+		</ul>
+	</header>
+
+	<div class="project-detail-container">
+		<div class="project-header">
+			<h1>Invalidprescription</h1>
+			<p class="subtitle">《星空》支线任务：引导、解谜、战斗与空间叙事</p>
+		</div>
+
+		<div class="video-wrapper">
+			<iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=116911559941052&amp;bvid=BV1cvN16yEaB&amp;cid=39906641110&amp;p=1" scrolling="no" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Invalidprescription 项目演示"></iframe>
+		</div>
+
+		<div class="content-section">
+			<h2>项目概览</h2>
+			<p>该关卡是一个《星空》支线任务，包含解谜、狙击、潜行、说服等元素。玩家来到一个布满岩石的贫瘠星球，帮助当地村民探究疾病的源头与医生的去向，并在故事结尾做出一个两难选择。</p>
+			<div class="fact-grid">
+				<div class="fact"><strong>500 小时</strong><span>设计、搭建、任务与迭代</span></div>
+				<div class="fact"><strong>约 15 分钟</strong><span>完整任务流程</span></div>
+				<div class="fact"><strong>4 + 3</strong><span>4 个大型战斗区域、3 个核心解谜环节</span></div>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>关卡布局</h2>
+			<p>关卡由室外聚落与双层室内空间组成。室外部分负责建立主要地标、次要地标、任务方向和危险区域；室内一层与二层承载解谜、潜行、战斗和叙事信息。玩家在推进过程中会从不同高度反复观察同一空间，因此布局同时服务于引导、预先获取信息和战斗复用。</p>
+			<div class="media-grid three">
+				<figure class="media-card"><a href="images/project3/image-002-731d147a044a.jpeg" target="_blank"><img class="contain" src="images/project3/image-002-731d147a044a.jpeg" alt="无效处方室外布局图"></a><figcaption>室外布局。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-003-1d55c47f195b.jpeg" target="_blank"><img class="contain" src="images/project3/image-003-1d55c47f195b.jpeg" alt="无效处方室内二层布局图"></a><figcaption>室内二层布局。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-004-9a4b3319908e.png" target="_blank"><img class="contain" src="images/project3/image-004-9a4b3319908e.png" alt="无效处方室内一层布局图"></a><figcaption>室内一层布局。</figcaption></figure>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>目标 1：如何引导玩家</h2>
+			<h3>主要地标、次要地标与遮挡关系</h3>
+			<p>我通过布置主要地标、次要地标和遮挡关系，使玩家在不同位置看到不同层级的信息。最终目标并不是始终完整暴露，而是随着玩家位置和建筑朝向的变化被展示、遮挡或重新框取，从而把注意力交给当前要完成的目标。</p>
+			<figure class="media-card"><a href="images/project3/image-005-d0fc398739b3.png" target="_blank"><img class="contain" loading="lazy" src="images/project3/image-005-d0fc398739b3.png" alt="玩家位置、朝向与视线分析"></a><figcaption>玩家位置、朝向、主要地标与视线变化。</figcaption></figure>
+			<p>玩家到达星球后处于位置 1，并朝箭头 1 的方向前进。此时玩家能够看到室外部分的最终目标：一个巨大的混凝土拱门和一个风化的石头拱门；两侧建筑同时形成视线限制，避免玩家一次接收过多无关信息。</p>
+			<figure class="media-card"><a href="images/project3/image-006-80ba7a313da2.png" target="_blank"><img class="contain" loading="lazy" src="images/project3/image-006-80ba7a313da2.png" alt="位置一的最终目标与视线限制"></a><figcaption>位置 1：最终目标可见，两侧建筑限制视野。</figcaption></figure>
+			<p>当玩家到达位置 2、3 后，建筑朝向发生改变，玩家视线也随之转变。之前不容易发现的次要地标开始进入视野，并使用亮黄色吸引注意力。</p>
+			<figure class="media-card"><a href="images/project3/image-007-52a94eaefa30.png" target="_blank"><img class="contain" loading="lazy" src="images/project3/image-007-52a94eaefa30.png" alt="位置二三的次要地标引导"></a><figcaption>位置 2、3：建筑朝向改变视线，亮黄色强化次要地标。</figcaption></figure>
+			<p>玩家处于位置 3 时，最终目标拱门会被暂时遮挡。图中的红色线框表示被隐藏的目标；这个遮挡把玩家视线重新聚焦在当前任务上，避免远期目标干扰眼前决策。</p>
+			<figure class="media-card"><a href="images/project3/image-008-f2021845d744.png" target="_blank"><img class="contain" loading="lazy" src="images/project3/image-008-f2021845d744.png" alt="位置三对最终目标的遮挡"></a><figcaption>位置 3：暂时遮挡最终目标，让玩家聚焦当前目标。</figcaption></figure>
+			<p>玩家处于位置 4 时，我使用大型车辆限制视野，并利用车辆轮廓形成引导线，使玩家能够明确下一目标。</p>
+			<figure class="media-card"><a href="images/project3/image-009-e67a6c76f39d.png" target="_blank"><img class="contain" loading="lazy" src="images/project3/image-009-e67a6c76f39d.png" alt="大型车辆限制视野并形成引导线"></a><figcaption>位置 4：大型车辆同时承担视野限制和构图引导。</figcaption></figure>
+
+			<h3>通过 Conveyance 传达区域可通过性</h3>
+			<p>我通过敌人布置和演出动画，让玩家在进入前判断区域是否危险。危险区域中有两名重装守卫，后方士兵正在练习射击，远处还有巡逻敌人；这些活动共同告诉玩家，前方不是普通通道，而是需要观察和准备的战斗区。</p>
+			<figure class="media-card"><a href="images/project3/image-010-6ca71c2c3083.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-010-6ca71c2c3083.jpeg" alt="敌人布置和演出传达危险"></a><figcaption>重装守卫、射击练习和巡逻共同传达前方危险。</figcaption></figure>
+			<p>当 NPC 出现在某一区域时，玩家会意识到这里暂时安全，可以对话或恢复状态。安全空间和战斗空间使用不同的角色状态与活动强度，让玩家不依赖文字也能判断节奏变化。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project3/image-011-8b903888ca80.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-011-8b903888ca80.jpeg" alt="NPC 出现传达安全区域一"></a><figcaption>NPC 的出现传达这里可以停留、对话和恢复。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-012-e185991deef8.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-012-e185991deef8.jpeg" alt="NPC 出现传达安全区域二"></a><figcaption>安全空间中的角色状态与战斗区形成对比。</figcaption></figure>
+			</div>
+			<p>窗户等不会完全阻断视线的物体让玩家提前获得信息，从而在真正进入战斗空间之前观察敌人位置，并做好战斗或潜行准备。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project3/image-013-e13f6f9bafdc.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-013-e13f6f9bafdc.jpeg" alt="利用窗户提前获得战斗信息一"></a><figcaption>透过窗户提前观察敌人和空间。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-014-706246abb0a4.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-014-706246abb0a4.jpeg" alt="利用窗户提前获得战斗信息二"></a><figcaption>不阻断视线的隔断帮助玩家提前规划。</figcaption></figure>
+			</div>
+
+			<h3>使用色彩吸引注意力并建立空间记忆</h3>
+			<p>需要玩家前往的区域使用与周围环境相反的颜色。例如图中目标区域使用白色，从周边环境中凸显出来。</p>
+			<figure class="media-card"><a href="images/project3/image-015-3a0baf326f0a.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-015-3a0baf326f0a.jpeg" alt="白色目标区域从环境中凸显"></a><figcaption>白色目标区域与周围环境形成反差。</figcaption></figure>
+			<p>危险区域使用代表危险的颜色进行警告。被红色集装箱包围的区域非常开阔、掩体较少，玩家容易被敌人包围；红色因此同时服务于视觉警告和空间性质的传达。室内空间还会使用不同的主色，使玩家对每个房间留下独立印象，帮助理解整体空间。</p>
+			<figure class="media-card"><a href="images/project3/image-016-fd6a876a157f.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-016-fd6a876a157f.jpeg" alt="红色危险区域与室内色彩编码"></a><figcaption>红色警告开阔、少掩体的危险区域；不同空间保持可辨识的色彩。</figcaption></figure>
+		</div>
+
+		<div class="content-section">
+			<h2>目标 2：如何设计解谜</h2>
+			<h3>教学玩家核心机制</h3>
+			<p>在任务早期，我强制玩家完成基础谜题；如果不理解机制，就无法进入下一步骤。这样可以确保玩家真正学会规则。教学之后需要立刻强化记忆，再逐步扩展机制。室外部分为了让玩家掌握“使用电池开启安全门”，一共设置了三处练习，通过反复训练加深记忆。</p>
+			<figure class="media-card"><a href="images/project3/image-017-36e81b876582.png" target="_blank"><img class="contain" loading="lazy" src="images/project3/image-017-36e81b876582.png" alt="三处电池与安全门教学"></a><figcaption>三处电池与安全门练习：教学后立即重复，再逐步扩展。</figcaption></figure>
+
+			<h3>重复使用相同的 Conveyance</h3>
+			<p>无论谜题设置在哪里，我都使用一致的红绿灯光：一旦出现红光，就一定存在一扇锁住、需要供电的安全门；绿光则表示电路已经连通。相同的反馈反复出现，让玩家把颜色直接与机制状态联系起来。</p>
+			<div class="media-grid three">
+				<figure class="media-card"><a href="images/project3/image-018-a6eda75fefc8.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-018-a6eda75fefc8.jpeg" alt="红绿灯光的谜题传达一"></a><figcaption>红光表示安全门仍然缺电。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-019-5c67755b7198.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-019-5c67755b7198.jpeg" alt="红绿灯光的谜题传达二"></a><figcaption>相同颜色在不同位置保持同一含义。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-020-23519ff1c56d.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-020-23519ff1c56d.jpeg" alt="红绿灯光的谜题传达三"></a><figcaption>绿光提供电路连通后的即时反馈。</figcaption></figure>
+			</div>
+			<p>灯光和电线进一步完善谜题信息的传达：灯光显示当前状态，电线把电源与目标在视觉上连接起来，让玩家能够追踪因果关系。</p>
+			<div class="media-grid three">
+				<figure class="media-card"><a href="images/project3/image-021-3e9aafe60e0d.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-021-3e9aafe60e0d.jpeg" alt="灯光与电线完善谜题传达一"></a><figcaption>灯光反馈当前谜题状态。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-022-6897729a3e89.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-022-6897729a3e89.jpeg" alt="灯光与电线完善谜题传达二"></a><figcaption>电线连接电源与目标。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-023-4253bb0e6619.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-023-4253bb0e6619.jpeg" alt="灯光与电线完善谜题传达三"></a><figcaption>视觉反馈帮助玩家理解因果关系。</figcaption></figure>
+			</div>
+
+			<h3>设置谜题视线</h3>
+			<p>玩家从房间中出来时的朝向，或到达新区域后的初始朝向，一定面对电池或谜题。玩家可能暂时无法到达电池所在的房间，但会先看到它的位置并留下记忆；之后路线开放时，玩家已经知道应该返回哪里。</p>
+			<div class="media-grid three">
+				<figure class="media-card"><a href="images/project3/image-024-ec53fe997de5.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-024-ec53fe997de5.jpeg" alt="玩家初始朝向面对谜题一"></a><figcaption>到达区域时，玩家初始朝向直接面对谜题信息。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-025-cfdb3146f281.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-025-cfdb3146f281.jpeg" alt="玩家初始朝向面对谜题二"></a><figcaption>暂时不可达的电池先被展示，建立位置记忆。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-026-dd01319d06b6.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-026-dd01319d06b6.jpeg" alt="玩家初始朝向面对谜题三"></a><figcaption>路线开放后，玩家能够利用之前建立的空间记忆。</figcaption></figure>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>目标 3：让战斗更丰富</h2>
+			<h3>让每场战斗先有热身</h3>
+			<p>每场战斗开始时，我都会设置一个背对玩家的敌人。玩家可以轻松完成第一次击杀，熟悉当前武器与空间，再进入更复杂的敌人组合。</p>
+			<div class="media-grid three">
+				<figure class="media-card"><a href="images/project3/image-027-4dd787bd88d9.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-027-4dd787bd88d9.jpeg" alt="背对玩家的热身敌人一"></a><figcaption>战斗开始时的热身敌人。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-028-9b5b28e61b98.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-028-9b5b28e61b98.jpeg" alt="背对玩家的热身敌人二"></a><figcaption>玩家可以先取得一次低压力击杀。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-029-961d0611e921.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-029-961d0611e921.jpeg" alt="背对玩家的热身敌人三"></a><figcaption>热身后再进入完整遭遇。</figcaption></figure>
+			</div>
+
+			<h3>混合不同类型的敌人</h3>
+			<p>敌人组合会改变玩家的移动和目标优先级。近战敌人与远程敌人搭配时，玩家需要一边拉开距离，一边处理远处枪线；近战敌人与中距离敌人搭配时，则需要在有限空间内更频繁地切换掩体和目标。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project3/image-030-06f56f2e75fc.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-030-06f56f2e75fc.jpeg" alt="近战敌人搭配远程敌人"></a><figcaption>近战敌人搭配远程敌人。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-031-8781e43399d5.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-031-8781e43399d5.jpeg" alt="近战敌人搭配中距离敌人"></a><figcaption>近战敌人搭配中距离敌人。</figcaption></figure>
+			</div>
+
+			<h3>通过敌人位置促使玩家更换武器</h3>
+			<p>我会把部分敌人放在难以击杀的位置，促使玩家主动更换武器。高台敌人会降低中距离武器的收益；玩家位于较高、较远位置时适合使用狙击枪，进入中距离后使用步枪，进入走廊的近距离战斗后再使用霰弹枪。武器切换由距离、视线和空间尺度共同驱动。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project3/image-032-55da0930c663.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-032-55da0930c663.jpeg" alt="高台敌人降低中距离武器收益"></a><figcaption>高台敌人降低中距离武器收益。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-033-abe30c1884eb.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-033-abe30c1884eb.jpeg" alt="远距离使用狙击枪"></a><figcaption>较高、较远距离：使用狙击枪。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-034-29ff27854232.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-034-29ff27854232.jpeg" alt="中距离使用步枪"></a><figcaption>中距离：使用步枪。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-035-157df76399c1.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-035-157df76399c1.jpeg" alt="走廊近距离使用霰弹枪"></a><figcaption>走廊近距离：使用霰弹枪。</figcaption></figure>
+			</div>
+
+			<h3>重复利用同一空间的不同高度</h3>
+			<p>当玩家位于空间的不同高度时，敌人会刷新在玩家上方或下方。这样既能重复利用空间，也能让玩家在同一房间获得不同的战斗体验和信息结构。</p>
+			<div class="media-grid three">
+				<figure class="media-card"><a href="images/project3/image-036-1b98773e001d.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-036-1b98773e001d.jpeg" alt="玩家处于空间上方"></a><figcaption>玩家处于上方（房间 1）。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-037-9da36cc2ca8e.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-037-9da36cc2ca8e.jpeg" alt="玩家处于空间中间"></a><figcaption>玩家处于空间中间。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-038-a907a9a0236c.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-038-a907a9a0236c.jpeg" alt="玩家处于空间下方"></a><figcaption>玩家处于空间下方。</figcaption></figure>
+			</div>
+
+			<h3>为潜行提供可规划的信息</h3>
+			<p>我设置敌人巡逻路线，并让玩家提前获得这些信息，使玩家能够观察巡逻规律、选择等待时机并规划潜行路线，而不是在进入区域后被动反应。</p>
+			<figure class="media-card"><a href="images/project3/image-039-c16f34cf5b7c.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-039-c16f34cf5b7c.jpeg" alt="提前观察敌人巡逻路线"></a><figcaption>玩家可以提前看到敌人的巡逻路线并规划潜行。</figcaption></figure>
+
+			<h3>针对敌人类型设计掩体</h3>
+			<p>面对近战敌人时，我使用中心掩体，使玩家可以围绕掩体与敌人周旋；面对远程高处敌人时，使用更高的掩体来阻断上方枪线；面对数量较多的敌人时，使用中等高度掩体，使玩家既能获得信息，也能短暂规避火力。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project3/image-040-3029ef0f1268.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-040-3029ef0f1268.jpeg" alt="针对近战敌人的中心掩体"></a><figcaption>中心掩体：围绕掩体与近战敌人周旋。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-041-62ac057a547d.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-041-62ac057a547d.jpeg" alt="针对高处远程敌人的高掩体"></a><figcaption>高掩体：规避来自高处远程敌人的枪线。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-042-a0922188c2f5.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-042-a0922188c2f5.jpeg" alt="针对大量敌人的中等掩体一"></a><figcaption>中等掩体：面对大量敌人时保留观察能力。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-043-1d7023505d40.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-043-1d7023505d40.jpeg" alt="针对大量敌人的中等掩体二"></a><figcaption>中等掩体同时服务换弹、规避与信息获取。</figcaption></figure>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>目标 4：空间叙事</h2>
+			<h3>物品摆放与环境风格</h3>
+			<p>室外以风化岩石为主基调，并搭配破旧的居民住宅，使视觉风格符合贫瘠星球和当地生活状态。居民住宅内部放置破旧沙发和矿工常用工具；雇佣兵休息室则放置沙发、扑克牌和啤酒等物品，用具体生活痕迹区分不同人群。</p>
+			<div class="media-grid three">
+				<figure class="media-card"><a href="images/project3/image-044-6bedb66533d2.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-044-6bedb66533d2.jpeg" alt="室外风化岩石环境"></a><figcaption>风化岩石构成室外主基调。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-045-fd57fc4e7390.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-045-fd57fc4e7390.jpeg" alt="居民住宅中的破旧家具与矿工工具"></a><figcaption>居民住宅：破旧沙发与矿工工具。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-046-d22c0f4d5749.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-046-d22c0f4d5749.jpeg" alt="雇佣兵休息室的生活物品"></a><figcaption>雇佣兵休息室：沙发、扑克牌和啤酒。</figcaption></figure>
+			</div>
+
+			<h3>家具既服务战斗，也补充叙事</h3>
+			<p>医生实验室中有两名近战敌人，因此我布置两个长桌作为掩体，让玩家拥有足够空间与近战敌人周旋；长桌同时符合实验室的功能。</p>
+			<figure class="media-card"><a href="images/project3/image-047-3753292b6931.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-047-3753292b6931.jpeg" alt="医生实验室中的长桌掩体"></a><figcaption>医生实验室：两张长桌同时服务空间叙事和近战周旋。</figcaption></figure>
+			<p>工厂内部使用大量传送带作为中等高度掩体。玩家可以蹲下换弹并规避子弹，也可以跳跃通过；传送带既符合工厂功能，也形成战斗中的移动选择。</p>
+			<figure class="media-card"><a href="images/project3/image-048-b3e3558e3bac.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-048-b3e3558e3bac.jpeg" alt="工厂传送带作为中等高度掩体"></a><figcaption>工厂内部：传送带作为可跨越的中等高度掩体。</figcaption></figure>
+			<p>雇佣兵营地的高处哨塔有敌人，因此地面使用高掩体，使玩家能够规避来自上方的枪线；掩体形式由敌人位置和叙事功能共同决定。</p>
+			<figure class="media-card"><a href="images/project3/image-049-4e042b39e7cd.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-049-4e042b39e7cd.jpeg" alt="雇佣兵营地中的高掩体"></a><figcaption>雇佣兵营地：高掩体阻断哨塔敌人的枪线。</figcaption></figure>
+
+			<h3>使用灯光、后处理与体积雾塑造氛围</h3>
+			<p>矿场区域通过体积雾与灯光塑造压抑、浑浊的工作环境。关卡完成后，玩家离开时会看到朝阳；这个画面暗示小镇可能迎来新生，也可能什么都没有改变，与结尾的两难选择保持一致。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project3/image-050-797de7b41907.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-050-797de7b41907.jpeg" alt="矿场体积雾与灯光"></a><figcaption>矿场体积雾与灯光。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-051-81bac073b345.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-051-81bac073b345.jpeg" alt="关卡结尾的朝阳"></a><figcaption>关卡结束后的朝阳：新生，或一切照旧。</figcaption></figure>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>目标 5：资源管理与节奏调整</h2>
+			<p>室内和室外部分都把呼吸空间穿插在战斗空间之间，用空间类型调整战斗节奏。下图中红色代表战斗空间，绿色代表呼吸空间。玩家在高强度遭遇之后会获得观察、对话、恢复和重新规划的机会，再进入下一场战斗。</p>
+			<div class="media-grid">
+				<figure class="media-card"><a href="images/project3/image-052-75599ceb4484.png" target="_blank"><img class="contain" loading="lazy" src="images/project3/image-052-75599ceb4484.png" alt="室外战斗空间与呼吸空间分布"></a><figcaption>室外部分：红色为战斗空间，绿色为呼吸空间。</figcaption></figure>
+				<figure class="media-card"><a href="images/project3/image-053-7a1cd0f47d4f.png" target="_blank"><img class="contain" loading="lazy" src="images/project3/image-053-7a1cd0f47d4f.png" alt="室内战斗空间与呼吸空间分布"></a><figcaption>室内部分：呼吸空间穿插在连续战斗之间。</figcaption></figure>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>关卡画廊</h2>
+			<p>以下为最终游戏画面。点击图片可查看原图。</p>
+			<div class="gallery-grid">
+				<a href="images/project3/image-054-0d7e5f90d074.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-054-0d7e5f90d074.jpeg" alt="无效处方关卡截图 1"></a>
+				<a href="images/project3/image-055-9afa595c7805.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-055-9afa595c7805.jpeg" alt="无效处方关卡截图 2"></a>
+				<a href="images/project3/image-056-f76c4451ace0.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-056-f76c4451ace0.jpeg" alt="无效处方关卡截图 3"></a>
+				<a href="images/project3/image-057-519687723de6.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-057-519687723de6.jpeg" alt="无效处方关卡截图 4"></a>
+				<a href="images/project3/image-058-f4a5014aabc1.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-058-f4a5014aabc1.jpeg" alt="无效处方关卡截图 5"></a>
+				<a href="images/project3/image-059-2ee400007cb7.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-059-2ee400007cb7.jpeg" alt="无效处方关卡截图 6"></a>
+				<a href="images/project3/image-060-1e392898e4af.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-060-1e392898e4af.jpeg" alt="无效处方关卡截图 7"></a>
+				<a href="images/project3/image-061-613bb35af9d2.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-061-613bb35af9d2.jpeg" alt="无效处方关卡截图 8"></a>
+				<a href="images/project3/image-062-f2aa03925dad.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-062-f2aa03925dad.jpeg" alt="无效处方关卡截图 9"></a>
+				<a href="images/project3/image-063-399b995ec6cb.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-063-399b995ec6cb.jpeg" alt="无效处方关卡截图 10"></a>
+				<a href="images/project3/image-064-273e45f514b4.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-064-273e45f514b4.jpeg" alt="无效处方关卡截图 11"></a>
+				<a href="images/project3/image-065-49999d3a538d.jpeg" target="_blank"><img loading="lazy" src="images/project3/image-065-49999d3a538d.jpeg" alt="无效处方关卡截图 12"></a>
+			</div>
+		</div>
+
+		<div class="back-btn-container">
+			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+		</div>
+	</div>
+
+	<script src="js/jquery-2.2.3.min.js"></script>
 </body>
 </html>

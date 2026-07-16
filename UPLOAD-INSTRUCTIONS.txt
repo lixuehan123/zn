@@ -1,0 +1,9 @@
+网站更新说明
+
+1. 请先完整解压 ZIP，不要直接在压缩包内双击 HTML。
+2. 将解压后的全部文件与文件夹一起上传到 GitHub Pages 仓库根目录。
+3. 仓库根目录必须直接看到 index.html、css、js、images；不要再套一层文件夹。
+4. 请保留 images/project1、images/project3、images/project4 及三个封面文件，否则详情页图片会丢失。
+5. Bilibili 播放器首次加载可能需要几秒钟。
+
+本次更新：保留原站版式；首页删除项目 2、5、6；项目 3、4 按 Word 原文完整保留设计逻辑；项目 1 的阶段 1、2 竖图已替换为 JPG。
