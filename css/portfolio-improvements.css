@@ -1,0 +1,351 @@
+/* Shared recruiter-first improvements for the Chinese portfolio. */
+.my-clean-nav .resume-nav-link {
+	color: #ffb347;
+}
+
+.my-clean-nav .resume-nav-link:hover,
+.my-clean-nav .resume-nav-link:focus {
+	color: #fff;
+}
+
+.project-scan-summary {
+	display: grid;
+	grid-template-columns: minmax(0, 1.45fr) minmax(280px, .85fr);
+	gap: 28px;
+	align-items: stretch;
+	margin: 0 0 46px;
+}
+
+.project-scan-media {
+	min-width: 0;
+}
+
+.project-scan-media .video-wrapper,
+.project-scan-media .hero-image,
+.project-scan-media .scan-image {
+	margin: 0;
+	height: 100%;
+	min-height: 360px;
+}
+
+.project-scan-media .scan-contain {
+	object-fit: contain;
+	background: #0f0f1b;
+}
+
+.project-scan-media .video-wrapper.click-video {
+	height: 100%;
+	min-height: 360px;
+	padding-bottom: 0;
+}
+
+.project-scan-media .hero-image,
+.project-scan-media .scan-image {
+	width: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, .15);
+}
+
+.project-scan-panel {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 26px;
+	border: 1px solid #eadcc9;
+	border-radius: 10px;
+	background: #fffaf3;
+	box-sizing: border-box;
+}
+
+.scan-eyebrow {
+	margin: 0 0 9px;
+	color: #d76d00;
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+}
+
+.scan-facts {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 10px;
+	margin: 0 0 22px;
+}
+
+.scan-fact {
+	padding: 11px 12px;
+	border-left: 3px solid #ff9800;
+	background: #fff;
+}
+
+.scan-fact strong,
+.scan-fact span {
+	display: block;
+}
+
+.scan-fact strong {
+	margin-bottom: 3px;
+	color: #777;
+	font-size: 11px;
+	font-weight: 700;
+}
+
+.scan-fact span {
+	color: #222;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 1.45;
+}
+
+.project-scan-panel h2 {
+	margin: 0 0 10px;
+	color: #111;
+	font-size: 20px;
+	font-weight: 800;
+}
+
+.scan-contributions {
+	margin: 0;
+	padding-left: 20px;
+}
+
+.scan-contributions li {
+	margin-bottom: 7px;
+	color: #444;
+	font-size: 13px;
+	line-height: 1.55;
+}
+
+.video-wrapper.click-video {
+	position: relative;
+	height: 0;
+	min-height: 0;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	border-radius: 10px;
+	background: #090911;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, .15);
+}
+
+.video-wrapper.click-video iframe {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.video-poster {
+	position: absolute;
+	inset: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	border: 0;
+	cursor: pointer;
+	background: #090911;
+	color: #fff;
+	text-align: center;
+}
+
+.video-poster::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, rgba(9, 9, 17, .78), rgba(9, 9, 17, .08) 58%);
+	transition: background .2s ease;
+}
+
+.video-poster:hover::after,
+.video-poster:focus-visible::after {
+	background: linear-gradient(to top, rgba(9, 9, 17, .82), rgba(9, 9, 17, .18) 62%);
+}
+
+.video-poster img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.video-play-button,
+.video-poster-label {
+	position: absolute;
+	z-index: 1;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.video-play-button {
+	top: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 72px;
+	height: 72px;
+	border: 2px solid rgba(255, 255, 255, .9);
+	border-radius: 50%;
+	background: rgba(255, 152, 0, .92);
+	font-size: 25px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+	transform: translate(-50%, -58%);
+}
+
+.video-poster-label {
+	bottom: 24px;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: .4px;
+}
+
+.gif-showcase {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.gif-card {
+	margin: 0;
+	overflow: hidden;
+	border: 1px solid #e7e7e7;
+	border-radius: 8px;
+	background: #fafafa;
+}
+
+.gif-card img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	background: #111;
+}
+
+.gif-card figcaption {
+	padding: 11px 13px;
+	color: #5f5f64;
+	font-size: 13px;
+	line-height: 1.55;
+}
+
+.prototype-notice {
+	margin: 0 0 18px;
+	padding: 16px 18px;
+	border-left: 4px solid #ff9800;
+	background: #fff7ed;
+	color: #4b443c;
+	font-size: 14px;
+	line-height: 1.7;
+}
+
+.portfolio-gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.portfolio-gallery-card {
+	margin: 0;
+	overflow: hidden;
+	border: 1px solid #e6e6e9;
+	border-radius: 8px;
+	background: #fafafa;
+}
+
+.portfolio-gallery-card a {
+	display: block;
+	background: #10101a;
+}
+
+.portfolio-gallery-card img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 3 / 2;
+	object-fit: contain;
+}
+
+.portfolio-gallery-card figcaption {
+	padding: 11px 13px;
+	color: #626269;
+	font-size: 13px;
+	line-height: 1.55;
+}
+
+.poster-feature {
+	max-width: 520px;
+	margin: 0 auto 34px;
+}
+
+.poster-feature img {
+	aspect-ratio: auto;
+	max-height: 820px;
+	object-fit: contain;
+}
+
+.resume-page {
+	max-width: 1100px;
+}
+
+.resume-intro {
+	text-align: center;
+	margin-bottom: 28px;
+}
+
+.resume-intro p {
+	color: #666;
+	font-size: 15px;
+	line-height: 1.7;
+}
+
+.resume-actions {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-bottom: 28px;
+}
+
+.resume-viewer {
+	width: 100%;
+	height: 1080px;
+	border: 1px solid #e5e5e8;
+	border-radius: 10px;
+	background: #f3f3f5;
+}
+
+@media (max-width: 900px) {
+	.project-scan-summary {
+		grid-template-columns: 1fr;
+	}
+	.project-scan-media .video-wrapper,
+	.project-scan-media .hero-image,
+	.project-scan-media .scan-image {
+		min-height: 0;
+	}
+	.project-scan-media .video-wrapper.click-video {
+		height: auto;
+		min-height: 0;
+		padding-bottom: 56.25%;
+	}
+	.project-scan-media .hero-image,
+	.project-scan-media .scan-image {
+		aspect-ratio: 16 / 9;
+	}
+}
+
+@media (max-width: 640px) {
+	.scan-facts,
+	.gif-showcase,
+	.portfolio-gallery-grid {
+		grid-template-columns: 1fr;
+	}
+	.project-scan-panel {
+		padding: 20px;
+	}
+	.resume-viewer {
+		height: 720px;
+	}
+}
