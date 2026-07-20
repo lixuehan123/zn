@@ -1,143 +1,206 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
-<title>论文：类魂关卡拓扑 | 李学汉</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
-<link href="css/font-awesome.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet"/>
-<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
-<style>
-		/* ========================================== */
-		/* 全局与背景设定 */
-		/* ========================================== */
-		body { margin: 0; padding: 0; font-family: 'Open Sans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif; background-color: #f7f7f9; color: #333; }
+	<title>Cold Front | 李学汉</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="description" content="Cold Front：5v5 夺旗多人竞技射击地图关卡设计。">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+	<style>
+		body { margin:0; padding:0; font-family:'Open Sans','Microsoft YaHei','PingFang SC',sans-serif; background:#f7f7f9; color:#333; }
+		.my-clean-header { display:flex; justify-content:space-between; align-items:center; background:#0f0f1b; padding:15px 5%; position:sticky; top:0; z-index:99999; box-shadow:0 2px 10px rgba(0,0,0,.5); width:100%; box-sizing:border-box; }
+		.my-clean-logo { display:flex; flex-direction:column; }
+		.my-clean-logo a { color:#fff; text-decoration:none; font-size:32px; font-weight:bold; letter-spacing:1px; line-height:1; }
+		.my-clean-logo a:hover, .my-clean-nav a:hover { color:#ff9800; text-decoration:none; }
+		.job-title { color:#ff9800; font-size:14px; font-weight:600; letter-spacing:2px; margin-top:6px; text-transform:uppercase; }
+		.my-clean-nav { display:flex; list-style:none; margin:0; padding:0; align-items:center; flex-wrap:wrap; }
+		.my-clean-nav li { margin-left:40px; position:relative; }
+		.my-clean-nav a { color:#fff; text-decoration:none; font-size:15px; font-weight:600; text-transform:uppercase; display:block; padding:15px 0; }
+		.dropdown-content { display:none; position:absolute; background:#1a1a24; min-width:270px; box-shadow:0 8px 16px rgba(0,0,0,.5); z-index:1; top:100%; left:0; border-radius:4px; padding:10px 0; }
+		.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display:block; }
+		.dropdown-content a { color:#fff; padding:10px 20px; font-size:13px; text-transform:none; font-weight:400; border-left:3px solid transparent; }
+		.dropdown-content a:hover { background:#2a2a3d; color:#ff9800; border-left-color:#ff9800; }
+		.dropdown-category-title { padding:10px 20px 5px; color:#777; font-size:11px; text-transform:uppercase; letter-spacing:1px; font-weight:bold; border-bottom:1px solid #333; margin:5px 0; }
 
-		/* ========================================== */
-		/* 导航栏 (与 index.html 完全一致) */
-		/* ========================================== */
-		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
-		.my-clean-logo { display: flex; flex-direction: column; }
-		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
-		.my-clean-logo a:hover { color: #ff9800; text-decoration: none; }
-		.job-title { color: #ff9800; font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-top: 6px; text-transform: uppercase; }
-
-		.my-clean-nav { display: flex; list-style: none; margin: 0; padding: 0; align-items: center; flex-wrap: wrap; }
-		.my-clean-nav li { margin-left: 40px; position: relative; } 
-		.my-clean-nav a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 600; text-transform: uppercase; transition: color 0.3s ease; display: block; padding: 15px 0; }
-		.my-clean-nav a:hover { color: #ff9800; text-decoration: none; }
-
-		/* 下拉菜单 */
-		.dropdown-content { display: none; position: absolute; background-color: #1a1a24; min-width: 250px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); z-index: 1; top: 100%; left: 0; border-radius: 4px; padding: 10px 0; }
-		.dropdown:hover .dropdown-content { display: block; }
-		.dropdown-content a { color: #fff; padding: 10px 20px; text-decoration: none; display: block; font-size: 13px; text-transform: none; font-weight: 400; transition: 0.2s; border-left: 3px solid transparent; }
-		.dropdown-content a:hover { background-color: #2a2a3d; color: #ff9800; border-left: 3px solid #ff9800; }
-		.dropdown-category-title { padding: 10px 20px 5px 20px; color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; border-bottom: 1px solid #333; margin-bottom: 5px; margin-top: 5px; pointer-events: none; }
-
-		/* ========================================== */
-		/* 项目详情页专属卡片排版 */
-		/* ========================================== */
-		.project-detail-container { max-width: 900px; margin: 60px auto; padding: 60px; background: #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-radius: 12px; box-sizing: border-box; }
-
-		.project-header { text-align: center; margin-bottom: 40px; }
-		.project-header h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; color: #111; letter-spacing: 1px; text-transform: uppercase; }
-		.project-header p.subtitle { font-size: 18px; color: #777; margin: 0; font-weight: 500; }
-
-		/* 视频包裹层 */
-		.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; margin-bottom: 50px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
-		.video-wrapper iframe, .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-
-		.content-section { margin-bottom: 50px; }
-		.content-section h2 { font-size: 26px; font-weight: bold; color: #111; margin-bottom: 20px; padding-left: 15px; border-left: 5px solid #ff9800; line-height: 1.2; }
-		.content-section p { font-size: 16px; line-height: 1.8; color: #444; text-align: justify; margin-bottom: 15px; }
-		
-		/* 工作量列表 */
-		.contribution-list { font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 15px; padding-left: 25px; }
-		.contribution-list li { margin-bottom: 12px; }
-		.contribution-list li strong { color: #111; font-weight: 700; }
-
-		.back-btn-container { text-align: center; margin-top: 60px; border-top: 1px solid #eaeaea; padding-top: 40px; }
-		.back-btn { background-color: #0f0f1b; color: #fff; padding: 14px 40px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background-color 0.3s ease, transform 0.3s ease; display: inline-block; }
-		.back-btn:hover { background-color: #ff9800; color: #fff; text-decoration: none; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255,152,0,0.3); }
-
-		@media (max-width: 1024px) { .project-detail-container { margin: 40px 20px; padding: 40px 30px; } }
-		@media (max-width: 768px) {
-			.my-clean-header { flex-direction: column; padding: 15px; }
-			.my-clean-logo { align-items: center; }
-			.my-clean-nav { margin-top: 15px; width: 100%; justify-content: center; }
-			.my-clean-nav li { margin: 5px 10px; }
-			.dropdown-content { position: static; display: none; box-shadow: none; background: #222; width: 100%; }
-			.dropdown:hover .dropdown-content { display: block; }
-			.project-detail-container { padding: 30px 20px; margin: 20px 10px; }
-			.project-header h1 { font-size: 32px; }
+		.project-detail-container { max-width:1080px; margin:60px auto; padding:60px; background:#fff; box-shadow:0 10px 40px rgba(0,0,0,.08); border-radius:12px; box-sizing:border-box; }
+		.project-header { text-align:center; margin-bottom:36px; }
+		.project-header h1 { font-family:'Jura',sans-serif; font-size:48px; font-weight:700; margin:0 0 12px; color:#111; letter-spacing:1px; text-transform:uppercase; }
+		.project-header .subtitle { font-size:18px; color:#777; margin:0; font-weight:500; }
+		.video-wrapper { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px; background:#000; margin-bottom:50px; box-shadow:0 8px 25px rgba(0,0,0,.15); }
+		.video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+		.content-section { margin-bottom:54px; }
+		.content-section h2 { font-size:26px; font-weight:bold; color:#111; margin:0 0 20px; padding-left:15px; border-left:5px solid #ff9800; line-height:1.3; }
+		.content-section h3 { font-size:20px; font-weight:700; color:#222; margin:30px 0 12px; }
+		.content-section p, .content-section li { font-size:16px; line-height:1.85; color:#444; }
+		.content-section p { margin:0 0 15px; text-align:justify; }
+		.fact-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin-top:24px; }
+		.fact { background:#fff6ea; border:1px solid #f3d2ad; border-radius:7px; padding:18px 15px; text-align:center; }
+		.fact strong { display:block; color:#d76d00; font-size:20px; margin-bottom:4px; }
+		.fact span { font-size:13px; color:#6a5d50; line-height:1.5; }
+		.principle { padding:22px 24px; margin:22px 0; border-left:4px solid #ff9800; background:#fff6ea; color:#493f36; font-size:18px; font-weight:700; line-height:1.75; }
+		.logic-list { margin:0; padding-left:24px; }
+		.logic-list li { margin-bottom:10px; }
+		.tradeoff-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:24px; }
+		.tradeoff-card { padding:22px; border:1px solid #e6e6e6; border-radius:8px; background:#fafafa; }
+		.tradeoff-card h3 { margin:0 0 10px; color:#d76d00; font-size:19px; }
+		.tradeoff-card p { margin:0; text-align:left; font-size:15px; line-height:1.75; }
+		.design-board { margin:24px 0 0; border:1px solid #e6e6e6; border-radius:8px; overflow:hidden; background:#fff; }
+		.design-board a { display:block; }
+		.design-board img { width:100%; height:auto; display:block; }
+		.design-board figcaption, .gallery-card figcaption { padding:12px 14px; font-size:13px; line-height:1.55; color:#666; background:#fafafa; }
+		.visual-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:22px; }
+		.visual-card { padding:22px; border-radius:8px; background:#15151e; color:#eee; }
+		.visual-card h3 { color:#ffb23e; margin:0 0 12px; }
+		.visual-card p { color:#ddd; text-align:left; margin:0; font-size:15px; }
+		.gallery-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+		.gallery-card { margin:0; border:1px solid #e6e6e6; border-radius:7px; overflow:hidden; background:#fafafa; }
+		.gallery-card a { display:block; overflow:hidden; background:#111; }
+		.gallery-card img { width:100%; aspect-ratio:5/4; object-fit:cover; display:block; transition:transform .3s ease, filter .3s ease; }
+		.gallery-card a:hover img { transform:scale(1.035); filter:brightness(1.06); }
+		.back-btn-container { text-align:center; margin-top:60px; border-top:1px solid #eaeaea; padding-top:40px; }
+		.back-btn { background:#0f0f1b; color:#fff; padding:14px 40px; font-size:16px; font-weight:600; text-decoration:none; border-radius:6px; display:inline-block; }
+		.back-btn:hover { background:#ff9800; color:#fff; text-decoration:none; }
+		@media (max-width:900px) { .fact-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .tradeoff-grid { grid-template-columns:1fr; } }
+		@media (max-width:768px) {
+			.my-clean-header { flex-direction:column; padding:15px; position:relative; }
+			.my-clean-logo { align-items:center; }
+			.my-clean-nav { margin-top:15px; width:100%; justify-content:center; }
+			.my-clean-nav li { margin:5px 10px; }
+			.dropdown-content { position:absolute; left:50%; transform:translateX(-50%); }
+			.project-detail-container { padding:30px 20px; margin:20px 10px; }
+			.project-header h1 { font-size:36px; }
+			.visual-grid, .gallery-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
 		}
+		@media (max-width:540px) { .fact-grid, .visual-grid, .gallery-grid { grid-template-columns:1fr; } }
 	</style>
 </head>
 <body>
-<header class="my-clean-header">
-<div class="my-clean-logo">
-<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
-<span class="job-title">关卡设计师</span>
-</div>
-<ul class="my-clean-nav">
-<li><a href="index.html">首页</a></li>
-<li class="dropdown">
-<a class="dropbtn" href="index.html#work">项目 <i class="fa fa-angle-down"></i></a>
-<div class="dropdown-content">
-<div class="dropdown-category-title">个人项目与论文</div>
-<a href="project1.html">ContainmentBreach（星空）</a>
-<a href="project2.html">论文：类魂关卡拓扑</a>
-<a href="project3.html">Invalidprescription（星空）</a>
-<a href="project4.html">逃离发电厂（半衰期 2）</a>
-<a href="project5.html">Coldfront（雷神之锤 3）</a>
-<a href="project6.html">Beast Motos（桌游）</a>
-<div class="dropdown-category-title">团队项目</div>
-<a href="project7.html">Petalnaut</a>
-<a href="project8.html">HamsterBallin</a>
-<a href="project9.html">未公开项目</a>
-<div class="dropdown-category-title">游戏创作赛（Game Jam）</div>
-<a href="project10.html">GGJ 2024：Make Me Laugh</a>
-<a href="project11.html">LD 54：Summon</a>
-<a href="project12.html">GMTK 2024：Build to Scale</a>
-</div>
-</li>
-<li><a href="index.html#about">关于我</a></li>
-<li><a href="index.html#contact">联系方式</a></li>
-</ul>
-</header>
-<div class="project-detail-container">
-<div class="project-header">
-<h1>论文：类魂关卡拓扑</h1>
-<p class="subtitle">关卡捷径与立体模型节奏的量化研究</p>
-</div>
-<div class="video-wrapper">
-<iframe allowfullscreen="" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="论文视频占位"></iframe>
-</div>
-<div class="content-section">
-<h2>项目简介</h2>
-<p>本硕士论文旨在为非线性 3D 关卡设计建立一套“黄金基准”，研究灵感主要来自类魂游戏中错综复杂的地图结构。研究通过图论视角，解析互联性、垂直性与奖励驱动探索背后的设计规律。</p>
-</div>
-<div class="content-section">
-<h2>我的工作</h2>
-<ul class="contribution-list">
-<li><strong>研究与方法论：</strong> 建立融合有向边与认知负荷的数学模型，用于量化空间复杂度。</li>
-<li><strong>引擎实现：</strong> 使用《消逝的光芒》引擎搭建立体模型测试地图，在可游玩的 3D 空间中验证理论拓扑结构。</li>
-<li><strong>建筑学整合：</strong> 运用真实建筑学原理，包括空间句法、院落层叠与借景，控制视线与导航。</li>
-<li><strong>数据分析：</strong> 记录回路比例、捷径解锁节奏与玩家满意度之间的相关性。</li>
-</ul>
-</div>
-<div class="content-section">
-<h2>设计分析</h2>
-<p>本研究的一项关键成果是“扩展稳定性因子”，用于解决垂直堆叠的 3D 环境在二维抽象表达中的局限。通过绘制节点（检查点）与边（路径／捷径），我计算了玩家产生认知疲劳前所适宜的拓扑深度。</p>
-<p>这项研究可用于系统化生成既显得自然有机、又经过严密组织的关卡，使玩家移动与战斗节奏得到自然引导。</p>
-</div>
-<div class="back-btn-container">
-<a class="back-btn" href="index.html#work"><i class="fa fa-arrow-left"></i> 返回作品集</a>
-</div>
-</div>
-<script src="js/jquery-2.2.3.min.js"></script>
+	<header class="my-clean-header">
+		<div class="my-clean-logo">
+			<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
+			<span class="job-title">关卡设计师</span>
+		</div>
+		<ul class="my-clean-nav">
+			<li><a href="index.html">首页</a></li>
+			<li class="dropdown">
+				<a href="index.html#work" class="dropbtn">项目 <i class="fa fa-angle-down"></i></a>
+				<div class="dropdown-content">
+					<div class="dropdown-category-title">个人项目</div>
+					<a href="project1.html">收容失效（星空）</a>
+					<a href="project3.html">无效处方（星空）</a>
+					<a href="project4.html">逃离发电厂（半衰期 2）</a>
+					<a href="project2.html">Cold Front（多人竞技射击地图）</a>
+					<div class="dropdown-category-title">团队项目</div>
+					<a href="project7.html">Petalnaut</a>
+					<a href="project8.html">Hamsterballin'</a>
+					<a href="project9.html">未公开项目</a>
+					<div class="dropdown-category-title">Game Jam</div>
+					<a href="project10.html">GGJ 2024：Make Me Laugh</a>
+					<a href="project11.html">LD 55：Summon</a>
+					<a href="project12.html">GMTK 2024：Build to Scale</a>
+				</div>
+			</li>
+			<li><a href="index.html#about">关于我</a></li>
+			<li><a href="index.html#contact">联系方式</a></li>
+		</ul>
+	</header>
+
+	<main class="project-detail-container">
+		<div class="project-header">
+			<h1>Cold Front</h1>
+			<p class="subtitle">5v5 夺旗多人竞技射击地图</p>
+		</div>
+
+		<div class="video-wrapper">
+			<iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=116951036860031&amp;bvid=BV138KU6zE7h&amp;cid=40124221336&amp;p=1" scrolling="no" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Cold Front 多人竞技射击地图演示"></iframe>
+		</div>
+
+		<section class="content-section">
+			<h2>项目概览</h2>
+			<p>Cold Front 是一张 5v5 夺旗多人竞技射击地图。地图以三条能够持续互相转换的路线和三层垂直战斗空间为基础，让玩家在安全、移动时间、信息、资源、空间控制与战斗优势之间不断做出交换。设计重点并非提供一条始终占优的路线，而是让每种选择同时带来收益与代价，并在双方建立优势后仍保留反制与转移空间。</p>
+			<div class="fact-grid">
+				<div class="fact"><strong>5v5</strong><span>玩家规模</span></div>
+				<div class="fact"><strong>夺旗</strong><span>游戏模式</span></div>
+				<div class="fact"><strong>30 分钟</strong><span>时间限制</span></div>
+				<div class="fact"><strong>8 面旗帜</strong><span>先达到者获胜</span></div>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2>多人竞技地图的核心</h2>
+			<div class="principle">让玩家不断用安全、时间交换信息、资源、空间控制与战斗优势。</div>
+			<ul class="logic-list">
+				<li>玩家花更少时间到达的位置，路线通常不会安全，但能够更快获得信息与空间控制。</li>
+				<li>玩家选择更安全的路线，需要花费更多时间，同时会暂时失去空间控制，并减少能够获取的信息。</li>
+				<li>这种交换同样作用于已经建立优势的一方：当玩家获得战斗优势时，地图通过资源、安全性和到达时间上的劣势迫使其动态调整，而不是长期固守。</li>
+			</ul>
+		</section>
+
+		<section class="content-section">
+			<h2>布局与空间结构</h2>
+			<p>地图由三层空间和三条主要路线构成。玩家可以在三条路线之间不断转换；不同楼层、桥梁、高台、隧道和中央平台形成连续的垂直战斗空间。路线之间的连接让玩家能够根据敌方位置、队友状态和目标压力快速改变策略，同时避免任何单一路线完全脱离整体战局。</p>
+			<figure class="design-board">
+				<a href="images/project2/cold-front-design-board.png" target="_blank"><img src="images/project2/cold-front-design-board.png" alt="Cold Front 三层平面图、轴测图、资源配置与视觉方向设计板"></a>
+				<figcaption>三层平面图、轴测图、武器与资源分布、区域标注，以及美术和光照方向。点击可查看原图。</figcaption>
+			</figure>
+		</section>
+
+		<section class="content-section">
+			<h2>三类路线的收益与代价</h2>
+			<div class="tradeoff-grid">
+				<article class="tradeoff-card">
+					<h3>高台与优势位置</h3>
+					<p>玩家需要花费更多时间才能到达高台。到达后能够获得更好的视野与战斗位置，但暴露程度也更高，更容易被敌方集火或从其他路线反制。</p>
+				</article>
+				<article class="tradeoff-card">
+					<h3>中央平台</h3>
+					<p>玩家可以用更短时间到达战场中央，但沿途获得的资源更少，位置优势也相对较弱。作为交换，中央区域提供更多战场信息，并能更快向另外两条路线转移，使后续策略选择更灵活。</p>
+				</article>
+				<article class="tradeoff-card">
+					<h3>绕后与偷家路线</h3>
+					<p>玩家需要花费更多时间绕行，路程相对安全，但更难及时支援队友，能够获得的信息也较少。在转移过程中，玩家几乎放弃了位置优势和空间控制权。</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2>视觉与光照方向</h2>
+			<div class="visual-grid">
+				<article class="visual-card">
+					<h3>建筑与美术风格</h3>
+					<p>关卡以粗野主义的厚重混凝土和石材结构为基础，通过高耸墙体、悬挑平台和嵌入墙体的粗大支柱塑造堡垒感；同时融合哥特与科幻元素，并使用火炬、浮雕、红蓝阵营旗帜、金属管线和铆接表面建立中世纪与工业科技并置的视觉语言。</p>
+				</article>
+				<article class="visual-card">
+					<h3>光照与方向感</h3>
+					<p>中央平台保持较高亮度，大部分建筑结构处于较低照度。阴影强化混凝土边缘和材质纹理，同时把玩家视线引向明亮区域。中央广场上方可看到被围合建筑框取的天空，以偏淡黄色的黄昏天光帮助玩家识别中心位置。</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2>实机画廊</h2>
+			<div class="gallery-grid">
+				<figure class="gallery-card"><a href="images/project2/shot0016.png" target="_blank"><img loading="lazy" src="images/project2/shot0016.png" alt="Cold Front 中央空间与高架路线"></a><figcaption>中央空间与高架路线。</figcaption></figure>
+				<figure class="gallery-card"><a href="images/project2/shot0019.png" target="_blank"><img loading="lazy" src="images/project2/shot0019.png" alt="Cold Front 火炬照明走廊"></a><figcaption>火炬照明建立走廊方向感。</figcaption></figure>
+				<figure class="gallery-card"><a href="images/project2/shot0018.png" target="_blank"><img loading="lazy" src="images/project2/shot0018.png" alt="Cold Front 多层走廊视线"></a><figcaption>多层走廊与纵深视线。</figcaption></figure>
+				<figure class="gallery-card"><a href="images/project2/shot0021.png" target="_blank"><img loading="lazy" src="images/project2/shot0021.png" alt="Cold Front 低层路线与环境危险区"></a><figcaption>低层路线与环境危险区。</figcaption></figure>
+				<figure class="gallery-card"><a href="images/project2/shot0023.png" target="_blank"><img loading="lazy" src="images/project2/shot0023.png" alt="Cold Front 高层桥梁与跨区视线"></a><figcaption>高层桥梁提供跨区观察与转移选择。</figcaption></figure>
+				<figure class="gallery-card"><a href="images/project2/shot0024.png" target="_blank"><img loading="lazy" src="images/project2/shot0024.png" alt="Cold Front 中央区域的桥梁连接"></a><figcaption>桥梁把中央区域与侧翼空间连接起来。</figcaption></figure>
+				<figure class="gallery-card"><a href="images/project2/shot0025.png" target="_blank"><img loading="lazy" src="images/project2/shot0025.png" alt="Cold Front 中央平台和阵营视觉标识"></a><figcaption>中央平台与红方阵营视觉标识。</figcaption></figure>
+				<figure class="gallery-card"><a href="images/project2/shot0027.png" target="_blank"><img loading="lazy" src="images/project2/shot0027.png" alt="Cold Front 侧翼高处俯瞰中央区域"></a><figcaption>侧翼高处俯瞰中央区域。</figcaption></figure>
+				<figure class="gallery-card"><a href="images/project2/shot0028.png" target="_blank"><img loading="lazy" src="images/project2/shot0028.png" alt="Cold Front 高台与中央战场全景"></a><figcaption>高台视角下的中央战场与多路线交汇。</figcaption></figure>
+				<figure class="gallery-card"><a href="images/project2/shot0030.png" target="_blank"><img loading="lazy" src="images/project2/shot0030.png" alt="Cold Front 中央平台和垂直空间"></a><figcaption>中央平台和周围的垂直战斗空间。</figcaption></figure>
+				<figure class="gallery-card"><a href="images/project2/shot0032.png" target="_blank"><img loading="lazy" src="images/project2/shot0032.png" alt="Cold Front 蓝方区域的拱桥与通道"></a><figcaption>蓝方区域的拱桥、通道与连接路线。</figcaption></figure>
+				<figure class="gallery-card"><a href="images/project2/shot0031.png" target="_blank"><img loading="lazy" src="images/project2/shot0031.png" alt="Cold Front 蓝方堡垒立面"></a><figcaption>蓝方堡垒立面与阵营识别。</figcaption></figure>
+			</div>
+		</section>
+
+		<div class="back-btn-container">
+			<a href="index.html#work" class="back-btn">返回项目列表</a>
+		</div>
+	</main>
 </body>
 </html>
