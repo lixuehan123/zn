@@ -9,35 +9,37 @@
 	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
 	<link href="css/project-detail.css" rel="stylesheet">
+	<link href="css/portfolio-improvements.css" rel="stylesheet">
 </head>
 <body>
 	<header class="my-clean-header">
 		<div class="my-clean-logo">
-			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
-			<span class="job-title">Level Designer</span>
+			<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
+			<span class="job-title">关卡设计师</span>
 		</div>
 		<ul class="my-clean-nav">
-			<li><a href="index.html">HOME</a></li>
+			<li><a href="index.html">首页</a></li>
 			<li class="dropdown">
-				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
+				<a href="index.html#work" class="dropbtn">项目 <i class="fa fa-angle-down"></i></a>
 				<div class="dropdown-content">
-					<div class="dropdown-category-title">Personal Projects</div>
-					<a href="project1.html">ContainmentBreach (Starfield)</a>
-					<a href="project3.html">Invalidprescription (Starfield)</a>
-					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
+					<div class="dropdown-category-title">个人项目</div>
+					<a href="project1.html">收容失效（星空）</a>
+					<a href="project3.html">无效处方（星空）</a>
+					<a href="project4.html">逃离发电厂（半衰期 2）</a>
 					<a href="project2.html">Cold Front（多人竞技射击地图）</a>
-					<div class="dropdown-category-title">Team Projects</div>
+					<div class="dropdown-category-title">团队项目</div>
 					<a href="project7.html">Petalnaut</a>
 					<a href="project8.html">Hamsterballin'</a>
-					<a href="project9.html">Unannounced Project</a>
-					<div class="dropdown-category-title">Game Jams</div>
-					<a href="project10.html">GGJ 2024: Make Me Laugh</a>
-					<a href="project11.html">LD 55: Summon</a>
-					<a href="project12.html">GMTK 2024: Built to Scale</a>
+					<a href="project9.html">未公开项目</a>
+					<div class="dropdown-category-title">Game Jam</div>
+					<a href="project10.html">GGJ 2024：Make Me Laugh</a>
+					<a href="project11.html">LD 55：Summon</a>
+					<a href="project12.html">GMTK 2024：Build to Scale</a>
 				</div>
 			</li>
-			<li><a href="index.html#about">ABOUT</a></li>
-			<li><a href="index.html#contact">CONTACT</a></li>
+			<li><a href="index.html#about">关于我</a></li>
+			<li><a class="resume-nav-link" href="resume.html">RESUME</a></li>
+			<li><a href="index.html#contact">联系方式</a></li>
 		</ul>
 	</header>
 
@@ -47,16 +49,28 @@
 			<p class="subtitle">Track 1 Level Design &amp; Item Blueprint Scripting</p>
 		</div>
 
-		<img class="hero-image" src="images/project8/hamsterballin-cover.jpg" alt="Hamsterballin 官方封面">
+		<section class="project-scan-summary" aria-label="项目速览">
+			<div class="project-scan-media">
+				<img class="scan-image" src="images/project8/hamsterballin-cover.jpg" alt="Hamsterballin 官方封面">
+			</div>
+			<div class="project-scan-panel">
+				<p class="scan-eyebrow">项目速览</p>
+				<div class="scan-facts">
+					<div class="scan-fact"><strong>项目性质</strong><span>SMU Guildhall 团队项目</span></div>
+					<div class="scan-fact"><strong>角色</strong><span>Track 1 关卡设计师</span></div>
+					<div class="scan-fact"><strong>技术</strong><span>UE5 Blueprint</span></div>
+					<div class="scan-fact"><strong>类型</strong><span>多人街机竞速</span></div>
+				</div>
+				<h2>我的核心贡献</h2>
+				<ul class="scan-contributions">
+					<li>设计 Track 1 的路线、高差、坡面与竞速节奏。</li>
+					<li>用 UE5 Blueprint 快速制作陷阱原型并验证乐趣。</li>
+					<li>参与部分道具逻辑开发，其中部分进入最终版本。</li>
+				</ul>
+			</div>
+		</section>
 		<div class="project-links">
 			<a class="external-btn" href="https://store.steampowered.com/app/4319370/Hamsterballin/" target="_blank" rel="noopener noreferrer"><i class="fa fa-steam"></i> 查看 Steam 页面</a>
-		</div>
-
-		<div class="fact-grid">
-			<div class="fact-card"><strong>项目类型</strong><span>SMU Guildhall 团队项目</span></div>
-			<div class="fact-card"><strong>我的职责</strong><span>Track 1 赛道设计</span></div>
-			<div class="fact-card"><strong>技术工作</strong><span>部分道具 Blueprint 编写</span></div>
-			<div class="fact-card"><strong>游戏类型</strong><span>多人竞技街机竞速</span></div>
 		</div>
 
 		<section class="content-section">
@@ -71,7 +85,28 @@
 				<li><strong>道具 Blueprint：</strong>负责部分道具的 Blueprint 逻辑编写。</li>
 				<li><strong>最终实装：</strong>我参与编写的部分道具进入了游戏的最终版本。</li>
 			</ul>
-			<div class="role-highlight">页面重点区分“团队最终成果”和“我的个人贡献”：公开截图用于呈现游戏整体视觉与玩法；我的明确工作范围是 Track 1 赛道设计和部分道具 Blueprint。</div>
+		</section>
+
+		<section class="content-section">
+			<h2>开发阶段验证</h2>
+			<div class="prototype-notice"><strong>版本说明：</strong>以下 GIF 为开发阶段记录，并非最终实装版本；需等游戏正式上线后更新为最终版本内容。</div>
+			<h3>Track 1 赛道片段</h3>
+			<p>以下四段展示我负责的 Track 1 在开发阶段的实际跑图效果，用于检查高速移动中的路线辨识、坡面衔接、落点判断与整体竞速节奏。</p>
+			<div class="gif-showcase">
+				<figure class="gif-card"><img loading="lazy" src="images/project8/trackpart1.gif" alt="Track 1 开发阶段赛道片段 1"><figcaption>Track 1 片段 1：坡面、弯道与高速路线衔接。</figcaption></figure>
+				<figure class="gif-card"><img loading="lazy" src="images/project8/trackpart2.gif" alt="Track 1 开发阶段赛道片段 2"><figcaption>Track 1 片段 2：障碍预读与速度维持。</figcaption></figure>
+				<figure class="gif-card"><img loading="lazy" src="images/project8/trackpart3.gif" alt="Track 1 开发阶段赛道片段 3"><figcaption>Track 1 片段 3：窄路通过与风险判断。</figcaption></figure>
+				<figure class="gif-card"><img loading="lazy" src="images/project8/trackpart4.gif" alt="Track 1 开发阶段赛道片段 4"><figcaption>Track 1 片段 4：高差、弯道与连续路线变化。</figcaption></figure>
+			</div>
+
+			<h3>UE5 Blueprint 陷阱原型</h3>
+			<p>我在游戏初期直接使用 UE5 Blueprint 编写这四个陷阱原型，用较低成本快速验证陷阱与滚动竞速结合后能否产生清晰、可读且有趣的交互，再根据测试结果决定后续迭代方向。</p>
+			<div class="gif-showcase">
+				<figure class="gif-card"><img loading="lazy" src="images/project8/trap1.gif" alt="UE5 Blueprint 陷阱原型 1"><figcaption>陷阱原型 1：碰撞、躲避与路线干扰验证。</figcaption></figure>
+				<figure class="gif-card"><img loading="lazy" src="images/project8/trap2.gif" alt="UE5 Blueprint 陷阱原型 2"><figcaption>陷阱原型 2：动态障碍的反应窗口验证。</figcaption></figure>
+				<figure class="gif-card"><img loading="lazy" src="images/project8/trap3.gif" alt="UE5 Blueprint 陷阱原型 3"><figcaption>陷阱原型 3：地面机关与碰撞反馈验证。</figcaption></figure>
+				<figure class="gif-card"><img loading="lazy" src="images/project8/trap4.gif" alt="UE5 Blueprint 陷阱原型 4"><figcaption>陷阱原型 4：大型道路障碍与高速可读性验证。</figcaption></figure>
+			</div>
 		</section>
 
 		<section class="content-section">
@@ -96,7 +131,7 @@
 				<figure class="media-card"><a href="images/project8/hamster-03.jpg" target="_blank"><img loading="lazy" src="images/project8/hamster-03.jpg" alt="Hamsterballin 仓鼠角色选择"></a><figcaption>仓鼠角色与服装选择。</figcaption></figure>
 				<figure class="media-card"><a href="images/project8/hamster-04.jpg" target="_blank"><img loading="lazy" src="images/project8/hamster-04.jpg" alt="Hamsterballin 四人竞速画面"></a><figcaption>四人竞速中的赛道信息与玩家位置反馈。</figcaption></figure>
 			</div>
-			<p class="source-note">以上图片来自游戏公开 Steam 页面。后续如果补充 Track 1 平面图、迭代图或 Blueprint 截图，可以继续加入更详细的个人设计拆解。</p>
+			<p class="source-note">以上静态图片来自游戏公开 Steam 页面；本页的 Track 1 与陷阱 GIF 为我的开发阶段记录，用于说明个人设计与原型验证工作。</p>
 		</section>
 
 		<div class="back-btn-container">

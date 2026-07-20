@@ -95,41 +95,39 @@
 			.fact-grid, .media-grid, .media-grid.three, .gallery-grid { grid-template-columns: 1fr; }
 		}
 	</style>
+	<link href="css/portfolio-improvements.css" rel="stylesheet">
 </head>
 
 <body>
 	
 	<header class="my-clean-header">
 		<div class="my-clean-logo">
-			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
-			<span class="job-title">Level Designer</span>
+			<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
+			<span class="job-title">关卡设计师</span>
 		</div>
 		<ul class="my-clean-nav">
-			<li><a href="index.html">HOME</a></li>
-			
+			<li><a href="index.html">首页</a></li>
 			<li class="dropdown">
-				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
+				<a href="index.html#work" class="dropbtn">项目 <i class="fa fa-angle-down"></i></a>
 				<div class="dropdown-content">
-					<div class="dropdown-category-title">Personal Projects</div>
-					<a href="project1.html">ContainmentBreach (Starfield)</a>
-					<a href="project3.html">Invalidprescription (Starfield)</a>
-					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
+					<div class="dropdown-category-title">个人项目</div>
+					<a href="project1.html">收容失效（星空）</a>
+					<a href="project3.html">无效处方（星空）</a>
+					<a href="project4.html">逃离发电厂（半衰期 2）</a>
 					<a href="project2.html">Cold Front（多人竞技射击地图）</a>
-
-					<div class="dropdown-category-title">Team Projects</div>
+					<div class="dropdown-category-title">团队项目</div>
 					<a href="project7.html">Petalnaut</a>
 					<a href="project8.html">Hamsterballin'</a>
-					<a href="project9.html">Unannounced Project</a>
-					
-					<div class="dropdown-category-title">Game Jams</div>
-					<a href="project10.html">GGJ 2024: Make me laugh</a>
-					<a href="project11.html">LD 55: Summon</a>
-					<a href="project12.html">GMTK 2024: Built to Scale</a>
+					<a href="project9.html">未公开项目</a>
+					<div class="dropdown-category-title">Game Jam</div>
+					<a href="project10.html">GGJ 2024：Make Me Laugh</a>
+					<a href="project11.html">LD 55：Summon</a>
+					<a href="project12.html">GMTK 2024：Build to Scale</a>
 				</div>
 			</li>
-			
-			<li><a href="index.html#about">ABOUT</a></li>
-			<li><a href="index.html#contact">CONTACT</a></li>
+			<li><a href="index.html#about">关于我</a></li>
+			<li><a class="resume-nav-link" href="resume.html">RESUME</a></li>
+			<li><a href="index.html#contact">联系方式</a></li>
 		</ul>
 	</header>
 
@@ -139,15 +137,38 @@
 			<p class="subtitle">《星空》支线任务：引导、解谜、战斗与空间叙事</p>
 		</div>
 
-		<div class="video-wrapper">
-			<iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=116911559941052&amp;bvid=BV1cvN16yEaB&amp;cid=39906641110&amp;p=1" scrolling="no" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Invalidprescription 项目演示"></iframe>
-		</div>
+		<section class="project-scan-summary" aria-label="项目速览">
+			<div class="project-scan-media">
+				<div class="video-wrapper click-video" data-video-src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=116911559941052&amp;bvid=BV1cvN16yEaB&amp;cid=39906641110&amp;p=1" data-video-title="Invalid Prescription 项目演示">
+					<button class="video-poster" type="button" aria-label="点击加载并播放 Invalid Prescription 项目演示">
+						<img src="images/project3-cover.jpeg" alt="Invalid Prescription 项目演示封面">
+						<span class="video-play-button"><i class="fa fa-play" aria-hidden="true"></i></span>
+						<span class="video-poster-label">点击加载并播放项目演示</span>
+					</button>
+				</div>
+			</div>
+			<div class="project-scan-panel">
+				<p class="scan-eyebrow">项目速览</p>
+				<div class="scan-facts">
+					<div class="scan-fact"><strong>项目性质</strong><span>个人支线任务</span></div>
+					<div class="scan-fact"><strong>工具</strong><span>Starfield Creation Kit</span></div>
+					<div class="scan-fact"><strong>流程</strong><span>约 15 分钟</span></div>
+					<div class="scan-fact"><strong>职责</strong><span>任务 / 关卡 / 脚本</span></div>
+				</div>
+				<h2>我的核心工作</h2>
+				<ul class="scan-contributions">
+					<li>整合引导、解谜、潜行、战斗与叙事选择。</li>
+					<li>使用地标、遮挡、光影和空间复用控制信息节奏。</li>
+					<li>独立完成任务逻辑、空间搭建与多轮测试迭代。</li>
+				</ul>
+			</div>
+		</section>
 
 		<div class="content-section">
 			<h2>项目概览</h2>
 			<p>该关卡是一个《星空》支线任务，包含解谜、狙击、潜行、说服等元素。玩家来到一个布满岩石的贫瘠星球，帮助当地村民探究疾病的源头与医生的去向，并在故事结尾做出一个两难选择。</p>
 			<div class="fact-grid">
-				<div class="fact"><strong>500 小时</strong><span>设计、搭建、任务与迭代</span></div>
+				<div class="fact"><strong>300 小时</strong><span>设计、搭建、任务与迭代</span></div>
 				<div class="fact"><strong>约 15 分钟</strong><span>完整任务流程</span></div>
 				<div class="fact"><strong>4 + 3</strong><span>4 个大型战斗区域、3 个核心解谜环节</span></div>
 			</div>
@@ -335,5 +356,6 @@
 	</div>
 
 	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="js/click-to-play.js"></script>
 </body>
 </html>

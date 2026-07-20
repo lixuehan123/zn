@@ -55,6 +55,7 @@
 			.project-header h1 { font-size: 32px; }
 		}
 	</style>
+	<link href="css/portfolio-improvements.css" rel="stylesheet">
 </head>
 <body>
 	
@@ -66,32 +67,26 @@
 		</div>
 		<ul class="my-clean-nav">
 			<li><a href="index.html">首页</a></li>
-			
 			<li class="dropdown">
 				<a href="index.html#work" class="dropbtn">项目 <i class="fa fa-angle-down"></i></a>
 				<div class="dropdown-content">
-					<!-- 个人项目 -->
 					<div class="dropdown-category-title">个人项目</div>
 					<a href="project1.html">收容失效（星空）</a>
 					<a href="project3.html">无效处方（星空）</a>
 					<a href="project4.html">逃离发电厂（半衰期 2）</a>
 					<a href="project2.html">Cold Front（多人竞技射击地图）</a>
-
-					<!-- 团队项目 -->
 					<div class="dropdown-category-title">团队项目</div>
 					<a href="project7.html">Petalnaut</a>
 					<a href="project8.html">Hamsterballin'</a>
 					<a href="project9.html">未公开项目</a>
-					
-					<!-- Game Jam -->
 					<div class="dropdown-category-title">Game Jam</div>
 					<a href="project10.html">GGJ 2024：Make Me Laugh</a>
 					<a href="project11.html">LD 55：Summon</a>
 					<a href="project12.html">GMTK 2024：Build to Scale</a>
 				</div>
 			</li>
-			
 			<li><a href="index.html#about">关于我</a></li>
+			<li><a class="resume-nav-link" href="resume.html">RESUME</a></li>
 			<li><a href="index.html#contact">联系方式</a></li>
 		</ul>
 	</header>
@@ -101,36 +96,80 @@
 		
 		<div class="project-header">
 			<h1>Petalnaut</h1>
-			<p class="subtitle">团队关卡设计与环境叙事</p>
+			<p class="subtitle">团队俯视角射击解谜 · 第 1 关与最终关设计</p>
 		</div>
 
-		<!-- 1. 视频窗口 -->
-		<div class="video-wrapper">
-			<iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=116936054674637&amp;bvid=BV1JnNZ6kEVj&amp;cid=40049446907&amp;p=1" scrolling="no" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Petalnaut 项目演示"></iframe>
-		</div>
+		<section class="project-scan-summary" aria-label="项目速览">
+			<div class="project-scan-media">
+				<div class="video-wrapper click-video" data-video-src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=116936054674637&amp;bvid=BV1JnNZ6kEVj&amp;cid=40049446907&amp;p=1" data-video-title="Petalnaut 项目演示">
+					<button class="video-poster" type="button" aria-label="点击加载并播放 Petalnaut 项目演示">
+						<img src="images/petalnaut-index-cover.png" alt="Petalnaut 项目演示封面">
+						<span class="video-play-button"><i class="fa fa-play" aria-hidden="true"></i></span>
+						<span class="video-poster-label">点击加载并播放项目演示</span>
+					</button>
+				</div>
+			</div>
+			<div class="project-scan-panel">
+				<p class="scan-eyebrow">项目速览</p>
+				<div class="scan-facts">
+					<div class="scan-fact"><strong>项目性质</strong><span>校内团队项目</span></div>
+					<div class="scan-fact"><strong>角色</strong><span>关卡设计师</span></div>
+					<div class="scan-fact"><strong>负责范围</strong><span>第 1 关 / 最终关</span></div>
+					<div class="scan-fact"><strong>类型</strong><span>俯视角射击解谜</span></div>
+				</div>
+				<h2>我的核心贡献</h2>
+				<ul class="scan-contributions">
+					<li>设计第 1 关和最终关，组织机制教学与综合考验。</li>
+					<li>围绕角色能力建立可重复组合的谜题块。</li>
+					<li>复用现有机制与代码设计新敌人与陷阱。</li>
+				</ul>
+			</div>
+		</section>
 
 		<!-- 2. 项目简介 -->
 		<div class="content-section">
 			<h2>项目介绍</h2>
-			<p>Petalnaut 是一款团队开发项目，我在项目中担任主要关卡设计师。游戏将植物主题的独特美术风格与探索机制结合。我主要负责搭建既能自然传达世界背景，又能顺畅配合玩家移动能力的关卡环境。</p>
+			<p>Petalnaut 是一个校内团队合作开发的俯视角射击解谜项目，玩法结合经典 2D《塞尔达》式房间解谜与《挺进地牢》式俯视角射击。我担任关卡设计师，负责第 1 关与最终关：第 1 关逐步建立角色能力、敌人和环境机关的基础规则；最终关则要求玩家把此前掌握的机制进行混合运用，在战斗压力下完成更复杂的空间判断。</p>
+			<p>我的设计方法是先把角色的不同能力拆解为可复用的“谜题块”，再通过敌人位置、危险区域、能力使用顺序和房间结构的重新组合，构建新的谜题与战斗节奏。这样既能保持规则一致，又能让相同机制在不同语境下产生新的决策。</p>
 		</div>
 
 		<!-- 3. 个人工作量 -->
 		<div class="content-section">
-			<h2>我的贡献</h2>
+			<h2>我的工作</h2>
 			<ul class="contribution-list">
-				<li><strong>跨专业协作：</strong>与环境美术密切合作，将具备完整功能的白盒关卡逐步转化为视觉统一的最终关卡。</li>
-				<li><strong>白盒搭建与尺度：</strong>确立跳跃距离、角色碰撞范围和镜头限制等核心尺度，保证移动过程流畅。</li>
-				<li><strong>资源实装：</strong>负责布景资源与碰撞体的放置，在优化性能的同时防止玩家破坏正常流程。</li>
-				<li><strong>版本控制（Perforce/Git）：</strong>维护清晰的项目仓库结构，避免团队成员并行开发时出现地图冲突。</li>
+				<li><strong>第 1 关：</strong>负责核心机制的首次教学，让玩家在低压力环境中理解角色能力、敌人攻击方式与房间目标。</li>
+				<li><strong>最终关：</strong>把前期已经学习的机制重新组合，在同一流程中加入战斗、解谜与能力切换，形成综合考验。</li>
+				<li><strong>谜题块设计：</strong>围绕主角的不同能力设计独立谜题模块，再通过模块的排列、叠加和顺序变化扩展关卡解法。</li>
+				<li><strong>低成本内容扩展：</strong>利用团队已经完成的机制与代码组合出新的敌人与陷阱，减少额外程序需求并提高既有系统的利用率。</li>
 			</ul>
 		</div>
 
 		<!-- 4. 设计解析 -->
 		<div class="content-section">
 			<h2>设计分析</h2>
-			<p>Petalnaut 的设计理念高度依赖“地标导航”。在视觉丰富、色彩鲜艳的世界中，玩家很容易因信息过多而失去方向。因此，我围绕体量巨大、形态鲜明的植物结构组织宏观布局，让这些结构成为清晰的空间参照，并像指南针一样帮助玩家判断方向。</p>
-			<p>在迭代阶段，测试表明玩家经常会在较为密集的区域迷路。为了解决这个问题，我与灯光美术合作建立“光线引导”系统，通过细微的氛围照明和饱和度更高的植物，自然地把玩家视线引向关键路线的出口。</p>
+			<h3>从单一能力建立谜题块</h3>
+			<p>每个谜题块首先围绕一种明确能力建立基础问题，例如穿越危险区域、改变位置、处理远程威胁或在限制条件下到达目标。单个模块只强调少量规则，使玩家能够理解自己的操作为什么成功或失败。</p>
+			<h3>从教学过渡到混合运用</h3>
+			<p>第 1 关负责让玩家逐项认识能力、敌人和环境规则；最终关不再重复单一教学，而是把多个谜题块放入同一房间或连续流程。玩家需要判断处理顺序，并在射击压力、范围攻击和地形危险之间切换能力。</p>
+			<h3>复用系统扩展关卡内容</h3>
+			<p>我优先思考现有机制还能形成哪些新组合，再决定是否需要新的程序功能。通过调整攻击范围、移动方式、敌人配置和环境条件，我能够利用现有代码构成新的敌人与陷阱，让团队把开发资源集中在更关键的系统上。</p>
+		</div>
+
+		<div class="content-section">
+			<h2>项目画廊</h2>
+			<h3>项目海报</h3>
+			<figure class="portfolio-gallery-card poster-feature"><a href="images/project7/petalnaut-poster.pdf" target="_blank"><img loading="lazy" src="images/project7/petalnaut-poster.png" alt="Petalnaut 项目海报"></a><figcaption>Petalnaut 11 × 17 项目海报，点击可查看 PDF。</figcaption></figure>
+			<h3>游戏截图</h3>
+			<div class="portfolio-gallery-grid">
+				<figure class="portfolio-gallery-card"><a href="images/project7/petalnaut-01.jpg" target="_blank"><img loading="lazy" src="images/project7/petalnaut-01.jpg" alt="Petalnaut 多方向攻击房间"></a><figcaption>多方向攻击与地面危险共同构成移动判断。</figcaption></figure>
+				<figure class="portfolio-gallery-card"><a href="images/project7/petalnaut-02.jpg" target="_blank"><img loading="lazy" src="images/project7/petalnaut-02.jpg" alt="Petalnaut 敌人与范围攻击组合"></a><figcaption>角色能力、敌人射线与范围攻击的组合运用。</figcaption></figure>
+				<figure class="portfolio-gallery-card"><a href="images/project7/petalnaut-03.jpg" target="_blank"><img loading="lazy" src="images/project7/petalnaut-03.jpg" alt="Petalnaut 跨越断开空间"></a><figcaption>利用角色能力穿越断开的房间结构。</figcaption></figure>
+				<figure class="portfolio-gallery-card"><a href="images/project7/petalnaut-04.jpg" target="_blank"><img loading="lazy" src="images/project7/petalnaut-04.jpg" alt="Petalnaut 多敌人视线房间"></a><figcaption>多名敌人的视线交叉形成空间压力。</figcaption></figure>
+				<figure class="portfolio-gallery-card"><a href="images/project7/petalnaut-05.jpg" target="_blank"><img loading="lazy" src="images/project7/petalnaut-05.jpg" alt="Petalnaut 狭窄战斗房间"></a><figcaption>狭窄空间中结合射线、障碍与安全区域。</figcaption></figure>
+				<figure class="portfolio-gallery-card"><a href="images/project7/petalnaut-06.jpg" target="_blank"><img loading="lazy" src="images/project7/petalnaut-06.jpg" alt="Petalnaut 尖刺通道"></a><figcaption>尖刺与通道布局要求玩家判断能力使用时机。</figcaption></figure>
+				<figure class="portfolio-gallery-card"><a href="images/project7/petalnaut-07.jpg" target="_blank"><img loading="lazy" src="images/project7/petalnaut-07.jpg" alt="Petalnaut 敌人与地形组合"></a><figcaption>通过敌人攻击与地形条件重组已有规则。</figcaption></figure>
+				<figure class="portfolio-gallery-card"><a href="images/project7/petalnaut-08.jpg" target="_blank"><img loading="lazy" src="images/project7/petalnaut-08.jpg" alt="Petalnaut 最终战斗房间"></a><figcaption>多类敌人、弹幕、地形与目标形成综合考验。</figcaption></figure>
+			</div>
 		</div>
 
 		<div class="back-btn-container">
@@ -140,5 +179,6 @@
 	</div>
 	
 	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="js/click-to-play.js"></script>
 </body>
 </html>

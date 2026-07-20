@@ -1,144 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-	<title>Unannounced Project | Xuehan Li</title>
+	<title>未公开项目｜Roguelike BD 构筑系统设计｜李学汉</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="description" content="以玩家操作、风险收益和跨体系相性为核心的 Roguelike BD 构筑系统设计。">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 	<link href="css/font-awesome.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-
+	<link href="https://fonts.googleapis.com/css?family=Jura:400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
 	<style>
-		body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background-color: #f7f7f9; color: #333; }
-		.my-clean-header { display: flex; justify-content: space-between; align-items: center; background: #0f0f1b; padding: 15px 5%; position: sticky; top: 0; z-index: 99999; box-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; }
-		.my-clean-logo { display: flex; flex-direction: column; }
-		.my-clean-logo a { color: #ffffff; text-decoration: none; font-size: 32px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s ease; line-height: 1; }
-		.my-clean-logo a:hover { color: #ff9800; text-decoration: none; }
-		.job-title { color: #ff9800; font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-top: 6px; text-transform: uppercase; }
-		.my-clean-nav { display: flex; list-style: none; margin: 0; padding: 0; align-items: center; flex-wrap: wrap; }
-		.my-clean-nav li { margin-left: 40px; position: relative; } 
-		.my-clean-nav a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 600; text-transform: uppercase; transition: color 0.3s ease; display: block; padding: 15px 0; }
-		.my-clean-nav a:hover { color: #ff9800; text-decoration: none; }
-		.dropdown-content { display: none; position: absolute; background-color: #1a1a24; min-width: 250px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); z-index: 1; top: 100%; left: 0; border-radius: 4px; padding: 10px 0; }
-		.dropdown:hover .dropdown-content { display: block; }
-		.dropdown-content a { color: #fff; padding: 10px 20px; text-decoration: none; display: block; font-size: 13px; text-transform: none; font-weight: 400; transition: 0.2s; border-left: 3px solid transparent; }
-		.dropdown-content a:hover { background-color: #2a2a3d; color: #ff9800; border-left: 3px solid #ff9800; }
-		.dropdown-category-title { padding: 10px 20px 5px 20px; color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; border-bottom: 1px solid #333; margin-bottom: 5px; margin-top: 5px; pointer-events: none; }
-		.project-detail-container { max-width: 900px; margin: 60px auto; padding: 60px; background: #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-radius: 12px; box-sizing: border-box; }
-		.project-header { text-align: center; margin-bottom: 40px; }
-		.project-header h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; color: #111; letter-spacing: 1px; text-transform: uppercase; }
-		.project-header p.subtitle { font-size: 18px; color: #777; margin: 0; font-weight: 500; }
-		.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; margin-bottom: 50px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
-		.video-wrapper iframe, .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-		.content-section { margin-bottom: 50px; }
-		.content-section h2 { font-size: 26px; font-weight: bold; color: #111; margin-bottom: 20px; padding-left: 15px; border-left: 5px solid #ff9800; line-height: 1.2; }
-		.content-section p { font-size: 16px; line-height: 1.8; color: #444; text-align: justify; margin-bottom: 15px; }
-		.contribution-list { font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 15px; padding-left: 25px; }
-		.contribution-list li { margin-bottom: 12px; }
-		.contribution-list li strong { color: #111; font-weight: 700; }
-		.back-btn-container { text-align: center; margin-top: 60px; border-top: 1px solid #eaeaea; padding-top: 40px; }
-		.back-btn { background-color: #0f0f1b; color: #fff; padding: 14px 40px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background-color 0.3s ease, transform 0.3s ease; display: inline-block; }
-		.back-btn:hover { background-color: #ff9800; color: #fff; text-decoration: none; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255,152,0,0.3); }
+		body { margin:0; padding:0; font-family:'Open Sans','Microsoft YaHei','PingFang SC',sans-serif; background:#f7f7f9; color:#333; }
+		.my-clean-header { display:flex; justify-content:space-between; align-items:center; background:#0f0f1b; padding:15px 5%; position:sticky; top:0; z-index:99999; box-shadow:0 2px 10px rgba(0,0,0,.5); width:100%; box-sizing:border-box; }
+		.my-clean-logo { display:flex; flex-direction:column; }
+		.my-clean-logo a { color:#fff; text-decoration:none; font-size:32px; font-weight:bold; letter-spacing:1px; line-height:1; }
+		.my-clean-logo a:hover, .my-clean-nav a:hover { color:#ff9800; text-decoration:none; }
+		.job-title { color:#ff9800; font-family:'Microsoft YaHei','PingFang SC',sans-serif; font-size:14px; font-weight:600; letter-spacing:2px; margin-top:6px; }
+		.my-clean-nav { display:flex; list-style:none; margin:0; padding:0; align-items:center; flex-wrap:wrap; }
+		.my-clean-nav li { margin-left:40px; position:relative; }
+		.my-clean-nav a { color:#fff; text-decoration:none; font-size:15px; font-weight:600; text-transform:uppercase; display:block; padding:15px 0; }
+		.dropdown-content { display:none; position:absolute; background:#1a1a24; min-width:270px; box-shadow:0 8px 16px rgba(0,0,0,.5); z-index:1; top:100%; left:0; border-radius:4px; padding:10px 0; }
+		.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display:block; }
+		.dropdown-content a { color:#fff; padding:10px 20px; font-size:13px; text-transform:none; font-weight:400; border-left:3px solid transparent; }
+		.dropdown-content a:hover { background:#2a2a3d; color:#ff9800; border-left-color:#ff9800; }
+		.dropdown-category-title { padding:10px 20px 5px; color:#777; font-size:11px; text-transform:uppercase; letter-spacing:1px; font-weight:bold; border-bottom:1px solid #333; margin:5px 0; }
 
-		@media (max-width: 1024px) { .project-detail-container { margin: 40px 20px; padding: 40px 30px; } }
-		@media (max-width: 768px) {
-			.my-clean-header { flex-direction: column; padding: 15px; }
-			.my-clean-logo { align-items: center; }
-			.my-clean-nav { margin-top: 15px; width: 100%; justify-content: center; }
-			.my-clean-nav li { margin: 5px 10px; }
-			.dropdown-content { position: static; display: none; box-shadow: none; background: #222; width: 100%; }
-			.dropdown:hover .dropdown-content { display: block; }
-			.project-detail-container { padding: 30px 20px; margin: 20px 10px; }
-			.project-header h1 { font-size: 32px; }
+		.project-detail-container { max-width:1120px; margin:60px auto; padding:60px; background:#fff; box-shadow:0 10px 40px rgba(0,0,0,.08); border-radius:12px; box-sizing:border-box; }
+		.project-header { text-align:center; margin-bottom:32px; }
+		.project-header h1 { font-family:'Jura','Microsoft YaHei',sans-serif; font-size:44px; font-weight:700; margin:0 0 12px; color:#111; letter-spacing:1px; }
+		.project-header .subtitle { font-size:20px; color:#555; margin:0 0 8px; font-weight:700; }
+		.project-meta { color:#888; font-size:14px; margin:0; }
+		.notice { border-left:5px solid #ff9800; background:#fff6e8; padding:18px 22px; border-radius:0 7px 7px 0; color:#5b4b37; font-size:15px; line-height:1.75; margin-bottom:48px; }
+		.content-section { margin-bottom:58px; }
+		.content-section h2 { font-size:27px; font-weight:800; color:#111; margin:0 0 22px; padding-left:15px; border-left:5px solid #ff9800; line-height:1.3; }
+		.content-section h3 { font-size:20px; font-weight:750; color:#222; margin:24px 0 11px; }
+		.content-section p, .content-section li { font-size:16px; line-height:1.85; color:#444; }
+		.content-section p { margin:0 0 15px; text-align:justify; }
+		.fact-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; margin-top:25px; }
+		.fact { text-align:center; background:#15151e; border-radius:8px; padding:23px 15px; color:#fff; }
+		.fact strong { display:block; color:#ffab2e; font-size:29px; line-height:1.1; margin-bottom:7px; }
+		.fact span { display:block; color:#d3d3da; font-size:13px; line-height:1.5; }
+		.thesis { position:relative; background:#15151e; color:#fff; border-radius:10px; padding:34px 38px; font-size:20px; font-weight:700; line-height:1.8; margin:28px 0 0; }
+		.thesis::before { content:'“'; position:absolute; top:-16px; left:14px; color:#ff9800; font-family:Georgia,serif; font-size:72px; opacity:.55; }
+		.process-flow { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; margin-top:25px; }
+		.process-step { position:relative; background:#fff7ec; border:1px solid #f1d6b5; border-radius:8px; padding:20px 14px; text-align:center; }
+		.process-step:not(:last-child)::after { content:'›'; position:absolute; right:-12px; top:50%; transform:translateY(-50%); color:#ff9800; font-size:27px; font-weight:800; z-index:2; }
+		.process-step strong { display:block; color:#d76d00; font-size:16px; margin-bottom:6px; }
+		.process-step span { color:#6d6257; font-size:13px; line-height:1.55; }
+		.principle-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+		.principle-card { border:1px solid #e5e5e5; border-radius:9px; padding:24px; background:#fafafa; }
+		.principle-number { display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center; border-radius:50%; background:#ff9800; color:#fff; font-weight:800; margin-bottom:12px; }
+		.principle-card h3 { margin:0 0 9px; }
+		.principle-card p { margin:0; text-align:left; font-size:15px; line-height:1.78; }
+		.layer-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:17px; }
+		.layer-card { padding:24px; border-radius:9px; color:#fff; min-height:230px; }
+		.layer-card:nth-child(1) { background:#315f55; }
+		.layer-card:nth-child(2) { background:#344d78; }
+		.layer-card:nth-child(3) { background:#734055; }
+		.layer-label { font-size:12px; opacity:.75; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; }
+		.layer-card h3 { color:#fff; margin:8px 0 10px; }
+		.layer-card p { color:#f2f2f4; margin:0; text-align:left; font-size:15px; line-height:1.75; }
+		.table-wrap { overflow-x:auto; border:1px solid #e1e1e1; border-radius:8px; }
+		.design-table { width:100%; border-collapse:collapse; min-width:820px; }
+		.design-table th { background:#171720; color:#fff; padding:15px 14px; font-size:14px; text-align:left; }
+		.design-table td { padding:15px 14px; border-top:1px solid #e7e7e7; vertical-align:top; font-size:14px; line-height:1.65; color:#444; }
+		.design-table tbody tr:nth-child(even) { background:#fafafa; }
+		.design-table td:first-child { font-weight:800; color:#d76d00; white-space:nowrap; }
+		.case-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+		.case-card { border:1px solid #e3e3e3; border-top:5px solid #ff9800; border-radius:8px; padding:24px; background:#fff; }
+		.case-stat { color:#d76d00; font-size:13px; font-weight:800; margin-bottom:9px; }
+		.case-card h3 { margin:0 0 10px; }
+		.case-card p { font-size:15px; line-height:1.75; text-align:left; }
+		.tag-list { display:flex; flex-wrap:wrap; gap:7px; margin-top:15px; }
+		.tag { background:#f2f2f4; border:1px solid #e2e2e5; border-radius:4px; color:#555; padding:5px 8px; font-size:12px; font-weight:700; }
+		.module-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+		.module-card { border-radius:7px; padding:17px; background:#f7f7f9; border:1px solid #e4e4e7; }
+		.module-card strong { display:block; color:#222; margin-bottom:6px; font-size:15px; }
+		.module-card span { display:block; color:#666; font-size:12px; line-height:1.55; }
+		.feedback-loop { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:13px; margin:24px 0; }
+		.feedback-node { padding:19px 14px; text-align:center; border:1px solid #e4e4e4; border-radius:8px; background:#fafafa; font-size:14px; font-weight:750; color:#333; }
+		.example-list { margin:12px 0 0; padding-left:22px; }
+		.example-list li { margin-bottom:9px; }
+		.map-card { border:1px solid #e1e1e1; border-radius:9px; overflow:hidden; background:#fff; }
+		.map-card img { display:block; width:100%; height:auto; user-select:none; -webkit-user-drag:none; }
+		.map-card figcaption { padding:13px 16px; background:#fafafa; color:#666; font-size:13px; line-height:1.6; }
+		.source-note { margin-top:18px; padding:16px 18px; border-radius:7px; background:#f3f3f5; color:#62626a; font-size:13px; line-height:1.65; }
+		.back-btn-container { text-align:center; margin-top:60px; border-top:1px solid #eaeaea; padding-top:40px; }
+		.back-btn { background:#0f0f1b; color:#fff; padding:14px 40px; font-size:16px; font-weight:600; text-decoration:none; border-radius:6px; display:inline-block; }
+		.back-btn:hover { background:#ff9800; color:#fff; text-decoration:none; }
+		@media (max-width:1000px) { .project-detail-container { margin:40px 20px; padding:42px 30px; } .module-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .process-flow { grid-template-columns:1fr; } .process-step:not(:last-child)::after { content:'↓'; right:auto; left:50%; top:auto; bottom:-20px; transform:translateX(-50%); } }
+		@media (max-width:768px) {
+			.my-clean-header { flex-direction:column; padding:15px; position:relative; }
+			.my-clean-logo { align-items:center; }
+			.my-clean-nav { margin-top:15px; width:100%; justify-content:center; }
+			.my-clean-nav li { margin:5px 10px; }
+			.dropdown-content { left:50%; transform:translateX(-50%); }
+			.project-detail-container { padding:30px 20px; margin:20px 10px; }
+			.project-header h1 { font-size:34px; }
+			.fact-grid, .principle-grid, .layer-grid, .case-grid, .feedback-loop { grid-template-columns:1fr; }
+			.module-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
 		}
+		@media (max-width:480px) { .module-grid { grid-template-columns:1fr; } .thesis { padding:28px 22px; font-size:18px; } }
 	</style>
+	<link href="css/portfolio-improvements.css" rel="stylesheet">
 </head>
 <body>
-	
-	<!-- 顶部导航栏 -->
 	<header class="my-clean-header">
 		<div class="my-clean-logo">
-			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
-			<span class="job-title">Level Designer</span>
+			<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
+			<span class="job-title">关卡设计师</span>
 		</div>
 		<ul class="my-clean-nav">
-			<li><a href="index.html">HOME</a></li>
-			
+			<li><a href="index.html">首页</a></li>
 			<li class="dropdown">
-				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
+				<a href="index.html#work" class="dropbtn">项目 <i class="fa fa-angle-down"></i></a>
 				<div class="dropdown-content">
-					<!-- Personal Projects -->
-					<div class="dropdown-category-title">Personal Projects</div>
-					<a href="project1.html">ContainmentBreach (Starfield)</a>
-					<a href="project3.html">Invalidprescription (Starfield)</a>
-					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
+					<div class="dropdown-category-title">个人项目</div>
+					<a href="project1.html">收容失效（星空）</a>
+					<a href="project3.html">无效处方（星空）</a>
+					<a href="project4.html">逃离发电厂（半衰期 2）</a>
 					<a href="project2.html">Cold Front（多人竞技射击地图）</a>
-
-					<!-- Team Projects -->
-					<div class="dropdown-category-title">Team Projects</div>
+					<div class="dropdown-category-title">团队项目</div>
 					<a href="project7.html">Petalnaut</a>
 					<a href="project8.html">Hamsterballin'</a>
-					<a href="project9.html">Unannounced Project</a>
-					
-					<!-- Game Jams -->
-					<div class="dropdown-category-title">Game Jams</div>
-					<a href="project10.html">GGJ 2024: Make me laugh</a>
-					<a href="project11.html">LD 55: Summon</a>
-					<a href="project12.html">GMTK 2024: Built to Scale</a>
+					<a href="project9.html">未公开项目</a>
+					<div class="dropdown-category-title">Game Jam</div>
+					<a href="project10.html">GGJ 2024：Make Me Laugh</a>
+					<a href="project11.html">LD 55：Summon</a>
+					<a href="project12.html">GMTK 2024：Build to Scale</a>
 				</div>
 			</li>
-			
-			<li><a href="index.html#about">ABOUT</a></li>
-			<li><a href="index.html#contact">CONTACT</a></li>
+			<li><a href="index.html#about">关于我</a></li>
+			<li><a class="resume-nav-link" href="resume.html">RESUME</a></li>
+			<li><a href="index.html#contact">联系方式</a></li>
 		</ul>
 	</header>
 
-	<!-- 项目主容器 -->
-	<div class="project-detail-container">
-		
+	<main class="project-detail-container">
 		<div class="project-header">
-			<h1>Unannounced Project</h1>
-			<p class="subtitle">NDA Protected Team Development & Modular Prototyping</p>
+			<h1>未公开项目</h1>
+			<p class="subtitle">Roguelike BD 构筑系统设计</p>
+			<p class="project-meta">Dota 2 游廊 · 类《哈迪斯》团队项目</p>
 		</div>
 
-		<!-- 1. 视频窗口 (对于保密项目可以放一段打码的灰盒，或者相关技术原型的展示) -->
-		<div class="video-wrapper">
-			<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Project 9 Video Placeholder" allowfullscreen></iframe>
-		</div>
+		<section class="project-scan-summary" aria-label="项目速览">
+			<div class="project-scan-media">
+				<img class="scan-image scan-contain" src="images/project9/bd-system-map-overview.png" alt="旧版 Roguelike BD 构筑网络概览">
+			</div>
+			<div class="project-scan-panel">
+				<p class="scan-eyebrow">项目速览</p>
+				<div class="scan-facts">
+					<div class="scan-fact"><strong>项目性质</strong><span>团队 Roguelike 项目</span></div>
+					<div class="scan-fact"><strong>平台</strong><span>Dota 2 游廊</span></div>
+					<div class="scan-fact"><strong>角色</strong><span>BD 系统设计</span></div>
+					<div class="scan-fact"><strong>状态</strong><span>旧版思路展示</span></div>
+				</div>
+				<h2>我的核心贡献</h2>
+				<ul class="scan-contributions">
+					<li>把操作、条件、收益与代价组织为可组合构筑网络。</li>
+					<li>兼顾新手单体系闭环和熟练玩家跨体系上限。</li>
+					<li>用构筑路径反向检验英雄技能与系统入口。</li>
+				</ul>
+			</div>
+		</section>
 
-		<!-- 2. 项目简介 -->
-		<div class="content-section">
-			<h2>Project Introduction</h2>
-			<p>This is a professional/academic team project currently under a Non-Disclosure Agreement (NDA). While specific narrative details and IP elements cannot be shared, my role centered on establishing the modular level design pipeline, rapid whiteboxing, and coordinating with the engineering team to ensure our spatial designs met the strict technical constraints of the engine.</p>
-		</div>
+		<div class="notice"><strong>说明：</strong>本页展示的 BD 系统并非最终版本。由于项目尚未公开，相关内容仅用于展示设计思路与方法，实际设计与最终版本可能有所不同。</div>
 
-		<!-- 3. 个人工作量 -->
-		<div class="content-section">
-			<h2>My Contributions</h2>
-			<ul class="contribution-list">
-				<li><strong>Modular Blockout Toolkit:</strong> Developed a standardized grid-snapping library of whitebox assets to speed up iteration times across the entire level design team.</li>
-				<li><strong>Technical Constraints Management:</strong> Monitored draw calls and polycounts during the greybox phase, implementing occlusion culling strategies early in development.</li>
-				<li><strong>Systems Integration:</strong> Placed and tested early gameplay system hooks (e.g., enemy spawn volumes, quest triggers) before final art was locked.</li>
-				<li><strong>Documentation:</strong> Wrote comprehensive Level Design Documents (LDDs) outlining intended player flow, encounter setups, and specific asset requests for the environment art team.</li>
+		<section class="content-section">
+			<h2>项目概览</h2>
+			<p>这是一个开发于 Dota 2 游廊中的类《哈迪斯》Roguelike 团队项目。本页集中展示我在旧版本中对 BD 构筑系统的设计思考：我从玩家实际采用的操作方式入手，把赐福拆解为触发条件、收益、代价与跨体系接口，使不同英雄的操作特征能够放大其与特定 BD 的相性。同时，系统既要允许新手在只关注单一赐福体系时形成基础构筑，也要为熟练玩家保留跨体系组合、主动承担风险和追求更高上限的空间。</p>
+			<div class="fact-grid">
+				<div class="fact"><strong>约 886</strong><span>旧版思维导图主题节点</span></div>
+				<div class="fact"><strong>269</strong><span>显式构筑关联</span></div>
+				<div class="fact"><strong>16</strong><span>主要赐福与英雄模块</span></div>
+			</div>
+			<div class="thesis">我希望建立的不是一组彼此独立的数值强化，而是一张能够同时适配不同英雄、操作方式与玩家理解水平的构筑网络。每项赐福都在系统中承担启动条件、放大收益、补足短板或引入代价的作用：新手沿单一体系也能形成清晰但上限受控的内部闭环，熟练玩家则可以跨体系拼接条件，并以更高的操作要求、风险或成型难度换取更高上限；这些构筑路径还会反向检验英雄技能是否提供了合理的构筑入口。</div>
+		</section>
+
+		<section class="content-section">
+			<h2>设计流程</h2>
+			<div class="process-flow">
+				<div class="process-step"><strong>玩家操作</strong><span>普攻、技能、冲刺、持续移动、站桩、受伤或召唤</span></div>
+				<div class="process-step"><strong>构筑需求</strong><span>暴击、移速、攻速、生存、异常、资源或冷却</span></div>
+				<div class="process-step"><strong>条件与代价</strong><span>自我异常、低生命、长冷却、停止移动或主动损血</span></div>
+				<div class="process-step"><strong>跨体系组合</strong><span>从不同赐福体系中寻找启动器、放大器与稳定器</span></div>
+				<div class="process-step"><strong>反哺英雄</strong><span>补充英雄技能入口，使特定操作能够启动更多 BD</span></div>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2>四个核心原则</h2>
+			<div class="principle-grid">
+				<article class="principle-card"><span class="principle-number">1</span><h3>先定义操作入口与英雄相性</h3><p>英雄的攻击节奏、位移频率、防守方式和技能衔接决定其天然构筑倾向。我先确认玩家能够稳定执行哪些行为、这些行为以什么频率发生，以及它们可以连接哪些体系，再设计相应的收益与数值。</p></article>
+				<article class="principle-card"><span class="principle-number">2</span><h3>用条件创造曲线增强</h3><p>玩家需要移速时，不一定直接获得固定移速，而可以先进入雷电异常，再让其他赐福把该状态转化为移速、伤害或生存收益。玩家需要寻找启动条件，而不是只比较数字大小。</p></article>
+				<article class="principle-card"><span class="principle-number">3</span><h3>风险、操作与成型难度对应上限</h3><p>更难操作、更难成型或需要主动损失生命的构筑，应当拥有更高的潜在收益；低风险构筑则强调稳定性，不应同时拥有最高上限。</p></article>
+				<article class="principle-card"><span class="principle-number">4</span><h3>为新手保留单体系闭环</h3><p>新手经常只盯着同一类赐福抓取，因此每个主要体系内部都能形成可用构筑，但强度不会超过需要识别关键词并跨体系拼接的进阶方案。</p></article>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2>三个玩家层级</h2>
+			<div class="layer-grid">
+				<article class="layer-card"><span class="layer-label">Accessible</span><h3>新手：单体系成型</h3><p>持续抓取同一位神或同一类型赐福，也能获得基本的触发、强化与生存闭环。它保证体验不会因为不理解构筑而完全失效，但上限受到控制。</p></article>
+				<article class="layer-card"><span class="layer-label">Combinational</span><h3>进阶：跨体系拼接</h3><p>玩家围绕暴击、移速、异常、召唤物或冷却等关键词，在多个体系中寻找启动器、放大器和稳定器，形成更明确的玩法身份。</p></article>
+				<article class="layer-card"><span class="layer-label">Mastery</span><h3>高手：高风险高上限</h3><p>主动接受低生命、自伤、长冷却、站桩或高操作要求，通过更复杂的成型路径换取更高伤害和更强战斗节奏。</p></article>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2>操作如何转化为构筑</h2>
+			<div class="table-wrap">
+				<table class="design-table">
+					<thead><tr><th>操作入口</th><th>条件或代价</th><th>收益与转化</th><th>可能形成的 BD</th></tr></thead>
+					<tbody>
+						<tr><td>频繁冲刺</td><td>消耗次数、受冷却限制，需要主动改变站位</td><td>冲刺后增伤、必定暴击、击退、施加流血或击杀刷新冲刺</td><td>冲刺流、暴击流、击退流、流血流</td></tr>
+						<tr><td>保持不动</td><td>放弃机动能力并承受更高的站位风险</td><td>不移动时增伤，降低移速换取减伤，强化近距离防守</td><td>不动流、阵地流、防御反击流</td></tr>
+						<tr><td>技能长冷却</td><td>技能冷却显著提高，降低主动技能频率</td><td>全部技能冷却时提高普攻、整体伤害、减伤与移速</td><td>长冷却普攻流、技能间歇爆发流</td></tr>
+						<tr><td>低生命／主动受伤</td><td>减少最大生命值、主动扣血或承受伤害</td><td>生命越低伤害越高，以恢复、减伤和复活次数稳定风险</td><td>低生命流、自伤流、受伤触发流</td></tr>
+						<tr><td>元素异常</td><td>主动维持自身或敌人的雷、电、冰、火等异常状态</td><td>把异常转化为元素增伤、移速、减伤、吸血或额外触发</td><td>异常触发流、元素混合流、精灵元素流</td></tr>
+						<tr><td>暴击与节奏</td><td>蓄力时机、攻击次数、冲刺后窗口或技能触发概率</td><td>获得必定暴击、暴击倍率、暴击转真实伤害或破甲转暴击</td><td>暴击流、真实伤害流、节奏攻击流</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2>代表性构筑案例</h2>
+			<div class="case-grid">
+				<article class="case-card"><div class="case-stat">14 个关联 · 4 个体系</div><h3>暴击流</h3><p>玩家既可以直接寻找暴击率，也可以寻找冲刺后必定暴击、每若干次攻击必定暴击、破甲转暴击、暴击倍率提升和暴击转真实伤害。重点不是只堆一个数值，而是同时提高暴击的触发可靠性与触发后的收益。</p><div class="tag-list"><span class="tag">幻影刺客</span><span class="tag">伤害</span><span class="tag">诅咒</span><span class="tag">防御</span></div></article>
+				<article class="case-card"><div class="case-stat">12 个关联 · 6 个体系</div><h3>低生命／受伤流</h3><p>最大生命值下降、持续损血和受伤触发提供高额收益；治愈、减伤、复活次数与单次伤害上限负责控制风险。构筑需要同时解决“如何进入危险状态”和“如何留在危险状态而不立刻死亡”。</p><div class="tag-list"><span class="tag">伤害</span><span class="tag">命运</span><span class="tag">圣骑士</span><span class="tag">治愈</span><span class="tag">次数</span><span class="tag">诅咒</span></div></article>
+				<article class="case-card"><div class="case-stat">8 个关联 · 4 个体系</div><h3>冲刺流</h3><p>冲刺不仅是移动工具，也可以成为输出循环的起点：减少冷却、增加次数、冲刺后增伤、必定暴击、击退敌人、施加流血，并在击杀后刷新。操作行为本身成为构筑资源。</p><div class="tag-list"><span class="tag">移速闪避</span><span class="tag">次数</span><span class="tag">位移击退</span><span class="tag">幻影刺客</span></div></article>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2>旧版系统模块</h2>
+			<p>旧版思维导图将赐福、英雄特征和构筑关键词拆成多个可互相连接的模块。下面仅保留与设计方法有关的模块定位；未整理的完整节点与原始连线不在网页中公开。</p>
+			<div class="module-grid">
+				<div class="module-card"><strong>宙斯／雷电</strong><span>攻击、攻速、范围伤害、元素异常与快速充能。</span></div>
+				<div class="module-card"><strong>冰冻控制</strong><span>减速、控制与减伤，通过暴击、攻速和移速补足输出。</span></div>
+				<div class="module-card"><strong>燃烧</strong><span>元素扩散、吸血、攻速、真实伤害、自伤与精灵体系。</span></div>
+				<div class="module-card"><strong>防御／折光</strong><span>叠加防御层数，以受伤和防守行为积累爆发机会。</span></div>
+				<div class="module-card"><strong>位移击退</strong><span>冲刺、吸引、击退、远程距离与生命值冲撞。</span></div>
+				<div class="module-card"><strong>幻影刺客</strong><span>暴击率、必定暴击、暴击倍率与真实伤害转化。</span></div>
+				<div class="module-card"><strong>移速闪避</strong><span>持续移动、冲刺冷却、速度转伤害和闪避上限。</span></div>
+				<div class="module-card"><strong>次数／核心</strong><span>技能次数、概率不消耗、冷却重置与复活次数。</span></div>
+				<div class="module-card"><strong>治愈</strong><span>生命恢复、最大生命值、治疗球与危险状态稳定。</span></div>
+				<div class="module-card"><strong>伤害</strong><span>通用增伤、生命阈值、真实伤害、处决与节奏触发。</span></div>
+				<div class="module-card"><strong>诅咒</strong><span>用明显负面效果换取高收益，支撑高风险构筑。</span></div>
+				<div class="module-card"><strong>命运／经济</strong><span>Roll、金币、规划、资源交换与阶段性投资。</span></div>
+				<div class="module-card"><strong>圣骑士</strong><span>护盾、聚怪、爆炸、受伤、反击与阵地作战。</span></div>
+				<div class="module-card"><strong>德鲁伊</strong><span>召唤物献祭、维持、隐匿、精灵元素和复制。</span></div>
+				<div class="module-card"><strong>萨满</strong><span>增益、辅助、亡灵传播、召唤物死亡与团队保护。</span></div>
+				<div class="module-card"><strong>远程投掷／流血</strong><span>投射物分裂、印记层数、异常持续与反复触发。</span></div>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2>构筑如何反哺英雄技能</h2>
+			<p>构筑网络完成后，我会反向检查英雄是否拥有足够清晰的启动入口。如果某个 BD 只能依赖偶然获得的赐福才能运作，英雄技能就需要补充稳定但不过度完整的基础条件，让玩家能够更早识别构筑方向，同时仍需要在后续选择中完成放大。</p>
+			<div class="feedback-loop">
+				<div class="feedback-node">英雄操作特征</div>
+				<div class="feedback-node">产生构筑需求</div>
+				<div class="feedback-node">发现缺失条件</div>
+				<div class="feedback-node">调整英雄技能入口</div>
+			</div>
+			<ul class="example-list">
+				<li><strong>时机型暴击：</strong>普攻在正确蓄力时机必定暴击，使高操作精度成为暴击构筑的稳定起点。</li>
+				<li><strong>持续移动：</strong>英雄连续移动时逐步获得临时移速，停止后失去加成，使移动方式直接参与构筑循环。</li>
+				<li><strong>雷电召唤：</strong>英雄能够召唤雷电生物，为雷电体系与召唤物体系建立自然接口。</li>
 			</ul>
-		</div>
+		</section>
 
-		<!-- 4. 设计解析 -->
-		<div class="content-section">
-			<h2>Design Analysis</h2>
-			<p>Working under strict creative and technical constraints required a highly organized approach to level structure. The core design philosophy I championed was "Form Follows Function." Before any aesthetic decisions were made, every metric—from the height of cover objects to the width of main thoroughfares—was mathematically verified to support the core combat loop.</p>
-			<p>Because the project details are confidential, I emphasize the *process*. The ability to rapidly tear down and rebuild a section of the map based on weekly milestone feedback without breaking the underlying technical logic was the key achievement in this endeavor.</p>
-		</div>
+		<section class="content-section">
+			<h2>旧版完整设计图</h2>
+			<figure class="map-card">
+				<img src="images/project9/bd-system-map-overview.png" alt="Roguelike BD 构筑系统旧版 XMind 全量网络预览" draggable="false">
+				<figcaption>旧版全量网络仅用于展示系统规模；由于节点数量极多，正文仅提取代表性设计逻辑。</figcaption>
+			</figure>
+			<div class="source-note">为保护未公开项目的系统细节，本页不提供原始 XMind 文件或完整可编辑关系数据。</div>
+		</section>
 
-		<div class="back-btn-container">
-			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
-		</div>
-
-	</div>
-	
-	<script src="js/jquery-2.2.3.min.js"></script>
+		<div class="back-btn-container"><a href="index.html#work" class="back-btn">返回项目列表</a></div>
+	</main>
 </body>
 </html>

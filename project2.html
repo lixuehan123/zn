@@ -76,6 +76,7 @@
 		}
 		@media (max-width:540px) { .fact-grid, .visual-grid, .gallery-grid { grid-template-columns:1fr; } }
 	</style>
+	<link href="css/portfolio-improvements.css" rel="stylesheet">
 </head>
 <body>
 	<header class="my-clean-header">
@@ -104,6 +105,7 @@
 				</div>
 			</li>
 			<li><a href="index.html#about">关于我</a></li>
+			<li><a class="resume-nav-link" href="resume.html">RESUME</a></li>
 			<li><a href="index.html#contact">联系方式</a></li>
 		</ul>
 	</header>
@@ -114,9 +116,32 @@
 			<p class="subtitle">5v5 夺旗多人竞技射击地图</p>
 		</div>
 
-		<div class="video-wrapper">
-			<iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=116951036860031&amp;bvid=BV138KU6zE7h&amp;cid=40124221336&amp;p=1" scrolling="no" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Cold Front 多人竞技射击地图演示"></iframe>
-		</div>
+		<section class="project-scan-summary" aria-label="项目速览">
+			<div class="project-scan-media">
+				<div class="video-wrapper click-video" data-video-src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=116951036860031&amp;bvid=BV138KU6zE7h&amp;cid=40124221336&amp;p=1" data-video-title="Cold Front 多人竞技射击地图演示">
+					<button class="video-poster" type="button" aria-label="点击加载并播放 Cold Front 项目演示">
+						<img src="images/project2/shot0016.png" alt="Cold Front 项目演示封面">
+						<span class="video-play-button"><i class="fa fa-play" aria-hidden="true"></i></span>
+						<span class="video-poster-label">点击加载并播放项目演示</span>
+					</button>
+				</div>
+			</div>
+			<div class="project-scan-panel">
+				<p class="scan-eyebrow">项目速览</p>
+				<div class="scan-facts">
+					<div class="scan-fact"><strong>项目性质</strong><span>个人多人地图</span></div>
+					<div class="scan-fact"><strong>模式</strong><span>5v5 夺旗</span></div>
+					<div class="scan-fact"><strong>结构</strong><span>三条路线 / 三层空间</span></div>
+					<div class="scan-fact"><strong>职责</strong><span>完整地图设计与搭建</span></div>
+				</div>
+				<h2>我的核心工作</h2>
+				<ul class="scan-contributions">
+					<li>围绕安全、时间、信息与空间控制设计路线交换。</li>
+					<li>组织三层垂直战斗空间与可持续切换的三条主路线。</li>
+					<li>通过资源、到达时间与暴露风险为优势方保留反制。</li>
+				</ul>
+			</div>
+		</section>
 
 		<section class="content-section">
 			<h2>项目概览</h2>
@@ -202,5 +227,6 @@
 			<a href="index.html#work" class="back-btn">返回项目列表</a>
 		</div>
 	</main>
+	<script src="js/click-to-play.js"></script>
 </body>
 </html>

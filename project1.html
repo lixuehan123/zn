@@ -78,35 +78,37 @@
 			.portrait-media img { max-height:none; }
 		}
 	</style>
+	<link href="css/portfolio-improvements.css" rel="stylesheet">
 </head>
 <body>
 	<header class="my-clean-header">
 		<div class="my-clean-logo">
-			<a href="index.html" title="Xuehan Li - Portfolio">XUEHAN LI</a>
-			<span class="job-title">Level Designer</span>
+			<a href="index.html" title="李学汉 - 关卡设计作品集">李学汉</a>
+			<span class="job-title">关卡设计师</span>
 		</div>
 		<ul class="my-clean-nav">
-			<li><a href="index.html">HOME</a></li>
+			<li><a href="index.html">首页</a></li>
 			<li class="dropdown">
-				<a href="index.html#work" class="dropbtn">PROJECTS <i class="fa fa-angle-down"></i></a>
+				<a href="index.html#work" class="dropbtn">项目 <i class="fa fa-angle-down"></i></a>
 				<div class="dropdown-content">
-					<div class="dropdown-category-title">Personal Projects</div>
-					<a href="project1.html">ContainmentBreach (Starfield)</a>
-					<a href="project3.html">Invalidprescription (Starfield)</a>
-					<a href="project4.html">Escape from Power Plant (Half-Life 2)</a>
+					<div class="dropdown-category-title">个人项目</div>
+					<a href="project1.html">收容失效（星空）</a>
+					<a href="project3.html">无效处方（星空）</a>
+					<a href="project4.html">逃离发电厂（半衰期 2）</a>
 					<a href="project2.html">Cold Front（多人竞技射击地图）</a>
-					<div class="dropdown-category-title">Team Projects</div>
+					<div class="dropdown-category-title">团队项目</div>
 					<a href="project7.html">Petalnaut</a>
 					<a href="project8.html">Hamsterballin'</a>
-					<a href="project9.html">Unannounced Project</a>
-					<div class="dropdown-category-title">Game Jams</div>
-					<a href="project10.html">GGJ 2024: Make me laugh</a>
-					<a href="project11.html">LD 55: Summon</a>
-					<a href="project12.html">GMTK 2024: Built to Scale</a>
+					<a href="project9.html">未公开项目</a>
+					<div class="dropdown-category-title">Game Jam</div>
+					<a href="project10.html">GGJ 2024：Make Me Laugh</a>
+					<a href="project11.html">LD 55：Summon</a>
+					<a href="project12.html">GMTK 2024：Build to Scale</a>
 				</div>
 			</li>
-			<li><a href="index.html#about">ABOUT</a></li>
-			<li><a href="index.html#contact">CONTACT</a></li>
+			<li><a href="index.html#about">关于我</a></li>
+			<li><a class="resume-nav-link" href="resume.html">RESUME</a></li>
+			<li><a href="index.html#contact">联系方式</a></li>
 		</ul>
 	</header>
 
@@ -116,9 +118,32 @@
 			<p class="subtitle">《星空》Creation Kit 生存关卡设计</p>
 		</div>
 
-		<div class="video-wrapper">
-			<iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=116937665290082&amp;bvid=BV1RgNf6MERA&amp;cid=40054623755&amp;p=1" scrolling="no" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="收容失效项目演示"></iframe>
-		</div>
+		<section class="project-scan-summary" aria-label="项目速览">
+			<div class="project-scan-media">
+				<div class="video-wrapper click-video" data-video-src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=116937665290082&amp;bvid=BV1RgNf6MERA&amp;cid=40054623755&amp;p=1" data-video-title="收容失效项目演示">
+					<button class="video-poster" type="button" aria-label="点击加载并播放收容失效项目演示">
+						<img src="images/project1-cover.png" alt="收容失效项目演示封面">
+						<span class="video-play-button"><i class="fa fa-play" aria-hidden="true"></i></span>
+						<span class="video-poster-label">点击加载并播放项目演示</span>
+					</button>
+				</div>
+			</div>
+			<div class="project-scan-panel">
+				<p class="scan-eyebrow">项目速览</p>
+				<div class="scan-facts">
+					<div class="scan-fact"><strong>项目性质</strong><span>个人关卡项目</span></div>
+					<div class="scan-fact"><strong>工具</strong><span>Starfield Creation Kit</span></div>
+					<div class="scan-fact"><strong>类型</strong><span>波次生存关卡</span></div>
+					<div class="scan-fact"><strong>职责</strong><span>关卡 / 脚本 / 数值</span></div>
+				</div>
+				<h2>我的核心工作</h2>
+				<ul class="scan-contributions">
+					<li>设计通电前后逐步扩张的立体环路与战斗节奏。</li>
+					<li>通过脚本实现电力、陷阱、区域解锁和武器升级。</li>
+					<li>配置武器、资源与敌群强度，支撑约一小时流程。</li>
+				</ul>
+			</div>
+		</section>
 
 		<div class="content-section">
 			<h2>总结</h2>
@@ -277,5 +302,6 @@
 			<a href="index.html#work" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
 		</div>
 	</div>
+	<script src="js/click-to-play.js"></script>
 </body>
 </html>
