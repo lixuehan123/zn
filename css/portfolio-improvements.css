@@ -1,4 +1,42 @@
 /* Shared recruiter-first improvements for the Chinese portfolio. */
+
+/* Keep the header typography identical across every page. */
+.my-clean-logo a,
+.job-title,
+.my-clean-nav a,
+.dropdown-category-title {
+	font-family: "Open Sans", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+}
+
+.my-clean-logo a {
+	font-size: 32px;
+	font-weight: 700;
+}
+
+.job-title {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.my-clean-nav a {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.dropdown-content a {
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.dropdown-category-title {
+	font-size: 11px;
+	font-weight: 700;
+}
+
+/* Match every video project to Project 1's comfortable content width. */
+.project-detail-container.video-project-detail {
+	max-width: 1080px;
+}
 .my-clean-nav .resume-nav-link,
 .my-clean-nav .resume-nav-link:link,
 .my-clean-nav .resume-nav-link:visited {
